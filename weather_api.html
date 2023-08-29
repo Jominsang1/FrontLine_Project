@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(function(){
+            $('.button').on("click", function(){
+                const time = Date.now();
+                console.log(time)
+
+                const data = new Date(time)
+                const data2 = new Date(time-(1000*60*60))
+                
+                console.log("-1시간", data2)
+
+                let year = data.getFullYear()
+                let month = Number(data.getMonth()+1)
+                let date = data.getDate()
+                let hours = data.getHours()
+                let hours2 = data2.getHours()
+                let minutes = data.getMinutes()
+
+                let input_hours;
+                let check_hours;
+
+                if(month < 10){
+                    month = "0"+month
+                }
+
+                if(date < 10){
+                    date = "0"+date
+                }
+
+                if(hours < 10){
+                    hours = "0"+hours
+                }
+
+                if(hours2 < 10){
+                    hours2 = "0"+hours
+                }
+
+                if(minutes < 30){
+                    input_hours = hours2
+                    check_hours = hours
+                } else {
+                    input_hours = hours
+                    check_hours = hours+1
+                }
+
+                console.log("진짜시간", year, month, date, hours, minutes)
+                // console.log(1, year.toString()+month+date)
+                // console.log(2, hours.toString()+minutes)
+
+                const xhr = new XMLHttpRequest();
+                //초단기예보조회 30분 기준
+                let url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey=ZVVKvZ%2F9XZ0XNbYrTeRqtelsi5YnTmeE0eXfkBXt319boYdmGKbF0L712MaVdYhwHBb5%2BV0Ic%2BrRwxIVuIBwYQ%3D%3D&dataType=JSON&numOfRows=1000&pageNo=1&base_date='+year.toString()+month+date+'&base_time='+(input_hours).toString()+'30'+'&nx=63&ny=110'
+                xhr.open("GET", url);
+                xhr.send();
+                xhr.onload = function () {
+                let data = JSON.parse(xhr.responseText)
+                console.log(xhr.responseText)
+                console.log(data)
+                //for문 돌려서 배열 data값 일치할때만 출력
+
+                let item = data.response.body.items.item
+                    
+                console.log(item)
+
+                let html = ""
+
+                for(let i = 0; i<item.length; i++){
+                    if(item[i].fcstTime == check_hours+"00"){
+                        console.log(item[i].category, item[i].fcstValue)
+                        if(item[i].category == "PTY"){
+                            html += "강수형태"+" "
+                            html += item[i].fcstValue+"<br>"
+                        }
+                        if(item[i].category == "SKY"){
+                            html += "하늘상태"+" "
+                            html += item[i].fcstValue+"<br>"
+                        }
+                        if(item[i].category == "T1H"){
+                            html += "기온"+" "
+                            html += item[i].fcstValue+"<br>"
+                        }
+                        if(item[i].category == "REH"){
+                            html += "습도"+" "
+                            html += item[i].fcstValue+"<br>"
+                        }
+                    }
+                }
+
+                $('.result')[0].innerHTML = html
+
+                //lgt = 낙뢰 / pty = 강수형태 / rn1 = 1시간 강수량 / sky = 하늘상태 / t1h = 기온 / reh = 습도 
+                //pty = 0없음 1비 2비/눈 3눈 5빗방울 6빗방울눈날림 7눈날림
+                //sky = 1맑음 3구름많음 4흐림
+
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <input class="button" type="button" value="button">
+    <div class="result">
+
+    </div>
+</body>
+</html>
