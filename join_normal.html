@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener("load", function(){
+            pop()
+        })
+
+        function pop(){
+            let section = document.querySelectorAll("[value=펼치기]")
+            let text = document.querySelectorAll(".text")
+            
+            for(let i = 0; i<section.length; i++){
+                section[i].addEventListener("click", function(){
+                    // console.log(i+1+"번째 섹션 클릭")
+                    if(text[i].classList.contains("hide")){
+                        text[i].classList.remove("hide")
+                    } else {
+                        text[i].classList.add("hide")
+                    }
+                    
+                    
+                })
+            }
+        }
+    </script>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        div{
+            text-align: center;
+        }
+        h1{
+            border-bottom: 2px solid black;
+            padding-bottom: 20px;
+        }
+        .text{
+        }
+        .section{
+            border: 1px solid black;
+            margin: 5px;
+        }
+        .hide{
+            display: none;
+        }
+        input {
+            cursor: pointer;
+        }
+        .pop {
+        }
+    </style>
+</head>
+<body>
+    <h1>약관동의</h1>
+
+    <div class="section">
+        <div>약관동의 1
+            <div class="pop">펼치기<input type="checkbox" value="펼치기"></div>
+        </div>
+        <div class="text hide">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
+        </div>
+    </div>
+
+    <div class="section">
+        <div>약관동의 2<input type="checkbox" value="펼치기"></div>
+        <div class="text hide">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
+        </div>
+    </div>
+
+    <div class="section">
+        <div>약관동의 3<input type="checkbox" value="펼치기"></div>
+        <div class="text hide">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
+        </div>
+    </div>
+</body>
+</html>

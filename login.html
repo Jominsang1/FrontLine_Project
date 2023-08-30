@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main {
+            border: 2px solid gray;
+            width: 700px;
+            border-radius: 15px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main_top {
+            border-bottom: 2px solid gray;
+            width: 100%;
+            text-align: center;
+        }
+
+        .main_top img {
+            cursor: pointer;
+            float: left;
+            position: relative;
+            left: 10px;
+
+        }
+
+        .main_login {
+            cursor: pointer;
+            height: 40px;
+            width: 300px;
+
+            color: white;
+            font-weight: bolder;
+            border-radius: 7px;
+            background-color: #5498FF;
+;
+            
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .join p {
+            cursor: pointer;
+        }
+
+        .main_input {
+            border: 2px solid gray;
+            border-radius: 15px;
+            width: 300px;
+
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            margin-bottom: 20px;
+            /* 임시 */
+            /* height: 500px; */
+        }
+
+        .input_line{
+            border-bottom: 2px solid gray;
+        }
+
+        .main_input input {
+            border: 1px solid white;
+            border-radius: 15px;
+            width: 95%;
+            height: 30px;
+            outline: none;
+            /* 임시 */
+            /* margin-bottom: 10px; */
+        }
+        
+        .logo img{
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .main_bottom {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+            join()
+            login()
+            logo()
+            x()
+        })
+
+        function join(){
+            document.querySelector(".join").addEventListener("click",function(){
+                alert("회원가입 페이지로 이동합니다.")
+                location.href="./join.html"
+            })
+        }
+
+        function login(){
+            document.querySelector(".main_login").addEventListener("click",function(){
+                let id_value = document.querySelectorAll(".main_input div input")[0].value
+                let password_value = document.querySelectorAll(".main_input div input")[1].value
+                let id = [];
+                let password = [];
+                
+                id.push("frontline")
+                password.push("1234")
+
+                // console.log(document.querySelector("[type=text]").value) id.value 테스트
+
+                // console.log(id[0], password[0]) 배열 테스트
+
+                for(let i = 0; i<id.length; i++){
+                    if(id[i] == document.querySelectorAll(".main_input div input")[0].value && password[i] == document.querySelectorAll(".main_input div input")[1].value){
+                        alert(id[i]+"님 환영합니다.")
+                        history.back(); //괄호안에 -3 수치 조절하면 그전페이지까지
+                    }
+                    else{
+                        alert("아이디 또는 비밀번호가 맞지 않습니다.")
+                    }
+                }
+
+                
+            })
+        }
+
+        function logo(){
+            document.querySelector(".logo img").addEventListener("click", function(){
+                location.href="./main.html"
+            })
+        }
+
+        function x(){
+            document.querySelector(".main_top img").addEventListener("click",function(){
+                // console.log(document.referrer.length) 이전페이지 기록 테스트
+                if(document.referrer.length == 0){
+                    location.href="./main.html"
+                } else {
+                    history.back();
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="main_top">
+            <h4><img src="./images/x.png">로그인 또는 회원가입</h4>
+        </div>
+        <div class="main_bottom">
+            <h3>놀아유에 오신걸 환영합니다</h3>
+            <div class="main_input">
+                <div class="input_line"><input type="text" placeholder="아이디"></div>
+                <div><input type="password" placeholder="비밀번호"></div>
+            </div>
+            <div class="main_login">
+                로그인
+            </div>
+            <div class="join">
+                <p>회원가입</p>
+            </div>
+            <div class="logo">
+                <img src="./images/logo.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
