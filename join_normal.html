@@ -6,8 +6,106 @@
     <title>Document</title>
     <script>
         window.addEventListener("load", function(){
+            check()
+            button()
             pop()
         })
+
+        function check(){
+            document.querySelector(".all div img").addEventListener("click", function(){
+                let count = 0;
+                let check_all = document.querySelectorAll(".main_bottom div div img")
+                let count_essential = 0;
+                let check_essential = document.querySelectorAll(".essential div img")
+                // console.log("all")
+                for(let i = 0; i<check_all.length; i++){
+                    if(check_all[i].getAttribute("src") == "./images/check_false.png"){
+                        count += 1;
+                    }
+                }
+
+                if(count != 0){
+                    for(let i = 0; i<check_all.length; i++){
+                        check_all[i].setAttribute("src", "./images/check_true.png")
+                    }
+                } else {
+                    for(let i = 0; i<check_all.length; i++){
+                        check_all[i].setAttribute("src", "./images/check_false.png")
+                    }
+                }
+
+                for(let i = 0; i<check_essential.length; i++){
+                    if(check_essential[i].getAttribute("src") == "./images/check_true.png"){
+                        count_essential += 1;
+                    }
+                }
+
+                if(count_essential == check_essential.length){
+                    document.querySelector(".button1").classList.add("hide")
+                    document.querySelector(".button2").classList.remove("hide")
+                } else {
+                    document.querySelector(".button1").classList.remove("hide")
+                    document.querySelector(".button2").classList.add("hide")
+                }
+            })
+
+            let check_one = document.querySelectorAll(".section div img")
+
+            for(let i = 0; i<check_one.length; i++){
+                check_one[i].addEventListener("click",function(){
+                    let count = 0;
+                    let count_essential = 0;
+                    let check_essential = document.querySelectorAll(".essential div img")
+                    // console.log("one")
+                    if(check_one[i].getAttribute("src") == "./images/check_false.png"){
+                        check_one[i].setAttribute("src", "./images/check_true.png")
+                    } else{
+                        check_one[i].setAttribute("src", "./images/check_false.png")
+                    }
+
+                    for(let i = 0; i<check_one.length; i++){
+                        if(check_one[i].getAttribute("src") == "./images/check_true.png"){
+                            count += 1;
+                        }
+                    }
+
+                    if(count == check_one.length){
+                        document.querySelector(".all div img").setAttribute("src", "./images/check_true.png");
+                    } else {
+                        document.querySelector(".all div img").setAttribute("src", "./images/check_false.png");
+                    }
+                    
+
+                    for(let i = 0; i<check_essential.length; i++){
+                        if(check_essential[i].getAttribute("src") == "./images/check_true.png"){
+                            count_essential += 1;
+                        }
+                    }
+
+                    if(count_essential == check_essential.length){
+                        document.querySelector(".button1").classList.add("hide")
+                        document.querySelector(".button2").classList.remove("hide")
+                    } else {
+                        document.querySelector(".button1").classList.remove("hide")
+                        document.querySelector(".button2").classList.add("hide")
+                    }
+                })
+            }
+        }
+
+        function button(){
+            let count = 0;
+            let check_essential = document.querySelectorAll(".essential div img")
+
+            for(let i = 0; i<check_essential.length; i++){
+                if(check_essential[i].getAttribute("src") == "./images/check_true.png"){
+                    count += 1;
+                }
+            }
+
+            // console.log(count)
+        }
+
 
         function pop(){
             let section = document.querySelectorAll("[value=펼치기]")
@@ -31,55 +129,130 @@
         body{
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: center;
         }
-        div{
+
+        .main_top {
             text-align: center;
+            margin-bottom: 50px;
         }
-        h1{
-            border-bottom: 2px solid black;
-            padding-bottom: 20px;
+
+        .main_bottom div {
+            width: 700px;
         }
-        .text{
+
+        .main_bottom div div img {
+            cursor: pointer;
         }
-        .section{
+
+        .main_bottom div div{
             border: 1px solid black;
             margin: 5px;
         }
         .hide{
             display: none;
         }
+        
         input {
             cursor: pointer;
         }
-        .pop {
+        
+        .next {
+            display: flex;
+            justify-content: center;
+            
+            width: 700px;
+            margin-top: 50px;
+        }
+
+        .button1 {
+            height: 40px;
+            width: 300px;
+
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            border-radius: 7px;
+            background-color: lightgray;
+            line-height: 40px;
+        }
+        .button2 {
+            cursor: pointer;
+            height: 40px;
+            width: 300px;
+
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            border-radius: 7px;
+            background-color: #5498FF;
+            line-height: 40px;
+        }
+        strong {
+            color: blue;
+        }
+        a{
+            color: gray;
         }
     </style>
 </head>
 <body>
-    <h1>약관동의</h1>
-
-    <div class="section">
-        <div>약관동의 1
-            <div class="pop">펼치기<input type="checkbox" value="펼치기"></div>
+    <div class="main">
+        <div class="main_top">
+            <h1>회원가입 및 이용약관</h1>
         </div>
-        <div class="text hide">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
+        <div class="main_bottom">
+            <div class="all">
+                <div><img src="./images/check_false.png">전체 동의하기</div>
+            </div>
+
+            <div class="section essential">
+                <div value="0"><img src="./images/check_false.png">이용약관 동의 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
+                <div class="text hide">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
+                </div>
+            </div>
+        
+            <div class="section essential">
+                <div value="0"><img src="./images/check_false.png">만 14세 이상확인 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
+                <div class="text hide">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
+                </div>
+            </div>
+        
+            <div class="section essential">
+                <div value="0"><img src="./images/check_false.png">개인정보 수집 및 이용 동의 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
+                <div class="text hide">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
+                </div>
+            </div>
+
+            <div class="section option">
+                <div value="0"><img src="./images/check_false.png"><a>개인정보 수집 및 이용 동의 (선택)</a><input type="checkbox" value="펼치기"></div>
+                <div class="text hide">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
+                </div>
+            </div>
+
+            <div class="section option">
+                <div value="0"><img src="./images/check_false.png"><a>마케팅 알림 수신동의 (선택)</a><input type="checkbox" value="펼치기"></div>
+                <div class="text hide">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
+                </div>
+            </div>
+
+            <div class="section option">
+                <div value="0"><img src="./images/check_false.png"><a>위치기반 서비스 이용약관 동의 (선택)</a><input type="checkbox" value="펼치기"></div>
+                <div class="text hide">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
+                </div>
+            </div>
+        </div>
+        <div class="next">
+            <div class="button1">다음</div>
+            <div class="button2 hide">다음</div>
         </div>
     </div>
-
-    <div class="section">
-        <div>약관동의 2<input type="checkbox" value="펼치기"></div>
-        <div class="text hide">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
-        </div>
-    </div>
-
-    <div class="section">
-        <div>약관동의 3<input type="checkbox" value="펼치기"></div>
-        <div class="text hide">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
-        </div>
-    </div>
+    
 </body>
 </html>
