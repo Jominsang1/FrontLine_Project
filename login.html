@@ -12,7 +12,7 @@
         }
 
         .main {
-            border: 2px solid gray;
+            border: 2px solid #A6A6A6;
             width: 700px;
             border-radius: 15px;
 
@@ -22,7 +22,7 @@
         }
 
         .main_top {
-            border-bottom: 2px solid gray;
+            border-bottom: 2px solid black;
             width: 100%;
             text-align: center;
         }
@@ -51,11 +51,12 @@
         }
 
         .join p {
+            display: inline-block;
             cursor: pointer;
         }
 
         .main_input {
-            border: 2px solid gray;
+            border: 2px solid #A6A6A6;
             border-radius: 15px;
             width: 300px;
 
@@ -69,7 +70,7 @@
         }
 
         .input_line{
-            border-bottom: 2px solid gray;
+            border-bottom: 2px solid lightgray;
         }
 
         .main_input input {
@@ -100,17 +101,18 @@
             login()
             logo()
             x()
+            tab()
         })
 
         function join(){
-            document.querySelector(".join").addEventListener("click",function(){
+            document.querySelector(".join p").addEventListener("click",function(){
                 alert("회원가입 페이지로 이동합니다.")
                 location.href="./join.html"
             })
         }
 
         function login(){
-            document.querySelector(".main_login").addEventListener("click",function(){
+            document.querySelector(".main_login").addEventListener("click", function(){
                 let id_value = document.querySelectorAll(".main_input div input")[0].value
                 let password_value = document.querySelectorAll(".main_input div input")[1].value
                 let id = [];
@@ -126,7 +128,11 @@
                 for(let i = 0; i<id.length; i++){
                     if(id[i] == document.querySelectorAll(".main_input div input")[0].value && password[i] == document.querySelectorAll(".main_input div input")[1].value){
                         alert(id[i]+"님 환영합니다.")
-                        history.back(); //괄호안에 -3 수치 조절하면 그전페이지까지
+                        if(document.referrer.length == 0){
+                            location.href="./main.html"
+                        } else {
+                            history.back(); //괄호안에 -3 수치 조절하면 그전페이지까지
+                        }
                     }
                     else{
                         alert("아이디 또는 비밀번호가 맞지 않습니다.")
@@ -150,6 +156,22 @@
                     location.href="./main.html"
                 } else {
                     history.back();
+                }
+            })
+        }
+
+        function tab(){
+            document.querySelector("[placeholder=아이디]").addEventListener("keyup", function(event){
+                // console.log(event.keyCode)
+                if(event.keyCode == 13){
+                    document.querySelector("[placeholder=비밀번호]").focus();
+                }
+            })
+
+            document.querySelector("[placeholder=비밀번호]").addEventListener("keyup", function(event){
+                // console.log(event.keyCode)
+                if(event.keyCode == 13){
+                    document.querySelector(".main_login").click();
                 }
             })
         }
