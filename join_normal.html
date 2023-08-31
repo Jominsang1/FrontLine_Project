@@ -19,23 +19,23 @@
                 let check_essential = document.querySelectorAll(".essential div img")
                 // console.log("all")
                 for(let i = 0; i<check_all.length; i++){
-                    if(check_all[i].getAttribute("src") == "./images/check_false.png"){
+                    if(check_all[i].getAttribute("src") == "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"){
                         count += 1;
                     }
                 }
 
                 if(count != 0){
                     for(let i = 0; i<check_all.length; i++){
-                        check_all[i].setAttribute("src", "./images/check_true.png")
+                        check_all[i].setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true")
                     }
                 } else {
                     for(let i = 0; i<check_all.length; i++){
-                        check_all[i].setAttribute("src", "./images/check_false.png")
+                        check_all[i].setAttribute("src", "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png")
                     }
                 }
 
                 for(let i = 0; i<check_essential.length; i++){
-                    if(check_essential[i].getAttribute("src") == "./images/check_true.png"){
+                    if(check_essential[i].getAttribute("src") == "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true"){
                         count_essential += 1;
                     }
                 }
@@ -57,27 +57,27 @@
                     let count_essential = 0;
                     let check_essential = document.querySelectorAll(".essential div img")
                     // console.log("one")
-                    if(check_one[i].getAttribute("src") == "./images/check_false.png"){
-                        check_one[i].setAttribute("src", "./images/check_true.png")
+                    if(check_one[i].getAttribute("src") == "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"){
+                        check_one[i].setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true")
                     } else{
-                        check_one[i].setAttribute("src", "./images/check_false.png")
+                        check_one[i].setAttribute("src", "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png")
                     }
 
                     for(let i = 0; i<check_one.length; i++){
-                        if(check_one[i].getAttribute("src") == "./images/check_true.png"){
+                        if(check_one[i].getAttribute("src") == "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true"){
                             count += 1;
                         }
                     }
 
                     if(count == check_one.length){
-                        document.querySelector(".all div img").setAttribute("src", "./images/check_true.png");
+                        document.querySelector(".all div img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true");
                     } else {
-                        document.querySelector(".all div img").setAttribute("src", "./images/check_false.png");
+                        document.querySelector(".all div img").setAttribute("src", "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png");
                     }
                     
 
                     for(let i = 0; i<check_essential.length; i++){
-                        if(check_essential[i].getAttribute("src") == "./images/check_true.png"){
+                        if(check_essential[i].getAttribute("src") == "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true"){
                             count_essential += 1;
                         }
                     }
@@ -98,7 +98,7 @@
             let check_essential = document.querySelectorAll(".essential div img")
 
             for(let i = 0; i<check_essential.length; i++){
-                if(check_essential[i].getAttribute("src") == "./images/check_true.png"){
+                if(check_essential[i].getAttribute("src") == "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true"){
                     count += 1;
                 }
             }
@@ -203,46 +203,46 @@
         </div>
         <div class="main_bottom">
             <div class="all">
-                <div><img src="./images/check_false.png">전체 동의하기</div>
+                <div><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png">전체 동의하기</div>
             </div>
 
             <div class="section essential">
-                <div value="0"><img src="./images/check_false.png">이용약관 동의 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
+                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png">이용약관 동의 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
         
             <div class="section essential">
-                <div value="0"><img src="./images/check_false.png">만 14세 이상확인 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
+                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png">만 14세 이상확인 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
         
             <div class="section essential">
-                <div value="0"><img src="./images/check_false.png">개인정보 수집 및 이용 동의 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
+                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png">개인정보 수집 및 이용 동의 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
 
             <div class="section option">
-                <div value="0"><img src="./images/check_false.png"><a>개인정보 수집 및 이용 동의 (선택)</a><input type="checkbox" value="펼치기"></div>
+                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><a>개인정보 수집 및 이용 동의 (선택)</a><input type="checkbox" value="펼치기"></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
 
             <div class="section option">
-                <div value="0"><img src="./images/check_false.png"><a>마케팅 알림 수신동의 (선택)</a><input type="checkbox" value="펼치기"></div>
+                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><a>마케팅 알림 수신동의 (선택)</a><input type="checkbox" value="펼치기"></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
 
             <div class="section option">
-                <div value="0"><img src="./images/check_false.png"><a>위치기반 서비스 이용약관 동의 (선택)</a><input type="checkbox" value="펼치기"></div>
+                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><a>위치기반 서비스 이용약관 동의 (선택)</a><input type="checkbox" value="펼치기"></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
