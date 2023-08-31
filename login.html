@@ -104,6 +104,11 @@
 
             margin-top: -2px;
         }
+
+        .input_id_x, .input_password_x {
+            display: none;
+            cursor: pointer;
+        }
     </style>
     <script>
         window.addEventListener("load", function(){
@@ -113,6 +118,7 @@
             x()
             tab()
             focus()
+            x_input()
         })
 
         function join(){
@@ -142,7 +148,7 @@
                         if(document.referrer.length == 0){
                             location.href="./main.html"
                         } else {
-                            history.back(); //괄호안에 -3 수치 조절하면 그전페이지까지
+                            history.back(); //괄호안에 -n 수치 조절하면 -n번째 페이지까지
                         }
                     }
                     else{
@@ -208,6 +214,34 @@
                 document.querySelector(".input_password").style.border = "2px solid lightgray";
             })
         }
+
+        function x_input(){
+            document.querySelector(".input_id input").addEventListener("keyup", function(){
+                if(document.querySelector(".input_id input").value != ""){
+                    document.querySelector(".input_id_x").style.display = "block"
+                } else {
+                    document.querySelector(".input_id_x").style.display = "none"
+                }
+            })  
+
+            document.querySelector(".input_password input").addEventListener("keyup", function(){
+                if(document.querySelector(".input_password input").value != ""){
+                    document.querySelector(".input_password_x").style.display = "block"
+                } else {
+                    document.querySelector(".input_password_x").style.display = "none"
+                }
+            })
+
+            document.querySelector(".input_id_x").addEventListener("click", function(){
+                document.querySelector(".input_id input").value = ""
+                document.querySelector(".input_id_x").style.display = "none"
+            }) 
+
+            document.querySelector(".input_password_x").addEventListener("click", function(){
+                document.querySelector(".input_password input").value = ""
+                document.querySelector(".input_password_x").style.display = "none"
+            }) 
+        }
     </script>
 </head>
 <body>
@@ -218,8 +252,8 @@
         <div class="main_bottom">
             <h3>놀아유에 오신걸 환영합니다</h3>
             <div class="main_input">
-                <div class="input_id"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_before.png?raw=true"><input type="text" placeholder="아이디"></div>
-                <div class="input_password"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true"><input type="password" placeholder="비밀번호"></div>
+                <div class="input_id"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_before.png?raw=true"><input type="text" placeholder="아이디"><img class="input_id_x" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/x.png?raw=true"></div>
+                <div class="input_password"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true"><input type="password" placeholder="비밀번호"><img class="input_password_x" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/x.png?raw=true"></div>
             </div>
             <div class="main_login">
                 로그인
