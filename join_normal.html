@@ -94,16 +94,12 @@
         }
 
         function button(){
-            let count = 0;
-            let check_essential = document.querySelectorAll(".essential div img")
-
-            for(let i = 0; i<check_essential.length; i++){
-                if(check_essential[i].getAttribute("src") == "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true"){
-                    count += 1;
-                }
-            }
-
-            // console.log(count)
+            document.querySelector(".button2").addEventListener("click",function(){
+                let count_essential = 0;
+                let check_essential = document.querySelectorAll(".essential div img")
+                
+                location.href="./join_normal_input.html"
+            })
         }
 
 
@@ -133,8 +129,22 @@
         }
 
         .main_top {
+            
             text-align: center;
             margin-bottom: 50px;
+        }
+
+        .section_title {
+            display: flex;
+            align-items: center;
+        }
+
+        .section_title div {
+            display: flex;
+        }
+
+        .section_title div div {
+            width: 100%;
         }
 
         .main_bottom div {
@@ -146,7 +156,7 @@
         }
 
         .main_bottom div div{
-            border: 1px solid black;
+            /* border: 1px solid black; */
             margin: 5px;
         }
         .hide{
@@ -191,8 +201,15 @@
         strong {
             color: blue;
         }
-        a{
+        a, .option div {
             color: gray;
+        }
+        .more {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .all div div input{
+            display: none;
         }
     </style>
 </head>
@@ -203,46 +220,46 @@
         </div>
         <div class="main_bottom">
             <div class="all">
-                <div><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png">전체 동의하기</div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div>전체 동의하기</div><input type="checkbox"></div></div>
             </div>
 
             <div class="section essential">
-                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png">이용약관 동의 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div>이용약관 동의 <strong>(필수)</strong></div><div class="more">펼치기</div><input type="checkbox" value="펼치기"></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
         
             <div class="section essential">
-                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png">만 14세 이상확인 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div>만 14세 이상확인 <strong>(필수)</strong></div><div class="more">펼치기</div><input type="checkbox" value="펼치기"></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
         
             <div class="section essential">
-                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png">개인정보 수집 및 이용 동의 <strong>(필수)</strong><input type="checkbox" value="펼치기"></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div>개인정보 수집 및 이용 동의 <strong>(필수)</strong></div><div class="more">펼치기</div><input type="checkbox" value="펼치기"></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
 
             <div class="section option">
-                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><a>개인정보 수집 및 이용 동의 (선택)</a><input type="checkbox" value="펼치기"></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div><a>개인정보 수집 및 이용 동의 (선택)</a></div><div class="more">펼치기</div><input type="checkbox" value="펼치기"></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
 
             <div class="section option">
-                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><a>마케팅 알림 수신동의 (선택)</a><input type="checkbox" value="펼치기"></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div><a>마케팅 알림 수신동의 (선택)</a></div><div class="more">펼치기</div><input type="checkbox" value="펼치기"></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
 
             <div class="section option">
-                <div value="0"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><a>위치기반 서비스 이용약관 동의 (선택)</a><input type="checkbox" value="펼치기"></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div><a>위치기반 서비스 이용약관 동의 (선택)</a></div><div class="more">펼치기</div><input type="checkbox" value="펼치기"></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
