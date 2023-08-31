@@ -44,7 +44,6 @@
             font-weight: bolder;
             border-radius: 7px;
             background-color: #5498FF;
-;
             
             text-align: center;
             line-height: 40px;
@@ -56,19 +55,15 @@
         }
 
         .main_input {
-            border: 2px solid #A6A6A6;
-            border-radius: 15px;
+            /* border: 2px solid #A6A6A6;
+            border-radius: 15px; */
             width: 300px;
 
             display: flex;
             justify-content: center;
             flex-direction: column;
 
-            margin-bottom: 20px;
-        }
-
-        .input_id{
-            border-bottom: 2px solid lightgray;
+            margin-bottom: 25px;
         }
 
         .main_input input {
@@ -95,6 +90,20 @@
             display: flex;
             padding: 10px;
         }
+
+        .input_id {
+            border: 2px solid lightgray;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .input_password {
+            border: 2px solid lightgray;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+
+            margin-top: -2px;
+        }
     </style>
     <script>
         window.addEventListener("load", function(){
@@ -115,8 +124,8 @@
 
         function login(){
             document.querySelector(".main_login").addEventListener("click", function(){
-                let id_value = document.querySelectorAll(".main_input div input")[0].value
-                let password_value = document.querySelectorAll(".main_input div input")[1].value
+                let id_value = document.querySelector(".input_id input").value
+                let password_value = document.querySelector(".input_password input").value
                 let id = [];
                 let password = [];
                 
@@ -181,17 +190,22 @@
         function focus(){
             document.querySelector(".input_id input").addEventListener("focus", function(){
                 document.querySelector(".input_id img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_after.png?raw=true")
-                // document.querySelector(".")
+                document.querySelector(".input_id").style.border = "2px solid black";
+                document.querySelector(".input_password").style.borderTop = "2px solid black";
             })
             document.querySelector(".input_id input").addEventListener("blur", function(){
                 document.querySelector(".input_id img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_before.png?raw=true")
+                document.querySelector(".input_id").style.border = "2px solid lightgray";
+                document.querySelector(".input_password").style.border = "2px solid lightgray";
             })
 
             document.querySelector(".input_password input").addEventListener("focus", function(){
                 document.querySelector(".input_password img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_after.png?raw=true")
+                document.querySelector(".input_password").style.border = "2px solid black";
             })
             document.querySelector(".input_password input").addEventListener("blur", function(){
                 document.querySelector(".input_password img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true")
+                document.querySelector(".input_password").style.border = "2px solid lightgray";
             })
         }
     </script>
