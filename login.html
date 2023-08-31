@@ -65,11 +65,9 @@
             flex-direction: column;
 
             margin-bottom: 20px;
-            /* 임시 */
-            /* height: 500px; */
         }
 
-        .input_line{
+        .input_id{
             border-bottom: 2px solid lightgray;
         }
 
@@ -79,8 +77,6 @@
             width: 95%;
             height: 30px;
             outline: none;
-            /* 임시 */
-            /* margin-bottom: 10px; */
         }
         
         .logo img{
@@ -94,6 +90,11 @@
             flex-direction: column;
             text-align: center;
         }
+
+        .input_id, .input_password {
+            display: flex;
+            padding: 10px;
+        }
     </style>
     <script>
         window.addEventListener("load", function(){
@@ -102,6 +103,7 @@
             logo()
             x()
             tab()
+            focus()
         })
 
         function join(){
@@ -175,6 +177,23 @@
                 }
             })
         }
+
+        function focus(){
+            document.querySelector(".input_id input").addEventListener("focus", function(){
+                document.querySelector(".input_id img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_after.png?raw=true")
+                // document.querySelector(".")
+            })
+            document.querySelector(".input_id input").addEventListener("blur", function(){
+                document.querySelector(".input_id img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_before.png?raw=true")
+            })
+
+            document.querySelector(".input_password input").addEventListener("focus", function(){
+                document.querySelector(".input_password img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_after.png?raw=true")
+            })
+            document.querySelector(".input_password input").addEventListener("blur", function(){
+                document.querySelector(".input_password img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true")
+            })
+        }
     </script>
 </head>
 <body>
@@ -185,8 +204,8 @@
         <div class="main_bottom">
             <h3>놀아유에 오신걸 환영합니다</h3>
             <div class="main_input">
-                <div class="input_line"><input type="text" placeholder="아이디"></div>
-                <div><input type="password" placeholder="비밀번호"></div>
+                <div class="input_id"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_before.png?raw=true"><input type="text" placeholder="아이디"></div>
+                <div class="input_password"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true"><input type="password" placeholder="비밀번호"></div>
             </div>
             <div class="main_login">
                 로그인

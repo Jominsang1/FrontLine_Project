@@ -97,8 +97,16 @@
             document.querySelector(".button2").addEventListener("click",function(){
                 let count_essential = 0;
                 let check_essential = document.querySelectorAll(".essential div img")
-                
-                location.href="./join_normal_input.html"
+
+                for(let i = 0; i<check_essential.length; i++){
+                    if(check_essential[i].getAttribute("src") == "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true"){
+                        count_essential += 1;
+                    }
+                }
+
+                if(count_essential = check_essential.length){
+                    location.href="./join_normal_input.html"
+                }
             })
         }
 
