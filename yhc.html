@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .name,
+        .addr,
+        .info,
+        .desc {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .desc {
+            height: 100px;
+        }
+
+        .addr, 
+        .info {
+            height: 50px;
+        }
+        
+        .ys_food_info,
+        .ys_travel_info,
+        .ys_play_info,
+        .ys_hotel_info,
+        .ys_pension_info,
+        .ys_camping_info {
+            width: 575px;
+            /* height: 200px; */
+            margin: 5px;
+        }
+
+        .hs_food_info,
+        .hs_travel_info,
+        .hs_play_info,
+        .hs_hotel_info,
+        .hs_pension_info,
+        .hs_camping_info {
+            width: 575px;
+            /* height: 200px; */
+            margin: 5px;
+        }
+
+        .cy_food_info,
+        .cy_travel_info,
+        .cy_play_info,
+        .cy_hotel_info,
+        .cy_pension_info,
+        .cy_camping_info {
+            width: 575px;
+            /* height: 200px; */
+            margin: 5px;
+        }
+
+        .img {
+            display: flex;
+            align-items: center;
+            width: 575px;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        img {
+
+            display: inline-block;
+            width: 200px;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .yesan_food,
+        .yesan_travel,
+        .yesan_play,
+        .yesan_hotel,
+        .yesan_pension,
+        .yesan_camping {
+            display: flex;
+            flex-wrap: wrap;
+            text-overflow: ellipsis;
+        }
+
+        .hongseong_food,
+        .hongseong_travel,
+        .hongseong_play,
+        .hongseong_hotel,
+        .hongseong_pension,
+        .hongseong_camping {
+            display: flex;
+            flex-wrap: wrap;
+            text-overflow: ellipsis;
+
+        }
+
+        .cheongyang_food,
+        .cheongyang_travel,
+        .cheongyang_play,
+        .cheongyang_hotel,
+        .cheongyang_pension,
+        .cheongyang_camping {
+            display: flex;
+            flex-wrap: wrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 예산 맛집 -->
+    <h1>예산 맛집</h1>
+    <div class="yesan_food">
+        <div class="ys_food_info">
+            <div class="name" style="font-size: 20px; font-weight: bold;">페이보리스원&오장동함흥냉면</div>
+            <div class="addr">충남 예산군 대흥면 예당로 829 1층</div>
+            <div class="info">단체석, 주차, 포장, 예약, 무선 인터넷, 남/녀 화장실 구분</div>
+            <div class="desc">저희 매장은 직화주꾸미전문점&오장동식 함흥 냉면 전문점입니다 먼저 직화주꾸미는 다양한 세 트메뉴로 구성되어 있습니다</div>
+            <div class="img"><img
+                    src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220429_235%2F1651217459482lmhjm_JPEG%2F20220426_191022.jpg">
+                    <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220429_201%2F1651217460564JzXuR_JPEG%2F20220426_191158.jpg">
+              <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MzBfOTkg%2FMDAxNjkzMzczMTc3MTY3.wnGUTSiARzFV6bLfP-hapiIeCefAGTfvDDfSXN0U5Pgg.p5BoW-L4gYbv8ANLeT2HVJGKROh5XMoYYocl2__alIAg.JPEG%2F20230830_142523.jpg">
+                </div>
+            </div>
+            <div class="ys_food_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">예당만나어죽</div>
+                <div class="addr">충남 예산군 예산읍 아리랑로 6 1층</div>
+                <div class="info">단체석, 주차, 포장, 예약, 무선 인터넷, 남/녀 화장실 구분</div>
+                <div class="desc">예산역 앞에 위치한 어죽.매운탕 전문점입니다. 담백하고 맛있는 음식으로 모실수 있도록 최선을 다하고 있습니다.
+                    자동차를 타고 오시는 분들은 예산역 공영주차장을 이용 부탁드립니다</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230807_138%2F1691399506200Xlo4T_JPEG%2FIMG_20230608_131740_558.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230428_201%2F1682645127492342iy_PNG%2F20230304_093527.png">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230516_272%2F1684205986639GL1NT_JPEG%2F20230516_115715.jpg">
+                </div>
+            </div>
+            <div class="ys_food_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">강경불고기 예산점</div>
+                <div class="addr">충남 예산군 예산읍 역전로140번길 31</div>
+                <div class="info">단체석, 주차, 포장, 예약, 무선 인터넷, 남/녀 화장실 구분</div>
+                <div class="desc">대한민국 1등 불고기<강경불고기 예산점> 강경 불고기 예산점은 고급스러운 불고기를 즐기실 수 있는 공간입니다. </div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230621_134%2F16873144877299XlSK_JPEG%2F%25B0%25AD%25B0%25E6%25B5%25C5%25C1%25F6%25BA%25D2%25B0%25ED%25B1%25E2.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MzBfNjgg%2FMDAxNjkzMzY4NDYwNjUz.Zq1k3AksLDvqqKkXPRcY5vN8aB6bvlmjjwKL062VhQUg.itG93EjzeLYLDzzyiZ2LDpvegVvEZAUQ2kDver5fgz0g.JPEG%2F1693368414199.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230621_170%2F16873144875261PMin_JPEG%2F%25B0%25E8%25B6%25F5%25C2%25F2.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 예산 여행지 -->
+        <h1>예산 여행지</h1>
+        <div class="yesan_travel">
+            <div class="ys_travel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">예당호 출렁다리</div>
+                <div class="addr">충남 예산군 응봉면 후사리 39</div>
+                <div class="info">단체석, 주차, 예약, 무선 인터넷, 유아시설 (놀이방), 남/녀 화장실 구분, 장애인 편의시설</div>
+                <div class="desc">2019년 4월 6일 개통된 예당호 출렁다리는 예산군의 새로운 대표 관광지 중 하나로 402m의 길이를 자랑하고 있다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200420_73%2F1587349939487bi5qq_JPEG%2FUC-cHX5XkAor4rGZUm_WgMmq.jpeg.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MjFfOTQg%2FMDAxNjkyNjAzNzEzODY3.WHnFYhjuf8HDoXyfum7CndbQxHW02e6DCj31H6LCdb0g.21Z17Zea-pGWgQpcMbbix96gtlukhEejp3S3stQsNEQg.JPEG%2F1692588417083.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA0MTRfNTEg%2FMDAxNTU1MjI4NjA3NDI1.9QG6h6UjcdEdLrP0kHHZsEzZ_tT8Xvpnk81I-Ou9KPMg.MxS2pgYd91oqD8PCdkuBeC8Z97y-kvA4ftwicbzpiyAg.JPEG.kbsong201%2F20190412_192842.jpg%23900x675">
+                </div>
+            </div>
+            <div class="ys_travel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">내포보부상촌</div>
+                <div class="addr">내포보부상촌</div>
+                <div class="info">단체석, 주차, 예약, 무선 인터넷, 유아시설 (놀이방), 남/녀 화장실 구분, 장애인 편의시설</div>
+                <div class="desc">내포 보부상촌은 천백년 역사 향기 가득한 예산군에 위치한 복합 테마파크로 한국의 전통 유통문화와 자연이 살아 숨 쉬는 전통문화 재현 체험형 테마파크이다.
+                </div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200715_158%2F1594801488397H489f_JPEG%2F%25B3%25BB%25C6%25F7%25BA%25B8%25BA%25CE%25BB%25F3%25C3%25CC_%25BB%25F3%25BC%25BC%25C6%25E4%25C0%25CC%25C1%25F600_thum.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200713_228%2F1594647607864EUi2J_JPEG%2F3GbpLoRuh9_8DaOVJa92GYKU.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA5MTVfMTgx%2FMDAxNjYzMjEwODA4MTg2.GSXHlhupAYYPfJQWFlMsd5OrKHCEtq3GMA6MU3OceE4g.ZTfQi4LhwZvECsPMnB3BCa70uYHrEEpq7y-_Scpwrbgg.JPEG.springlll8%2F5.jpg">
+                </div>
+            </div>
+            <div class="ys_travel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">예당호모노레일</div>
+                <div class="addr">충남 예산군 응봉면 예당관광로 158</div>
+                <div class="info">단체석, 주차, 예약, 무선 인터넷, 유아시설 (놀이방), 남/녀 화장실 구분, 장애인 편의시설</div>
+                <div class="desc">예당호 모노레일은 24인승 모노레일이 총 3대로 구성되어, 약 1320m를 왕복하는 순환령 모노레 일입니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230119_208%2F1674105378397UxVWm_JPEG%2Fimage-5346969290555486786.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MjlfNjQg%2FMDAxNjg4MDMyMDY1MjMw.NJs8YF6TIaOIHvCowdUiMBErpE7au4jv8updlu4E0Asg.YDiHSMGrmQHhH9IxS5B6ritNVLBffL2P2CZPHV0XCj4g.JPEG.bora_see%2F%25BE%25C6%25B1%25D7%25B7%25CE%25B7%25A3%25B5%25E5_%25C5%25C2%25BD%25C5%25B8%25F1%25C0%25E5%252C_%25BF%25B9%25BB%25EA%25BF%25A9%25C7%25E0%252C_%25BF%25B9%25BB%25EA%25BF%25A9%25C7%25E0%25C4%25DA%25BD%25BA%252C_%25BF%25B9%25BB%25EA%25BD%25C3%25C0%25E510.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMDdfNjkg%2FMDAxNjc4MTU5MDA5MzI1.c6g3NnVkz_WiwzxFHlx_Oooyq7dl29ndwamfKCGdit8g.5hGg-nbbPRgjqQdEvaixywWhNYzgrVJ-sT3-QwheEOYg.JPEG.newjinha%2FDSC05358.JPG">
+                </div>
+            </div>
+        </div>
+
+        <!-- 예산 놀거리 -->
+        <h1>예산 놀거리</h1>
+        <div class="yesan_play">
+            <div class="ys_play_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">그리고 삽교</div>
+                <div class="addr"> 충청남도 예산군 삽교역로 91</div>
+                <div class="info">주차공간, 남/녀 화장실 시설 구비</div>
+                <div class="desc">그리고 삽교는 충청남도 예산군 삽교읍 신가리에 있는 카페다. 현대적인 감각이 돋보이는 외관과 고급스러운 분위기를 연출하는 인테리어가 눈에 띈다. 내부에는
+                    단체석이
+                    마련되어 있어 각종 모임하기 좋다. 대표 메뉴는 아메리카노다. 이 밖에 카페라떼, 카페모카, 바닐라라떼, 카라멜 마끼아또, 핫초코, 캐모마일 등 여러 가지 음료가 준비되어 있다.
+                </div>
+                <div class="img"><img
+                        src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=577783e9-2575-4d31-a781-ddfd1b6595f8">
+                    <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=8d842f27-eac7-4776-bbf6-ff6c2adcfa6c">
+                    <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=055d019c-fa44-4489-9c2b-0dda25488203">
+                </div>
+            </div>
+            <div class="ys_play_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">응봉상회</div>
+                <div class="addr"> 충청남도 예산군 입침중촌길 21</div>
+                <div class="info">주차공간, 남/녀 화장실 시설 구비</div>
+                <div class="desc">응봉상회는 충청남도 예산군 응봉면 입침리에 있다. 옛 농협 양곡창고를 리모델링해 카페로 다시 태어난 곳이다.
+                    대표 메뉴는 수제 아몬드 크림이 올라가 고소하고 달콤한 응봉라테다. 이 밖에 아메리카노, 에스프레소, 캐러멜마키아토, 연유라테, 카페모카 등도 맛볼 수 있다.</div>
+                <div class="img"><img
+                        src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=4c0c672c-4189-480e-989d-1380e0d1dcfa">
+                    <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=a01dab1c-e42c-4fa5-97fc-458298a4c45a">
+                    <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=921bc2ee-a6f3-43e2-8408-32154f9a29f0">
+                </div>
+            </div>
+            <div class="ys_play_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">유양창고</div>
+                <div class="addr">충청남도 예산군 수덕사로 1163-4</div>
+                <div class="info">주차공간, 남/녀 화장실 시설 구비</div>
+                <div class="desc">유양창고는 충청남도 예산군 덕산면 둔리에 있다. 기존에 창고로 쓰던 건물을 리모델링해 카페로 재탄생했다.
+                    널찍한 내부는 모던하면서 차분한 분위기를 연출하고 있다. 단체석도 마련되어 있어 각종 모임 하기 손색이 없다.
+                    대표 메뉴는 흑임자 크림 라테이며, 이 밖에 인절미 크림 라테, 아메리카노, 자몽 에이드, 청포도 라임 에이드 등도 판다.
+                    해미IC와 가깝고, 인근에 덕산도립공원, 용봉산자연휴양림이 있어 연계 여행이 손쉽다.
+
+                    상세정보
+                </div>
+                <div class="img"><img
+                        src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=36883e59-d578-4b01-ad57-0a47b04fabe9">
+                    <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=010f0b30-b1af-4928-b9f2-8fcafcd2e6a2">
+                    <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=e51038b6-0924-498c-b981-78e085f98250">
+                </div>
+            </div>
+        </div>
+
+        <!-- 예산 호텔 -->
+        <h1>예산 호텔</h1>
+        <div class="yesan_hotel">
+            <div class="ys_hotel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">스플라스 리솜</div>
+                <div class="addr">충남 예산군 덕산면 온천단지3로 45-7</div>
+                <div class="info">주차, 예약, 남/녀 화장실 구분</div>
+                <div class="desc">객실 오픈 예정 일자 안내
+                    - 10, 11월 주말 / 12월 : 오픈날짜 미정
+                    ※ 상기 일정은 당사 객실 운영상 변경될 수 있으니 참고 바랍니다.
+
+                    연중무휴 워터파크!
+
+                    아직 모르셨어요?
+                    가을에도 겨울에도 다 열어요!
+
+                    365일 파도풀, 슬라이드까지 모든 시설 운영 중
+                    온 가족 여유롭게 4계절 따스한 온터파크를 즐겨보세요</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220902_81%2F1662074672642u3E0F_JPEG%2F%253B%253B%253B%253B%253B.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20191217_252%2F1576547142826aeDEQ_JPEG%2F7QkyFUiNcqLlDFTB8MOSaL94.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220902_130%2F1662074563993tEH76_JPEG%2F%25BD%25BA%25C6%25C41.jpg">
+                </div>
+            </div>
+            <div class="ys_hotel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">세심천온천호텔</div>
+                <div class="addr">충남 예산군 삽교읍 수암산로 210</div>
+                <div class="info">주차, 예약, 남/녀 화장실 구분</div>
+                <div class="desc">게르마늄과 나트륨성분을 다량 함유한 약알칼리성의 49도 온천으로 피부노화 방지, 신경통, 류마티스, 피로회복에 탁월.
+
+                    온천호텔
+                    다양한 40실의 객실
+                    (가족탕실, 단체실 양실, 한실 등)
+
+                    대온천탕
+                    동시 1,800명 입장가능
+                    (노천탕, 가족탕, 야외수영장 등)</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230825_276%2F1692933731110hQuC8_JPEG%2FDJI_0851.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20191101_187%2F1572571603361CsptR_JPEG%2Fh5yrYwemrJrZohS8en0cUyjO.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230824_175%2F1692841455785SypwI_JPEG%2FIMG_4313.jpeg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 예산 펜션 -->
+        <h1>예산 펜션</h1>
+        <div class="yesan_pension">
+            <div class="ys_pension_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">예당글로리아펜션</div>
+                <div class="addr">충남 예산군 대흥면 임존성길 64</div>
+                <div class="info">독채, 단체, 복층, 가족실, 침대방, 온돌방, 개별바비큐, 수영장, 바비큐장, 모던</div>
+                <div class="desc">예당저수지,의좋은형제공원과
+                    대흥봉수산에서가족과 친구와 같이
+                    추억을 만들어요
+
+                    * 수영장 운영
+                    - 7월 1일 부터 8월 31일 까지
+                    - 우천 시 운영하지 않습니다.
+                    - 오전 11시까지는 수영장 청소 관계로 이용 불가 합니다.
+                    - 수영장 규격 : 성인용 4m x 7m ,유아용 4m x 4m
+                    * 바베큐 시간
+                    - 오후 6시~오후 10시까지(숯불 마감 시간 오후 8시)</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200117_179%2F1579245822154DmMz7_JPEG%2Fjc1jJvi7xeW8vg7ZZxuzLhxi.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200117_262%2F1579245822190vEWfp_JPEG%2FzLl6DI0iT31IOlxWJC7QqyvY.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200117_279%2F1579245822227rJraX_JPEG%2FM6SO9eGXs-NDr-fSioGCyAvw.jpg">
+                </div>
+            </div>
+            <div class="ys_pension_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">온연 프라이빗 빌라</div>
+                <div class="addr">충남 예산군 덕산면 온천단지1로 69-5 온연 프라이빗 빌라</div>
+                <div class="info">독채, 단체, 복층, 가족실, 침대방, 온돌방, 개별바비큐, 수영장, 바비큐장, 모던</div>
+                <div class="desc">국내 유일의 자연 속 프라이빗 온천 스테이
+                    - 서울에서 1시간 30분 거리, 충남 예산(덕산)에 위치
+                    - 상위 1% 천연 보양온천(45℃) 명소
+                    - 전 객실 독채형 빌라, 소수를 위한 숲 전망의 노천 온천탕과 테라스</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220505_18%2F1651722214823sd4I9_JPEG%2FGFXS9121-e.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20230615_103%2F1686786211601oDmiS_JPEG%2Fbatch_GFXS9214.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20230429_184%2F1682746880735iQip8_JPEG%2Fbatch_GFXS9120.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 예산 캠핑 -->
+        <h1>예산 캠핑</h1>
+        <div class="yesan_camping">
+            <div class="ys_camping_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">수덕캠핑장</div>
+                <div class="addr">충남 예산군 덕산면 노곡길 15</div>
+                <div class="info">예약, 무선 인터넷, 남/녀 화장실 구분</div>
+                <div class="desc">자연에 둘러싸인 힐링 캠핑장. 수덕 캠핑장입니다.
+                    3박 4일 이상의 숙박 및 장박, 텐트대여 등의 문의는 전화로 해주시기 바랍니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20190428_207%2F1556384261569b2Asx_JPEG%2FRagHtmCx7FbRtw8FpxI4i1il.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MDdfMjg0%2FMDAxNjkxMzc2MjMzODUw.LZEBm12grxFTdbyOZbzJqlJfrXmAjacSQDsftx5x-NAg.NXkXt1WN3NYUSKBWFYtUJ40lq57Rb2XRG5WfAKAzLl0g.JPEG%2F20230805_163925.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200504_284%2F1588560675269glvBw_JPEG%2FKakaoTalk_20200504_083106614.jpg">
+                </div>
+            </div>
+            <div class="ys_camping_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">팜앤투어캠핑장</div>
+                <div class="addr">충남 예산군 광시면 시목1길 70-41</div>
+                <div class="info">예약, 무선 인터넷, 남/녀 화장실 구분</div>
+                <div class="desc">팜앤팜투어캠핑장입니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230324_57%2F1679631502045lbk5Y_JPEG%2F%25B4%25D9%25BF%25EE%25B7%25CE%25B5%25E5_%25281%2529.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230406_151%2F1680748291774NFwDn_JPEG%2F1.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA2MjZfMTUx%2FMDAxNjg3NzU2Nzc0NjQ1.Ypr3x8otD6QdDVEvkE3Szs3lvD7S7iqcRo3y6j8KAfkg.woQCiaU1rEh8h64uGBdcRxfB_4w0v5BjQ1FIAAFYWbkg.JPEG%2F20230624_154732.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 홍성 맛집 -->
+        <h1>홍성 맛집</h1>
+        <div class="hongseong_food">
+            <div class="hs_food_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">우마카 내포신도시점</div>
+                <div class="addr">충남 홍성군 홍북읍 청사로174번길 9 110호</div>
+                <div class="info">주차, 예약, 남/녀 화장실 구분</div>
+                <div class="desc">프리미엄 와규 전문점
+                    우마카 내포신도시점 입니다.
+                    친절한 서비스와 최상의 맛으로 손님분들의 식사시간을 책임지겠습니다 감사합니다</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230330_222%2F1680185351804cFBJt_JPEG%2FD429F92A-BE61-4C47-82F0-C39CC7D86BAC.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230330_83%2F1680185352089v4E3O_JPEG%2F9EAF7BAA-2D44-4C60-BC37-34194331EE2F.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA3MjRfNTQg%2FMDAxNjkwMjAyODMxNDcz.BnOdzq0MXoywHmir1ur6sCQsiQ9XFCwMhlAntNuJqasg.ldLL39KLa4wGck4NGGjuH02yQoYq1cQdeKoknuIzwCog.JPEG%2F20230724_173744.jpg">
+                </div>
+            </div>
+            <div class="hs_food_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">AFK</div>
+                <div class="addr">충남 홍성군 홍북읍 의향로 273 2층 204호</div>
+                <div class="info">주차, 예약, 남/녀 화장실 구분</div>
+                <div class="desc">Away From Keyboard
+                    '자리 비움' 이라는 뜻으로 모두가 잠시 키보드에서 멀어져서
+                    온전한 휴식을 즐기다 가셨으면 좋겠습니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230819_102%2F1692412674765WtFey_JPEG%2F2FEBB58B-29D3-401A-A489-70AD6CE5F493.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230819_26%2F169241267498912H3Q_JPEG%2F94ED4A6F-528F-49C8-9F4C-C8C87DAE68F3.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MjRfMTE1%2FMDAxNjkyODUxMDMxNzI1.eIWQhlxIIUQ5Y_yMETR0hBjfpOkj_ePYmOheGJAzd4Ag.FBT0L_ScCgGEPorxppPrRy2Opd9pZaeXjOwYCqL_4Q8g.JPEG%2F20230824_131503.jpg.jpg">
+                </div>
+            </div>
+            <div class="hs_food_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">비츠카페</div>
+                <div class="addr">충남 홍성군 서부면 남당항로72번길 1</div>
+                <div class="info">주차, 예약, 남/녀 화장실 구분</div>
+                <div class="desc">* S-oil 광고 촬영장소 *
+                    3,000평 대지에 봄에 데이지,청보리
+                    여름은 수국 가을은 핑크뮬리를 예쁘게 사진을 담을 수 있고 1~2주차장 있으며
+                    카페는 모던하고 심플하며 바다와 노을 예쁘게 볼수 있는 공간이예요.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230815_223%2F1692084296534LBQdH_JPEG%2FIMG_3408.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230613_67%2F1686623411272ueNMs_JPEG%2FIMG_5908.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MjdfODEg%2FMDAxNjkzMDk4MDUyOTA5.tJYKAOmmP0fVrKzgSe67XLzARV12_3nS4HRpdQcWXfMg.iSV2TIku7JobtYvnYXU2-vt2sURgJ9sU9rgB9EmWmVQg.JPEG%2F20230826_135158.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 홍성 여행지 -->
+        <h1>홍성 여행지</h1>
+        <div class="hongseong_travel">
+            <div class="hs_travel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">홍주성</div>
+                <div class="addr">충남 홍성군 홍성읍 아문길 20-1</div>
+                <div class="info">단체석, 주차, 포장, 예약, 무선 인터넷, 남/녀 화장실 구분</div>
+                <div class="desc">이 성은 1906년 을사조약의 체결을 반대하여 민종식(閔宗植) ·이세영(李世永) 등이 일으킨 의병부대가 이곳에 주둔한 일본군을 격퇴시킨 사적지로도 유명하다
+                </div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA2MDJfMjU4%2FMDAxNjg1NjY0MDE2MDUz.q_-eTCB8gCTuAtIiFZ0KuSniuVKxNqk4imQvNq1cfe0g.1vL1A59rjeDabxb1FGnFgeWGZl-spNTQQOVe4hU4hHIg.JPEG%2F20230527_142438.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MjlfMjMz%2FMDAxNjkzMjY3MjcyMTE3.eLwPlO9OUtmcxQniSOQxb6sQR9QePHJ9UToAbV7fafUg.a6Zdj8i7ShlgeO7xcu09F-mZ3UWjrZ7ACCWketY-Hksg.JPEG.jsu2468%2FIMG_6529.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA4MjlfMjAg%2FMDAxNTAzOTg5MzE0NTg5.z6xWv8RYR7IhoSq3poRVYRQUGIw-lJVXsxaOgngIG7Ag.HMto8-GmWlARSLKyFw9ypsLQX80hdZE9ArVf3EMZd18g.JPEG.ontheroad_gh%2F_MG_7154.JPG%23900x600">
+                </div>
+            </div>
+            <div class="hs_travel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">더호봉</div>
+                <div class="addr">충남 홍성군 홍성읍 내포로 58 2동</div>
+                <div class="info">단체석, 주차, 포장, 예약, 무선 인터넷, 남/녀 화장실 구분</div>
+                <div class="desc">이른 새벽에 일어나 직접 반죽해서 매일 아침 새로 굽는 빵을 맛볼 수 있는 TV나온 빵 집</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220129_60%2F1643445160275sphSA_JPEG%2FKakaoTalk_20220129_172112840_11.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220129_112%2F1643445157753q1NT7_JPEG%2FKakaoTalk_20220129_172112840_03.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MjdfMTM1%2FMDAxNjkzMTI0ODUwMzUy.9e9ITmh0kxY_-hZn15hIhdxkBYTEQQvgo3Kc_l24q9Mg.MsCRPBBJMvOBWjCkjASXROYtTQo_gnesD8QlBTlnyDEg.JPEG%2F2F7B6D49-71A2-4040-8B2F-1978F567B824.jpeg">
+                </div>
+            </div>
+            <div class="hs_travel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">홍성거북이마을</div>
+                <div class="addr">충남 홍성군 구항면 거북로 436 내현권혁다목적회관</div>
+                <div class="info">단체석, 주차, 포장, 예약, 무선 인터넷, 남/녀 화장실 구분</div>
+                <div class="desc">#거북이마을보리고추장
+                    #농촌체험
+                    #전통체험
+                    #예절교육
+                    #농어촌인성학교</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA3MDNfMTYz%2FMDAxNDk5MDUzMDcxODA5.bf_jlrO72Wllkw4QPrNTivItXYMbVAtt7bo2FdZrIs4g.p1s31IjsTJu8EWMO8_UuRfzasDo0mSyhVXIf70s1qiUg.JPEG.lyu1388%2FDPP_0132.JPG%235760x3840">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMjFfMjY3%2FMDAxNjc2OTcyNDIyNjEz.XAxXHe6fnjdEL_bqU1TBqV30M833Syq3c6X5Q8x7nDAg.bIVDDHulyfb1MLJQ4MUZ9Mcw7WL2rsOmzCvd6as06CYg.JPEG.realtraveller%2FPSB_1712.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA3MDNfMTA1%2FMDAxNDk5MDUzMjg5MjYx.I_c8tEBgGNMZrooLz5Bq5bOXn4V3oyKjbNyDkrZdMVEg.ni6s1rQ0c09TjEcHz6s4IInZ5LTv0IAU-pZYfhT8KKgg.JPEG.lyu1388%2FDPP_0005.JPG%235760x3840">
+                </div>
+            </div>
+        </div>
+
+        <!-- 홍성 놀거리 -->
+        <h1>홍성 놀거리</h1>
+        <div class="hongseong_play">
+            <div class="hs_play_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">아가새농장</div>
+                <div class="addr">충남 홍성군 서부면 서부로 295-90</div>
+                <div class="info">주차, 무선 인터넷, 남/녀 화장실 구분</div>
+                <div class="desc">새,토끼 등 동물들이 함께하는 체험농장</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210828_25%2F1630142823186mrjK1_JPEG%2Fe09QBqEDy9OfNDhiU1wGtMKv.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA2MThfMTkw%2FMDAxNjU1NTMzNTk1NzMx.AFviQHVaJ3ymZQIhL-axccKRSP7qZUc2ka_nut6dDJ4g.It5HWZ9xQoPghbaKvC_lcqwk7YWYTpeYK_g4rHY2eLgg.JPEG%2Fupload_d850b2cd91d5cf7722febbf4086cfc74.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA2MThfMTU0%2FMDAxNjU1NTMzNjA3MzUz.TBJSoduv1f_zr61J08ClPgzLq_1LyiAXbAENUk1jUNYg.UrnuoVxnhX7lW6d2SXJBGMCu04lB-wXiRExJQ_aN-I8g.JPEG%2Fupload_8df1bb87596450f5130a676d3a92b198.jpg">
+                </div>
+            </div>
+            <div class="hs_play_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">다옴공방</div>
+                <div class="addr">충남 홍성군 홍북읍 충남대로 50 아르페온 2차 127호</div>
+                <div class="info">주차, 무선 인터넷, 남/녀 화장실 구분</div>
+                <div class="desc">충남 내포신도시 충남도청 근처 아르페온 2차
+                    127호에 루리케이크 옆 상가에 위치한
+                    화과자& 떡 공방입니다.
+                    (중흥s클래스 상가에서 아르페온으로 이전했어요:))
+                    *100프로 사전예약제입니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230824_63%2F1692866963279TXCse_JPEG%2FPolish_20230822_144012232.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230824_277%2F1692867287871hCkGQ_JPEG%2FPolish_20230822_143555505.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230824_147%2F1692867083312VOBM7_JPEG%2FPolish_20230822_190906444.jpg">
+                </div>
+            </div>
+            <div class="hs_play_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">더힐링식물원팜</div>
+                <div class="addr">충남 홍성군 홍동면 충절로344번길 62-55 더힐링식물원팜</div>
+                <div class="info">주차, 무선 인터넷, 남/녀 화장실 구분</div>
+                <div class="desc">더힐링식물원팜 충남도청 소재지인 홍성군의 홍동면에 위치하고 있습니다.
+                    자연과 힐링을 주제로 하는 복합 문화공간으로 충남 서해안의 대천 해수욕장, 안면도, 예당호 관광지와 연계되는 충청 서부권 최대의 자연 체험학습 농장입니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20211108_175%2F1636361047963uQMEe_JPEG%2FHmzwvH6AIJtWWPIITciCvVhV.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221215_206%2F1671095299246Kb36w_JPEG%2F4F6E6FB2-5C10-494F-8D7A-5469EC8083C8.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMzBfODUg%2FMDAxNjgwMTQzNjkyMzE5.DVnQz2U5xa1rANq8iby8nHyyue0NYWRJz3lY2xd6FSQg.-O58PntH1Lp8GYx7CV6VmnZPHg5XrKpi2It9ZH4YfJwg.JPEG%2F20230326_143132.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 홍성 호텔 -->
+        <h1>홍성 호텔</h1>
+        <div class="hongseong_hotel">
+            <div class="hs_hotel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">호텔 솔레어</div>
+                <div class="addr">충남 홍성군 홍성읍 조양로205번길 60</div>
+                <div class="info">주차, 무선 인터넷</div>
+                <div class="desc">저희 호텔 솔레어는 방문 하시는 고객님께 안락하고 편안한 휴식의 공간을 제공 하기위하여 항시 노력하며
+                    청결한 객실 과 고객의 입장에서 응대하는 서비스 마인드로 여러분을 맞이 하겠습니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20170814_290%2F1502720806101eprBG_JPEG%2FOkMstqt9xz7qSnepnKtYaXlq.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20211203_144%2F1638488878942l9AjF_JPEG%2Fupload_5a1cfc4bd3b992464e6a77c1947f1e02.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20210715_159%2F16263335917369lXUY_JPEG%2Fupload_9aa58883841a7572605b1d9e79860c78.jpg">
+                </div>
+            </div>
+            <div class="hs_hotel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">벨리노호텔</div>
+                <div class="addr">충남 홍성군 홍성읍 조양로205번길 10 벨리노호텔</div>
+                <div class="info">주차, 무선 인터넷</div>
+                <div class="desc">2023년 7월 Grand Open!
+                    홍성 내포 내 가장 최근 오픈한 벨리노호텔입니다.
+                    365일 청결히, 친절히 모시겠습니다.
+
+                    1층 고객 이용 가능한 라운더리실(세탁기, 건조기 비치)
+                    테이크아웃이 가능한 라운지바를 운영중입니다.
+                    전층 전자레인지 및 1회용 수저세트, 종이컵 비치,
+                    1객실 1주차 가능한 넓은 주차장 보유중입니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230711_177%2F1689082851510PntJb_JPEG%2F%25BA%25A7%25B8%25AE%25B3%25EB%25C8%25A3%25C5%25DA_%25BF%25DC%25B0%25FB_%25284%2529.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230711_165%2F1689082848888Qzsw6_JPEG%2F%25BA%25A7%25B8%25AE%25B3%25EB%25C8%25A3%25C5%25DA_%25B7%25CE%25BA%25F1_%25281%2529.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230711_61%2F16890828277105rIhv_JPEG%2FIMG_6896.JPG">
+                </div>
+            </div>
+        </div>
+
+        <!-- 홍성 펜션 -->
+        <h1>홍성 펜션</h1>
+        <div class="hongseong_pension">
+            <div class="hs_pension_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">달몽펜션</div>
+                <div class="addr">충남 홍성군 서부면 남당항로435번길 16-20</div>
+                <div class="info">바닷가, 침대방, 바비큐장, 와이파이, 갯벌, 모던, 데크, 2인실, 가족실, 복층</div>
+                <div class="desc">평범한 휴식을 거부하고 한단계 업그레이드된 휴식이 있는 모던한 인테리어와호텔식침구 푸른 오션뷰와 아름다운 노을이 보이는 이곳
+                    여성을 위한 펜션으로
+                    저희 달몽펜션에서는 전문조리사님이 장보기.요리.설거지를 해주십니다 회.백숙.매운탕.조식~원하시면 맞춰드립니다 몸!만 오셔도 편안한 휴식을 즐기시면 됩니다</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210716_33%2F1626399543981L6oPc_JPEG%2FhXjlq5TJKNChvGU798Kj7-Cu.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210716_193%2F1626399543877QqvTB_JPEG%2FxjjgZ__-kKNYN2s9EhM0ebZB.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210716_58%2F16263995441171HjaJ_JPEG%2FrtJjQqN6TNYL23Hqz9ggKNR0.jpg">
+                </div>
+            </div>
+            <div class="hs_pension_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">소당한옥펜션</div>
+                <div class="addr">충남 홍성군 홍북읍 홍북로574번길 49</div>
+                <div class="info">한옥, 독채, 단체, 바비큐장, 와이파이, 잔디, 세미나실, 파티, 장기숙박, 개별화장실, 문화유적</div>
+                <div class="desc">쌀농부가 짓고 운영하는 현대식 한옥펜션입니다.
+                    한옥 내 작은 도서관은 소모임 장소로 이용할 수 있고 독서, 차를 마실 수 있는 아담한 장소입니다. 숙박을 하시는 분들에게 무료로 제공되고 있습니다. 23년 8월 현재 개방
+                    중입니다.
+                    세미나실이나 한옥은 대여도 가능합니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230503_150%2F1683091974821ykyeJ_JPEG%2FSOON3406.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230808_154%2F169146142423341SDz_JPEG%2FKakaoTalk_20230808_104644053_25.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MjFfMTcz%2FMDAxNjkyNTkyMDQzNjcy.5pi3aP1AbnIghfSMrWKuvBGH7_y2_IHMFWdCY_CIsnsg.2IceXZzjVM9uHYpQbBPHMIy4J3P86Q7S8u1lo4QmvMEg.JPEG%2F2C2EA5CC-E840-4B93-B3DF-51E5F2E5A7C2.jpeg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 홍성 캠핑 -->
+        <h1>홍성 캠핑</h1>
+        <div class="hongseong_camping">
+            <div class="hs_camping_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">캠핑힐</div>
+                <div class="addr">충남 홍성군 서부면 서부서길 506</div>
+                <div class="info">잔디, 장기숙박, 바닷가, 해수욕장, 갯벌, 문화유적,</div>
+                <div class="desc">궁리항주변 바다가 보이는 캠핑장</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA3MzFfMTk3%2FMDAxNjkwNzY2NjIyNjk0.N3daTTxmrQDqH5P-l6DJr4N9hrVtOvAmw_4qq9ULg6Yg.wOt1Pyh-XkOeedPb0LZjFfqN0hznf71Vlb4nDInhEVwg.JPEG%2F20230729_170337.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA2MTFfMTIw%2FMDAxNjg2NDQyNzY5NDYx.hEiIv2OCkQ83qgnAEAOMZFJInp86SwgTUNOIj_6OpAIg.8wV-n1G7a9qZm4d5SiDU5Fx-jcFFmB56gQqMZErnXG4g.JPEG%2FE497DE84-A663-4508-9251-D3BF677A225D.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMTJfMjE0%2FMDAxNjcwODEwNzkzNDEw.Fe_qnzYkEqkgQgSfhG1_gOYhwrIaNlxEBFMPyeadvn0g.UdyEDPCOLdT4qOFrIYW7e4DF6dUJBdlgUwGj1asU_Mcg.JPEG.brilliant618%2FIMG_8673.JPG">
+                </div>
+            </div>
+            <div class="hs_camping_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">세울터 오토캠핑장</div>
+                <div class="addr">충남 홍성군 서부면 홍남서로362번길 46</div>
+                <div class="info">잔디, 장기숙박, 바닷가, 해수욕장, 갯벌, 문화유적,</div>
+                <div class="desc">1.예약은 인터넷을 통해 가능합니다.
+                    2.문의전화:010-2056-6498
+                    3.예약 신청 후 일정 시간 내에 이용요금 결제가 완료되지 않을 경우 예약신청은 자동으로 취소될 수있습니다
+                    4.예약하신 분과 입금하신분이 다른경우에는 문자로 연락 주시기 바랍니다.
+                    5.입실 시간은 이용당일 14:00부터 22:00 까지 입니다</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230619_187%2F1687182721074pf11c_JPEG%2F%25BC%25F6%25BF%25B5%25C0%25E54.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230619_5%2F1687182709740PAoXx_JPEG%2F%25C1%25F6%25C7%25FC%25B5%25B5.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MTZfMTYw%2FMDAxNjkyMTQ2NDAyOTY0.-4XvTWoJrDCdi2wfPXKzQ3K3bmR1WoIbCHGU5xTr-3og.ZevGrRe4qZgAnoJ7jBEh2V_GX7amp59vCKTHsqsl2wog.JPEG%2F20230815_093412.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 청양 맛집 -->
+        <h1>청양 맛집</h1>
+        <div class="cheongyang_food">
+            <div class="cy_food_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">대일식당</div>
+                <div class="addr">충남 청양군 남양면 구용길 334 대일식당</div>
+                <div class="info">단체석, 주차, 포장, 남/녀 화장실 구분</div>
+                <div class="desc">1992년부터 시작하였습니다. 누추한 곳 찾아 주셔서 감사합니다. 재료 소진시 조기 마감 될수 있습니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230730_29%2F16907212856821tKdb_JPEG%2FIMG_6808.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221217_65%2F1671278971591V5qp4_JPEG%2F46A026D2-4EFE-4AAB-B92A-457E5D336806.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221201_173%2F1669875384656krKMJ_JPEG%2FFC2181F3-A2DD-4889-BC0A-EAAD5D3B416A.jpeg">
+                </div>
+            </div>
+            <div class="cy_food_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">별장앤봄</div>
+                <div class="addr">충남 청양군 청양읍 충절로 1494</div>
+                <div class="info">단체석, 주차, 포장, 남/녀 화장실 구분</div>
+                <div class="desc">충남청양비빔밥!!
+                    청양돈가스!!
+
+                    안녕하세요. 청양군청 인근 맛있는 돈까스와
+                    새싹비빔밥으로 많은 분들께 인정받은
+                    별장앤봄 인사드립니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210918_175%2F1631962092282yxw18_JPEG%2FZFwwggLhnRD7CRN-oVIwQZsF.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MTVfMjE5%2FMDAxNjkyMDY4OTc0NjMx.griErl8k4q3RveeTitdRbIGJ6hVvGs17Me5UOcXFl5Ag.G02cCjTsQ5Bo6tbNrOpxKbzrBaTJlK_-4fGSsHj-8Uwg.JPEG%2FIMG_0683.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MTJfMjYz%2FMDAxNjkxODEyNzAzNzQz.XeqXqJpCDrb_ogEph_huXY5S0OkCyQzpB6UaehS0PL0g.gXR_fhLTb4bnDQC0b3UoLIYrSxNdzharFELlE8wWOQAg.JPEG%2FDE256A8B-2C45-419C-B81A-848B241028B3.jpeg">
+                </div>
+            </div>
+            <div class="cy_food_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">메르시</div>
+                <div class="addr">충남 청양군 청양읍 학사길 35-28 메르시</div>
+                <div class="info">단체석, 주차, 포장, 남/녀 화장실 구분</div>
+                <div class="desc">매주 토요일은 휴무입니다 감사합니다^^</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210322_222%2F16164024222538pKAP_JPEG%2FXhEIMvh_L6-EkkPbHzv9ii4l.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20190507_65%2F1557219141407HNARy_JPEG%2FNL5lJ8MBYmaKLJ0I8DX8IXsl.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA2MjNfMjU1%2FMDAxNjg3NDkzNzQ0NzYw.xs8iFO_Lxfgc8m3s1_qQd0HP6DZ-KqkHTMLrsLkjo1wg.CoQg7LDUOLpGOMhSBGs2_iZIcCGK-nu10CrsVzqdJn0g.JPEG%2F20230623_125259.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 청양 여행지 -->
+        <h1>청양 여행지</h1>
+        <div class="cheongyang_travel">
+            <div class="cy_travel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">칠갑산자연휴양림</div>
+                <div class="addr">충남 청양군 대치면 광대리 산73</div>
+                <div class="info">주차, 배달, 예약, 남/녀 화장실 구분</div>
+                <div class="desc">충청남도 청양군 대치면 광대리에 있는 자연휴양림. 1990년 5월에 개장했으며, 구역면적은 75만㎡, 1일 최대 수용인원은 500명, 최적 인원은
+                    300명이다.
+                    청양군청에서 관리하며, 청양자연휴양림이라고도 한다. </div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_114%2F1440992231826N368n_JPEG%2F11491071_0.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_155%2F1440992232036Ntst8_JPEG%2F11491071_1.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150206_144%2F1423205689440X8SGh_JPEG%2F%25C3%25E6%25B3%25B2_%25C3%25BB%25BE%25E7%25C4%25A5%25B0%25A9%25BB%25EA%25C0%25DA%25BF%25AC%25C8%25DE%25BE%25E7%25B8%25B2_1.JPG%3Ftype%3Dm500_500">
+                </div>
+            </div>
+            <div class="cy_travel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">한옥카페 지은</div>
+                <div class="addr">충남 청양군 남양면 나래미길 60-4 1층</div>
+                <div class="info">주차, 배달, 예약, 남/녀 화장실 구분</div>
+                <div class="desc">조선시대 전통 한옥
+                    방기옥고택(충남 문화재 자료 279호)의
+                    고택 후손이 증축한 자리에 한옥카페 지은을 직접 운영하며, 700년 이상된 은행나무의 웅장함과 배산임수로 지어진
+                    고택의 사계절이 뚜렷한 자연과 어울어져 멋스럽고 마음이 평온해지는 고택 카페입니다.
+                    본관을 통해 주문후 멋진 고택 위로 올라
+                    오셔서 음료 드시며 힐링하세요^^</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210224_86%2F1614162185011BQFFH_JPEG%2F_OsIqM4ya-uqkjA8vpStqZ-3.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230122_68%2F167434382576930khs_JPEG%2F20221003_105137.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200725_294%2F1595647510069tC8Gy_JPEG%2FFY7H3OCpOf8yGQ2C0GxISkfr.jpg">
+                </div>
+            </div>
+            <div class="cy_travel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">춘소커피</div>
+                <div class="addr">충남 청양군 남양면 구룡리 59-13</div>
+                <div class="info">주차, 배달, 예약, 남/녀 화장실 구분</div>
+                <div class="desc">안녕하세요^^
+                    저희 춘소커피는 작은 시골마을의 카페입니다. 옛 보건지소 건물을 복원하여 카페로 만들었는데요. 최대한 옛 모습을 유지하면서 카페로써의 따뜻한 분위기를 만들고자 했습니다.
+                    소박하면서도
+                    풍요로운 시골의 정취를 차 한잔과 함께 느끼실 수 있기를 바랍니다.
+                    감사합니다</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20191221_233%2F1576939126627NA1Co_JPEG%2FIIMzxOJuAH1lIj8ucSqB7GRX.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20191221_108%2F1576939170528Xbtdj_JPEG%2FvEMMjdBOX1vzhP7DzIKvh03m.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20191221_139%2F1576939177790TqOky_JPEG%2FD0wbENT0TNqB1jp3xFtW2a7F.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 청양 놀거리 -->
+        <h1>청양 놀거리</h1>
+        <div class="cheongyang_play">
+            <div class="cy_play_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">선한제빵소</div>
+                <div class="addr">충남 청양군 남양면 충절로 281-9</div>
+                <div class="info">주차, 포장, 예약, 반려동물 동반</div>
+                <div class="desc">충남 청양에 위치한 빵, 쿠키체험하는 선한제빵소입니다.
+                    빵, 쿠키체험, 울병만들기 체험, 비누만들기 체험, 꽃차체험 등을 진행하고 있습니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20190903_106%2F1567488854656q92AL_JPEG%2F20181023_155758.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200111_194%2F1578711775957aOTdS_JPEG%2FKakaoTalk_20200111_115931135.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200111_3%2F1578711679175aS2nt_JPEG%2F20180903_060034.jpg">
+                </div>
+            </div>
+            <div class="cy_play_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">목수의집</div>
+                <div class="addr">충남 청양군 청양읍 갓골길 45 1층</div>
+                <div class="info">주차, 방문접수/출장, 예약</div>
+                <div class="desc">목수의집은
+                    나무를 소재로 소박하고 멋스런 생활공간을 만들어가는 목공방입니다.
+                    화려하지 않지만 서두르지 않고 소중한 만남을 기억하며 정성으로 채워 가겠습니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20161109_99%2F14786828463662RCFI_JPEG%2F177059584424814_1.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20161109_182%2F1478682846857smSuq_JPEG%2F177059584424814_7.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMDNfNDIg%2FMDAxNjA2OTQ0NjA4NDU4.i3OAnQYmMCvM1wjfgiWJCpUubUf3Cq22X-u4AaVeUFQg.JVU0eilUpuUuZLj-Ddn53P843BvpL9t7fSUkazhihKEg.JPEG.jjw47272%2F20201202_162801.jpg">
+                </div>
+            </div>
+            <div class="cy_play_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">골든트리캔들</div>
+                <div class="addr">골든트리캔들</div>
+                <div class="info">주차, 포장</div>
+                <div class="desc">골든트리캔들은 100% 천연재료만을 사용하는 아로마소이캔들 공방입니다.
+                    새로운 캔들공예기법을 직접 배워보실 수 있도록 다양한 교육프로그램을 개설하고 있습니다.
+                    취미로 시작해 새롭게 도전하게되는 캔들공방 창업 노하우까지 알려드린답니다. 골든트리캔들 블로그를 방문해보세요.
+                    궁금하신점은 전화통화 문의, 블로그 비밀덧글, 카톡(goldentreelab)을 이용해주세요</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20170124_117%2F14852355205268FX48_JPEG%2F186074545540386_0.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20170124_68%2F1485235521836cvBOA_JPEG%2F186074545540386_13.jpeg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20170124_141%2F1485235521033nOtUt_JPEG%2F186074545540386_5.jpeg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 청양 호텔 -->
+        <h1>청양 호텔</h1>
+        <div class="cheongyang_hotel">
+            <div class="cy_hotel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">칠갑산 엔에이치 호텔</div>
+                <div class="addr">충남 청양군 비봉면 록평용당로 775-3 칠갑산엔에이치호텔</div>
+                <div class="info">주차, 예약, 무선 인터넷</div>
+                <div class="desc">칠갑산 맑은 공기를 담은 칠갑산 NH호텔
+
+                    휴식, 그 이상의 가치를 전해드리고픈 NH의 마음을 담아 고객님께 전달해 드립니다.
+
+                    시원한 숲이 한눈에 펼쳐치는 파노라믹한 전망을 즐겨보세요!
+
+                    푹신한 침대와 온전한 휴식을 즐길 수 있도록 최선을 다하는 칠갑산 NH호텔이 되겠습니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220527_218%2F1653631153431THKrl_JPEG%2F%25C4%25A5%25B0%25A9%25BB%25EANH_%25B7%25CE%25B0%25ED-08.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220926_44%2F16641816684089AfP4_JPEG%2Fthumb-30675724_C0qsGgwO_91f9ac47e3949a1e4b7c0475e30ffb2f496d9ec1_835x557.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MTRfNjkg%2FMDAxNjkxOTc5Mzg0MjA0.au96tUEllO3gO59kwZSnl2tmAAosospOhh8rCm9tZFwg.5wrueWCJ6gP_Y--bQLxKJ73bMo8Ll60z22b2DKHRkDIg.JPEG.inyeong2%2FKakaoTalk_20230813_213411486_14.jpg">
+                </div>
+            </div>
+            <div class="cy_hotel_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">칠갑산샬레호텔</div>
+                <div class="addr">충남 청양군 대치면 한티고개길 57</div>
+                <div class="info">주차, 예약, 무선 인터넷</div>
+                <div class="desc">정성을 다하는 칠갑산 샬레호텔입니다.
+                    물 맑고 산세 좋은 명산 칠갑산 기슭에 자리 잡은 샬레는 청정지역의 자연 그대로 머금고 있어 어디서도 느끼지 못한
+                    마음의 평안과 쉼을 제공하는 청양군 대표 호텔입니다.
+                    아침의 산 새소리와 시원한 산들바람 그리고 밤 하늘의 빛나는 별까지 누구나 흠뻑 취할 수 있는 향기로운 여유와 깊은 울림을 드립니다.
+                    샬레에서 삶의 풍요로움을 느껴 보세요!
+                </div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200520_73%2F1589938064859RRWIM_JPEG%2FEC02k70iWSGhljwQPl_R5sPc.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA3MTBfOCAg%2FMDAxNjg4OTcwMjE5OTMz.GIWLhCsa-WshzQ9BdLZFzlvYwM_lsh3yCZ9J0SFZlgwg.-vzQ0ikIx2G_uF4I2pPR192u4kBPwAMUgkTjcng186Yg.JPEG%2F20190614_195016.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMDRfMTEw%2FMDAxNjc1NTAyMTI2MDMw.JWVDDL55tZDTw5wQx99havhw9FFtwMKMEn6WmzyBQ6wg.7Yov6hluESVsWaGFrzHiKbCWTNWKeROmzN4ItiGjyScg.JPEG%2F20230203_171526.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 청양 펜션 -->
+        <h1>청양 펜션</h1>
+        <div class="cheongyang_pension">
+            <div class="cy_pension_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">풍월주인</div>
+                <div class="addr">충남 청양군 청남면 상장큰길 207-27</div>
+                <div class="info">풀빌라, 수영장, 스파, 개별바비큐, 글램핑, 독채, 침대방, 조식제공, 와이파이, 모던, 2인실, 가족실, 데크</div>
+                <div class="desc">[맑은 바람과 밝은 달:) 아름다운 자연을 즐기는 사람들의 힐링공간 Stay]
+
+                    저희 풍월주인은 일상에서 지친 마음을 비워내고 시간과 계절이 물들어가는 자연을 바라보며 가족,친구,연인과함께 조용하고 편안하게 힐링을 하고 가실수있는 독채 풀빌라 입니다</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230806_262%2F1691300163499mnBoL_JPEG%2FIMG_20230619_181441_490.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230619_180%2F1687160910502yvEnB_JPEG%2F1687160728738.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230806_275%2F1691299754887gHbMO_JPEG%2FIMG_20230710_162255_261.jpg">
+                </div>
+            </div>
+            <div class="cy_pension_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">어슬티굿밤</div>
+                <div class="addr">충남 청양군 운곡면 어슬티안길 71-15</div>
+                <div class="info">독채, 단체, 복층, 개별바비큐, 온돌방, 침대방, 가족실, 오토캠핑, 방갈로, 바비큐장</div>
+                <div class="desc">충남 청양군 운곡면 어슬티에 위치한 시골 펜션입니다.
+                    할아버지, 할머니가 운영하는 촌캉스를 즐겨보세요.
+                    감성 넘치는 시골 펜션에서 항아리 훈제고기도 먹고, 낚시터에서 손맛 낚시를 경험할 수 있습니다.
+                    어슬티굿밤은 한국관광공사 관광두레 주민사업체입니다.</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221102_223%2F1667380767735VDBeV_JPEG%2F74fd61abb3df6.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221102_264%2F1667380767678Xk4n5_JPEG%2F0d778521b2250.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MTdfNjEg%2FMDAxNjkyMjU1MDY2NzUw.UVKU2Nm3qDG3WLmhFMjAPX5J0qgVN73-jpmDbz9jetcg.EkSTPU1HCVQ_5uRG2Ac_qzDpzo0gy2MCMf48_0G3-l0g.JPEG%2F1692253630229.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 청양 캠핑 -->
+        <h1>청양 캠핑</h1>
+        <div class="cheongyang_camping">
+            <div class="cy_camping_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">리썸글램핑</div>
+                <div class="addr">충남 청양군 목면 안심길 85-64 리썸글램핑</div>
+                <div class="info">스파, 독채, 복층, 개별바비큐, 온돌방, 침대방, 글램핑, 2인실, 가족실, 데크, 수영장, 바비큐장, 와이파이, 문화유적</div>
+                <div class="desc">인스타그램블로그
+                    설명
+                    2023년 5월에 오픈한 신축 최고급 럭셔리 글램핑장인 리썸글램핑입니다. 충남 청양에 위치하고 있어 전국 어디서나 접근성이 좋습니다. 저희 리썸글램핑은 복층형 9개호실,
+                    개별자쿠지형
+                    8개호실로 구성되어 있으며, 인피니티 수영장, 아크릴수영장, 온수풀2개장이 준비되어 있어 즐거운 물놀이를 즐기실 수 있습니다. 힐링을 원하신다면 언제든지 방문해주세요. 언제나
+                    친절하고
+                    깨끗한 이곳. 리썸글램핑입니다</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230514_261%2F1684040692737UXRWL_JPEG%2F9.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230514_230%2F1684040687544pOdwX_JPEG%2F8.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MTlfMTE2%2FMDAxNjg3MTY2MTQzMDQw.IyShfxOPaq5chOtwiGdKRXPvIHHSSwkG--CqVjGR2AIg.jTYJ1cwVwkI9viTasgSlgbOCjamSq7e6h9dQNk91Gz8g.JPEG.bzmymn%2FIMG_0101.jpg">
+                </div>
+            </div>
+            <div class="cy_camping_info">
+                <div class="name" style="font-size: 20px; font-weight: bold;">평화숲 글램핑</div>
+                <div class="addr">충남 청양군 대치면 비끼내길 171-6</div>
+                <div class="info">주차, 예약, 무선 인터넷, 남/녀 화장실 구분</div>
+                <div class="desc">충남 청양군 신설 글램핑장, 칠갑산 도립공원, 고은식물원, 장곡사, 백제문화체험박물관 ,천장호출렁다리등 근처 숙박 글램핑장.평화숲글램핑</div>
+                <div class="img"><img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220706_150%2F165709380675665GpQ_JPEG%2F20220702_172045.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220706_26%2F1657093779887KAufv_JPEG%2F20220702_172014.jpg">
+                    <img
+                        src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MTlfMjgx%2FMDAxNjkyNDUzNTQ3OTI2.BOIztL50czs_lQllu9EwDJD0jbBTNlF9LzR14D86tKcg.lmjTW061dXt6FynnDH-ZwJgFEUoddQoky8WSaGZc4Ngg.JPEG%2F1692452889866.jpg">
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

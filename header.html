@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            /* border: 1px solid black; */
+            margin: 10px;
+            width: 1920px;
+            display: inline-block;
+        }
+
+        #logo {
+            display: inline-block;
+            margin-left: 800px;
+        }
+
+        .btns {
+            /* border: 1px solid black; */
+            display: inline-block;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+            float: right;
+            line-height: 50px;
+            margin-top: 10px;
+            margin-right: 10px;
+
+
+        }
+
+        #option_btn {
+            display: inline-block;
+            border: none;
+            background-image: url("adidas.png");
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            background-color: white;
+            margin-right: 20px;
+
+        }
+
+        #inn_btn,
+        #food_btn,
+        #travel_btn {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            font-size: 22px;
+            font-weight: bold;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="main">
+            <div id="logo"><img src="mainLogo.png"></div>
+            <div class="btns"><input type="button" id="option_btn"></div>
+            <div class="btns"><input type="button" id="inn_btn" value="숙소"></div>
+            <div class="btns"><input type="button" id="food_btn" value="맛집"></div>
+            <div class="btns"><input type="button" id="travel_btn" value="여행지"></div>
+        </div>
+        <hr>
+    </header>
+</body>
+
+</html>
