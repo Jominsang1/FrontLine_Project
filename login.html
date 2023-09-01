@@ -44,7 +44,6 @@
             font-weight: bolder;
             border-radius: 7px;
             background-color: #5498FF;
-;
             
             text-align: center;
             line-height: 40px;
@@ -56,21 +55,15 @@
         }
 
         .main_input {
-            border: 2px solid #A6A6A6;
-            border-radius: 15px;
+            /* border: 2px solid #A6A6A6;
+            border-radius: 15px; */
             width: 300px;
 
             display: flex;
             justify-content: center;
             flex-direction: column;
 
-            margin-bottom: 20px;
-            /* 임시 */
-            /* height: 500px; */
-        }
-
-        .input_line{
-            border-bottom: 2px solid lightgray;
+            margin-bottom: 25px;
         }
 
         .main_input input {
@@ -79,8 +72,6 @@
             width: 95%;
             height: 30px;
             outline: none;
-            /* 임시 */
-            /* margin-bottom: 10px; */
         }
         
         .logo img{
@@ -94,6 +85,30 @@
             flex-direction: column;
             text-align: center;
         }
+
+        .input_id, .input_password {
+            display: flex;
+            padding: 10px;
+        }
+
+        .input_id {
+            border: 2px solid lightgray;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .input_password {
+            border: 2px solid lightgray;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+
+            margin-top: -2px;
+        }
+
+        .input_id_x, .input_password_x {
+            display: none;
+            cursor: pointer;
+        }
     </style>
     <script>
         window.addEventListener("load", function(){
@@ -102,6 +117,8 @@
             logo()
             x()
             tab()
+            focus()
+            x_input()
         })
 
         function join(){
@@ -113,8 +130,8 @@
 
         function login(){
             document.querySelector(".main_login").addEventListener("click", function(){
-                let id_value = document.querySelectorAll(".main_input div input")[0].value
-                let password_value = document.querySelectorAll(".main_input div input")[1].value
+                let id_value = document.querySelector(".input_id input").value
+                let password_value = document.querySelector(".input_password input").value
                 let id = [];
                 let password = [];
                 
@@ -131,7 +148,7 @@
                         if(document.referrer.length == 0){
                             location.href="./main.html"
                         } else {
-                            history.back(); //괄호안에 -3 수치 조절하면 그전페이지까지
+                            history.back(); //괄호안에 -n 수치 조절하면 -n번째 페이지까지
                         }
                     }
                     else{
@@ -175,6 +192,56 @@
                 }
             })
         }
+
+        function focus(){
+            document.querySelector(".input_id input").addEventListener("focus", function(){
+                document.querySelector(".input_id img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_after.png?raw=true")
+                document.querySelector(".input_id").style.border = "2px solid black";
+                document.querySelector(".input_password").style.borderTop = "2px solid black";
+            })
+            document.querySelector(".input_id input").addEventListener("blur", function(){
+                document.querySelector(".input_id img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_before.png?raw=true")
+                document.querySelector(".input_id").style.border = "2px solid lightgray";
+                document.querySelector(".input_password").style.border = "2px solid lightgray";
+            })
+
+            document.querySelector(".input_password input").addEventListener("focus", function(){
+                document.querySelector(".input_password img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_after.png?raw=true")
+                document.querySelector(".input_password").style.border = "2px solid black";
+            })
+            document.querySelector(".input_password input").addEventListener("blur", function(){
+                document.querySelector(".input_password img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true")
+                document.querySelector(".input_password").style.border = "2px solid lightgray";
+            })
+        }
+
+        function x_input(){
+            document.querySelector(".input_id input").addEventListener("keyup", function(){
+                if(document.querySelector(".input_id input").value != ""){
+                    document.querySelector(".input_id_x").style.display = "block"
+                } else {
+                    document.querySelector(".input_id_x").style.display = "none"
+                }
+            })  
+
+            document.querySelector(".input_password input").addEventListener("keyup", function(){
+                if(document.querySelector(".input_password input").value != ""){
+                    document.querySelector(".input_password_x").style.display = "block"
+                } else {
+                    document.querySelector(".input_password_x").style.display = "none"
+                }
+            })
+
+            document.querySelector(".input_id_x").addEventListener("click", function(){
+                document.querySelector(".input_id input").value = ""
+                document.querySelector(".input_id_x").style.display = "none"
+            }) 
+
+            document.querySelector(".input_password_x").addEventListener("click", function(){
+                document.querySelector(".input_password input").value = ""
+                document.querySelector(".input_password_x").style.display = "none"
+            }) 
+        }
     </script>
 </head>
 <body>
@@ -185,8 +252,8 @@
         <div class="main_bottom">
             <h3>놀아유에 오신걸 환영합니다</h3>
             <div class="main_input">
-                <div class="input_line"><input type="text" placeholder="아이디"></div>
-                <div><input type="password" placeholder="비밀번호"></div>
+                <div class="input_id"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_before.png?raw=true"><input type="text" placeholder="아이디"><img class="input_id_x" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/x.png?raw=true"></div>
+                <div class="input_password"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true"><input type="password" placeholder="비밀번호"><img class="input_password_x" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/x.png?raw=true"></div>
             </div>
             <div class="main_login">
                 로그인
