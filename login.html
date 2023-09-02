@@ -119,8 +119,36 @@
             tab()
             focus()
             x_input()
+            input_check()
+            
         })
 
+        function input_check(){
+            document.querySelector(".input_id input").addEventListener("keyup", function(event){
+                // console.log(event)
+                //위 숫자 0부터 48~57
+                //넘패드 숫자 0부터 96~105
+                //a~z 65~90
+                //엔터13 백스페이스8 딜리트46
+                //방향키 37~40
+                // console.log(event.keyCode);
+                
+                if((48 <= event.keyCode && event.keyCode <= 57) || (96 <= event.keyCode && event.keyCode <= 105) || (65 <= event.keyCode && event.keyCode <= 90) || (37 <= event.keyCode && event.keyCode <= 40) || event.keyCode == 13 || event.keyCode == 8 || event.keyCode == 46){
+
+                } else {
+                    alert("아이디는 영문(소문자)과 숫자만 입력하세요")
+                    // console.log(document.querySelector(".input_id").value)
+                    while(document.querySelector(".input_id input").value != ""){
+                        document.querySelector(".input_id input").value = null
+                    }
+                    document.querySelector(".input_id_x").style.display = "none"
+                }
+
+                // console.log(document.querySelector(".input_id input"))
+            })
+
+            
+        }
         function join(){
             document.querySelector(".join p").addEventListener("click",function(){
                 alert("회원가입 페이지로 이동합니다.")
