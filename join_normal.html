@@ -129,7 +129,7 @@
 
 
         function pop(){
-            let section = document.querySelectorAll(".more")
+            let section = document.querySelectorAll("p")
             let text = document.querySelectorAll(".text")
             
             for(let i = 0; i<section.length; i++){
@@ -169,6 +169,7 @@
 
         .section_title div {
             display: flex;
+            align-items: center
         }
 
         .section_title div div {
@@ -176,6 +177,7 @@
         }
 
         .main_bottom div {
+            /* border: 1px solid red; */
             width: 700px;
         }
 
@@ -233,9 +235,9 @@
             color: gray;
         }
         .more {
-            cursor: pointer;
             display: flex;
             flex-direction: row-reverse;
+            height: 40px;
         }
         .essential .text {
             border: 1px solid black;
@@ -261,8 +263,8 @@
         .all {
             margin-bottom: 50px;
         }
-        .section {
-            margin-bottom: 20px;
+        p {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -277,42 +279,42 @@
             </div>
 
             <div class="section essential">
-                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div>이용약관 동의 <strong>(필수)</strong></div><div class="more">펼치기</div></div></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div>이용약관 동의 <strong>(필수)</strong></div><div class="more"><p>펼치기</p></div></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
         
             <div class="section essential">
-                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div>만 14세 이상확인 <strong>(필수)</strong></div><div class="more">펼치기</div></div></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div>만 14세 이상확인 <strong>(필수)</strong></div><div class="more"><p>펼치기</p></div></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
         
             <div class="section essential">
-                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div>개인정보 수집 및 이용 동의 <strong>(필수)</strong></div><div class="more">펼치기</div></div></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div>개인정보 수집 및 이용 동의 <strong>(필수)</strong></div><div class="more"><p>펼치기</p></div></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
 
             <div class="section option">
-                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png"><div><div><a>개인정보 수집 및 이용 동의 (선택)</a></div><div class="more">펼치기</div></div></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png"><div><div><a>개인정보 수집 및 이용 동의 (선택)</a></div><div class="more"><p>펼치기</p></div></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
 
             <div class="section option">
-                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png"><div><div><a>마케팅 알림 수신동의 (선택)</a></div><div class="more">펼치기</div></div></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png"><div><div><a>마케팅 알림 수신동의 (선택)</a></div><div class="more"><p>펼치기</p></div></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
 
             <div class="section option">
-                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png"><div><div><a>위치기반 서비스 이용약관 동의 (선택)</a></div><div class="more">펼치기</div></div></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png"><div><div><a>위치기반 서비스 이용약관 동의 (선택)</a></div><div class="more"><p>펼치기</p></div></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
