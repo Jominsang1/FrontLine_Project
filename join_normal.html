@@ -19,7 +19,7 @@
                 let check_essential = document.querySelectorAll(".essential div img")
                 // console.log("all")
                 for(let i = 0; i<check_all.length; i++){
-                    if(check_all[i].getAttribute("src") == "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"){
+                    if(check_all[i].getAttribute("src") == "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png" || check_all[i].getAttribute("src") == "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png"){
                         count += 1;
                     }
                 }
@@ -29,8 +29,15 @@
                         check_all[i].setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true")
                     }
                 } else {
+                    // 전체 동의 되돌리기
                     for(let i = 0; i<check_all.length; i++){
-                        check_all[i].setAttribute("src", "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png")
+                        if(check_all[i].parentElement.parentElement.classList.contains("essential") == true){
+                            check_all[i].setAttribute("src", "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png")
+                        } else if(check_all[i].parentElement.parentElement.classList.contains("all") == true){
+                            check_all[i].setAttribute("src", "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png")
+                        } else {
+                            check_all[i].setAttribute("src", "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png")
+                        }
                     }
                 }
 
@@ -57,10 +64,20 @@
                     let count_essential = 0;
                     let check_essential = document.querySelectorAll(".essential div img")
                     // console.log("one")
+
+                    //check_false_gray, check_false 구분해서 체크 해제 나누기
                     if(check_one[i].getAttribute("src") == "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"){
                         check_one[i].setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true")
-                    } else{
-                        check_one[i].setAttribute("src", "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png")
+                    } else if(check_one[i].getAttribute("src") == "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png"){
+                        check_one[i].setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/check_true.png?raw=true")
+                    } else {
+                        // console.log(check_one[i].parentElement.parentElement.classList.contains("essential"))
+                        if(check_one[i].parentElement.parentElement.classList.contains("essential") == true){
+                            check_one[i].setAttribute("src", "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png")
+                        } else {
+                            check_one[i].setAttribute("src", "https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png")
+                        }
+                        
                     }
 
                     for(let i = 0; i<check_one.length; i++){
@@ -222,6 +239,7 @@
         }
         .essential .text {
             border: 1px solid black;
+            border-radius: 7px;
             width: 610px;
 
             padding: 10px;
@@ -232,6 +250,7 @@
 
         .option .text {
             border: 1px solid lightgray;
+            border-radius: 7px;
             width: 610px;
 
             padding: 10px;
@@ -279,21 +298,21 @@
             </div>
 
             <div class="section option">
-                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div><a>개인정보 수집 및 이용 동의 (선택)</a></div><div class="more">펼치기</div></div></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png"><div><div><a>개인정보 수집 및 이용 동의 (선택)</a></div><div class="more">펼치기</div></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
 
             <div class="section option">
-                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div><a>마케팅 알림 수신동의 (선택)</a></div><div class="more">펼치기</div></div></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png"><div><div><a>마케팅 알림 수신동의 (선택)</a></div><div class="more">펼치기</div></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
             </div>
 
             <div class="section option">
-                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/main/images/check_false.png"><div><div><a>위치기반 서비스 이용약관 동의 (선택)</a></div><div class="more">펼치기</div></div></div>
+                <div class="section_title"><img src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/5bd11e647db46989c984247ad4c37ccdb30dffd7/images/check_false_gray.png"><div><div><a>위치기반 서비스 이용약관 동의 (선택)</a></div><div class="more">펼치기</div></div></div>
                 <div class="text hide">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae quam vero consequuntur vel nesciunt officiis, aperiam facere fugiat? Unde perspiciatis magni temporibus laborum, impedit omnis illo officiis nemo repellat!
                 </div>
