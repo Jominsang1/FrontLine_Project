@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    window.addEventListener("load", function(){
+        button()
+    })
+
+    function button(){
+        document.querySelector(".wrap div").addEventListener("click", function(){
+            location.href="./main.html"
+        })
+    }
+</script>
+<style>
+    .wrap {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        position: relative;
+        top: 30vh
+    }
+    .wrap div {
+        cursor: pointer;
+            height: 40px;
+            width: 300px;
+
+            color: white;
+            font-weight: bolder;
+            border-radius: 7px;
+            background-color: #5498FF;
+            
+            text-align: center;
+            line-height: 40px;
+    }
+</style>
+<body>
+    <div class= wrap>
+        <h1>환영합니다!</h1>
+        <div>메인으로</div>
+    </div>
+</body>
+</html>
