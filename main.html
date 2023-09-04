@@ -148,236 +148,532 @@
            
             천안.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_ch.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[0][i]+"<br>";
+                let html = "천안의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for (let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[0][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+
+                check(result[0]);
             })
 
             천안.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                
             })
 
             아산.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_as.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[1][i]+"<br>";
+                let html = "아산의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[1][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+
+                check(result[1]);
             })
 
             아산.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             당진.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_dj.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[2][i]+"<br>";
+                let html = "당진의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[2][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+
+                check(result[2]);
             })
 
             당진.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             서산.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_ss.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[3][i]+"<br>";
+                let html = "서산의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[3][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+
+                check(result[3]);
             })
 
             서산.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             태안.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_ta.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[4][i]+"<br>";
+                let html = "태안의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[4][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+
+                check(result[4]);
             })
 
             태안.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             예산.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_ys.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[5][i]+"<br>";
+                let html = "예산의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[5][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+
+                check(result[5]);
             })
 
             예산.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             공주.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_gj.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[6][i]+"<br>";
+                let html = "공주의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[6][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+
+                check(result[6]);
             })
 
             공주.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             홍성.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_hs.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[7][i]+"<br>";
+                let html = "홍성의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[7][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+
+                check(result[7]);
 
             })
 
             홍성.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             보령.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_br.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[8][i]+"<br>";
+                let html = "보령의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[8][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+
+                check(result[8]);
 
             })
 
             보령.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             청양.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_cy.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[9][i]+"<br>";
+                let html = "청양의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[9][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
-
+                check(result[9]);
             })
 
             청양.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             부여.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_by.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[10][i]+"<br>";
+                let html = "부여의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[10][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
-
+                check(result[10]);
             })
 
             부여.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             서천.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_sc.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[11][i]+"<br>";
+                let html = "서천의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[11][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
-
+                check(result[11]);
             })
 
             서천.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
             
             논산.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_ns.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[12][i]+"<br>";
+                let html = "논산의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[12][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+                check(result[12]);
 
             })
 
             논산.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             계룡.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_gr.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[13][i]+"<br>";
+                let html = "계룡의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[13][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+
+                check(result[13]);
 
             })
 
             계룡.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
 
             금산.addEventListener("mouseover", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map_gs.png")
-                let html = ""
-                let weater = document.querySelector(".weather")
-                for (let i = 0; i<6; i++){
-                    html += result[14][i]+"<br>";
+                let html = "금산의 현재 <br>"
+                let weater = document.querySelector(".weather_text")
+                for ( let i = 4; i<6; i++){
+                    if( i == 4){
+                        html += "온도 : "
+                    }
+
+                    if( i == 5 ){
+                        html += "습도 : "
+                    }
+                    html += result[14][i];
+                    if( i == 4){
+                        html += "도 <br>"
+                    }
+
+                    if( i == 5 ){
+                        html += "% <br>"
+                    }
                 }
                 weater.innerHTML = html;
+
+                check(result[14]);
 
             })
 
             금산.addEventListener("mouseout", function(){
                 document.querySelector(".map").setAttribute("src", "./images/map.png")
+                 
             })
+        }
+
+        function check(result){
+            let img = document.querySelectorAll(".weather_img img")
+                for (let i = 0; i<img.length; i++){
+                    img[i].style.display = "none"
+                }
+
+            if(result[2] == 0){
+                if(result[3] == 1){
+                    document.querySelector(".sunny").style.display = "block"
+                } else {
+                    document.querySelector(".cloudy").style.display = "block"
+                }
+            } else {
+                if(result[2] == 1 || result[2] == 2 || result[2] == 5 || result[2] == 6){
+                    document.querySelector(".rain").style.display = "block"
+                } else {
+                    document.querySelector(".snow").style.display = "block"
+                }
+            }
+           
+            // pty=2  0없음 1비 2비/눈 3눈 5빗방울 6빗방울눈날림 7눈날림
+            // sky=3  1맑음 3구름많음 4흐림
+            // t1h=4
+            // reh=5
         }
     </script>
     <style>
-        .main {
-            display: flex;
-            height: 100%;
-            width: 100%;
+        div {
+            /* border: 1px solid red; */
         }
         img {
             max-width: 100%;
         }
-        
-        .main div {
+        .main {
+            display: flex;
+        }
+        .main_map {
             height: 100%;
             width: 100%;
+        }
+
+        .sunny, .cloudy, .rain, .snow {
+            display: none;
+        }
+
+        .weather {
+            border: 2px solid #0066FF;
+            width: 200px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            padding: 10px;
+        }
+
+        .weather_img {
+            display: flex;
+            justify-content: center;
+        }
+        .weather_text {
+            text-align: center;
         }
     </style>
 </head>
@@ -387,7 +683,7 @@
     <a href="./login.html"><input type="button" value="대충 로그인페이지 가는 버튼"></a>
     <a href="./main_2.html"><input type="button" value="대충 main_2페이지 가는 버튼"></a>
     <div class="main">
-        <div>
+        <div class="main_map">
             <img class="map" src="./images/map.png" usemap="#image-map">
     
             <map name="image-map">
@@ -408,9 +704,15 @@
                 <area class="금산" target="" alt="금산" title="금산" href="" coords="736,587,727,629,713,667,710,704,726,711,740,755,763,780,781,766,801,799,837,801,851,780,838,756,881,776,901,784,896,764,907,755,896,741,907,731,901,714,893,697,881,684,881,659,880,637,875,611,851,609,842,592,805,617,790,637,760,630,760,604,750,586" shape="poly">
             </map>
         </div>
-        <div>
-            <div class="weather">
-                날씨
+        <div class="weather">
+            <div class="weather_img">
+                <img class="sunny" src="./images/Sunny.png">
+                <img class="cloudy" src="./images/Cloudy.png">
+                <img class="rain" src="./images/Rain.png">
+                <img class="snow" src="./images/Snow.png">
+            </div>
+            <div class="weather_text">
+                
             </div>
         </div>
     </div>
