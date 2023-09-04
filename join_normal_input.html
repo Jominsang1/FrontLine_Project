@@ -7,8 +7,9 @@
     <script>
         window.addEventListener("load", function(){
             eye()
-            password_check()
+            check_password()
             button()
+            check_all()
         })
 
         function eye(){
@@ -28,7 +29,7 @@
             })
         }}
 
-        function password_check(){
+        function check_password(){
             // console.log("1")
             let password = document.querySelectorAll(".input_password input")
 
@@ -46,14 +47,39 @@
         }
 
         function button(){
-            let button = document.querySelector(".button")
+            let button = document.querySelector(".button2")
             let count = 0;
             button.addEventListener("click", function(){
                 if(count == 0){
-                    alert(document.querySelector(".input_id input").value+"님 회원가입을 환영합니다.")
-                    location.href="./main.html"
+                    location.href="./join_finish.html"
                 }
             })
+        }
+
+        function check_all(){
+            let count = 0;
+            let input_all = document.querySelectorAll("input")
+            let password = document.querySelectorAll(".input_password input")
+
+            for(let i = 0; i<input_all.length; i++){
+                input_all[i].addEventListener("blur", function(){
+                    for(let j = 0; j<input_all.length; j++){
+                        if (input_all[j].value !== ""){
+                            count += 1;
+                        }
+                    }
+                    
+                    if(count == input_all.length && password[0].value == password[1].value){
+                        document.querySelector(".button1").style.display = "none"
+                        document.querySelector(".button2").style.display = "block"
+                    } else {
+                        document.querySelector(".button2").style.display = "none"
+                        document.querySelector(".button1").style.display = "block"
+                    }
+
+                    count = 0;
+                })
+            }
         }
     </script>
     <style>
@@ -69,6 +95,7 @@
             border-radius: 15px;
             padding-left: 5px;
             padding-right: 5px;
+            margin-bottom: 20px;
         }
 
         .input_bottom {
@@ -76,6 +103,7 @@
             border-radius: 15px;
             padding-left: 5px;
             padding-right: 5px;
+            margin-bottom: 30px;
         }
         .section {
             display: flex;
@@ -85,7 +113,20 @@
         .top {
             border-top: 2px solid lightgray;
         }
-        .button {
+        .button1 {
+            height: 40px;
+            width: 300px;
+
+            color: white;
+            font-weight: bolder;
+            border-radius: 7px;
+            background-color: lightgray;
+            
+            text-align: center;
+            line-height: 40px;
+
+        }
+        .button2 {
             cursor: pointer;
             height: 40px;
             width: 300px;
@@ -97,6 +138,7 @@
             
             text-align: center;
             line-height: 40px;
+            display: none;
         }
 
         input {
@@ -122,24 +164,36 @@
             padding-left: 3px;
             margin-bottom: 6px;
         }
+
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin-bottom: 60px;
+        }
     </style>
 </head>
 <body>
-    <h1>회원가입 및 이용약관</h1>
-    <div class="input_main">
-        <div class="input_top">
-            <div class="section input_name"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_human.png?raw=true"><input type="text" placeholder="이름"></div>
-            <div class="section top input_id"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_check.png?raw=true"><input type="text" placeholder="아이디"></div>
-            <div class="section top input_password"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true"><input type="password" placeholder="비밀번호"><img class="eye" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/eye-dark.png?raw=true"></div>
-            <div class="section top input_password"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true"><input type="password" placeholder="비밀번호 확인"><img class="eye" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/eye-dark.png?raw=true"></div>
-            <div class="check_password">비밀번호가 일치하지 않습니다.</div>
+    <div class="wrap">
+        <h1>회원가입 및 이용약관</h1>
+        <div class="input_main">
+            <div class="input_top">
+                <div class="section input_name"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_human.png?raw=true"><input type="text" placeholder="이름"></div>
+                <div class="section top input_id"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_check.png?raw=true"><input type="text" placeholder="아이디"></div>
+                <div class="section top input_password"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true"><input type="password" placeholder="비밀번호"><img class="eye" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/eye-dark.png?raw=true"></div>
+                <div class="section top input_password"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true"><input type="password" placeholder="비밀번호 확인"><img class="eye" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/eye-dark.png?raw=true"></div>
+                <div class="check_password">비밀번호가 일치하지 않습니다.</div>
+            </div>
+            <div class="input_bottom">
+                <div class="section input_email"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_message.png?raw=true"><input type="text" placeholder="이메일"></div>
+                <div class="section top input_phone"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_call.png?raw=true"><input type="text" placeholder="휴대폰 번호"></div>
+                <div class="section top input_birth"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_gift.png?raw=true"><input type="text" placeholder="생년월일 8자리"></div>
+            </div>
+            <div class="button1">가입하기</div><div class="button2">가입하기</div>
         </div>
-        <div class="input_bottom">
-            <div class="section input_email"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_message.png?raw=true"><input type="text" placeholder="이메일"></div>
-            <div class="section top input_phone"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_call.png?raw=true"><input type="text" placeholder="휴대폰 번호"></div>
-            <div class="section top input_birth"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_gift.png?raw=true"><input type="text" placeholder="생년월일 8자리"></div>
-        </div>
-        <div class="button">가입하기</div>
     </div>
 </body>
 </html>
