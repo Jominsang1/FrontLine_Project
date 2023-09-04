@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Montserrat";
+
+        }
+
+        .searchbox {
+            width: 40%;
+            margin: 10px auto;
+            position: relative;
+        }
+
+        .header {
+            background: #ECDFBF;
+            overflow: hidden;
+            padding: 20px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .header h1 {
+            text-transform: uppercase;
+            color: white;
+            margin: 0;
+            margin-bottom: 8px;
+        }
+
+        #value {
+            margin: auto;
+            border: none;
+            background: #ffffff;
+            padding: 6px;
+            font-size: 18px;
+            width: 76.5%;
+            border-radius: 6px;
+            color: rgb(0, 0, 0);
+            box-shadow: 2px 2px 2px 2px #E0D3B699;
+            z-index: 2;
+
+        }
+
+        #value:focus {
+            outline: none;
+        }
+
+        .container {
+            border: none;
+            width: 75%;
+            margin: auto;
+            padding: 10px;
+            background: #ffffff;
+            display: none;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px #E0D3B699;
+            z-index: 3;
+
+            margin-top: -10px;
+
+
+        }
+
+        .item {
+            margin: 3% 0px;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            width: 44px;
+            height: 44px;
+            background: #E0D3B6;
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            line-height: 25px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .name {
+            font-size: 17px;
+            font-weight: 470;
+            color: skyblue;
+        }
+
+        .all {
+            border: 1px solid white;
+            width: 350px;
+            margin: 10px auto;
+            color: skyblue;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px #E0D3B699;
+        }
+
+        #ch {
+            font-weight: bolder;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="searchbox">
+        <div class="header">
+            <h1>Search</h1>
+            <input onkeyup="filter()" type="text" id="value" placeholder="어디로 갈까U?">
+
+            <div class="container">
+                <div class="item">
+                    <a id="page" class="all" href="http://127.0.0.1:5501/%EB%8C%80%EC%B6%A9/%EC%B6%A9%EB%82%A8pg.html">
+                        <span class="name" id="ch">충남 전체보기</span>
+                    </a>
+                </div>
+
+                <div class="item">
+                    <span class="icon"><a id="page"
+                            href="http://127.0.0.1:5501/%EB%8C%80%EC%B6%A9/%EC%B2%9C%EC%95%88pg.html"><img class="icon"
+                                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MjZfMjcx%2FMDAxNjg3NzQwNTAxODE5.plZABfD8UjJVP3wO4OF2YOKB3xmMg1p7SfGy4aS_f2Ig.--qh7eGnsa8BgDG9XHJdtweLbxTZwzFgcdZDQbM91s0g.JPEG.kmg132%2F20230514%25A3%25DF112330.jpg&type=a340"></span></a>
+                    <span class="name"><a href="http://127.0.0.1:5501/%EB%8C%80%EC%B6%A9/%EC%B2%9C%EC%95%88pg.html">
+                            천안</span></a>
+                </div>
+
+                <div class="item">
+                    <span class="icon"><img class="icon"
+                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20140601_192%2Fmissionhkc_1401603482124tl4pz_JPEG%2FIMG_4558.JPG&type=sc960_832"></span>
+                    <span class="name">아산</span>
+                </div>
+
+                <div class="item">
+                    <span class="icon"><img class="icon"
+                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MDZfMTI3%2FMDAxNjg2MDQ0NDQyMDAx.LhYqQPprDTgOLUvT49YBcICRlBmg3BbL_oYapVpgul8g.dTe3B6AguFl1CssViUS881lvTfUkrTed4pwA-n8b4Rsg.JPEG.hangirrokr%2F20230606%25A3%25DF114237.jpg&type=sc960_832"></span>
+                    <span class="name">태안,서산,당진</span>
+                </div>
+
+                <div class="item">
+                    <span class="icon"><img class="icon"
+                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMzFfMjE5%2FMDAxNjgwMjU1NzM1MTA3.oV_UhtaVpSE3Zhey5SOYDjRTkvbR2omoBTR1MNoSfZog.GJZ7Y5wO5_l9znZF2P6y_XRENcw6-r5T0-XaoMJPJYIg.JPEG.parksb44%2FDSC_0107.jpg&type=sc960_832"></span>
+                    <span class="name">예산,홍성,청양</span>
+                </div>
+
+                <div class="item">
+                    <span class="icon"><img class="icon"
+                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA0MDJfMjEg%2FMDAxNjgwNDQyODk2OTg0.xMuVhYEgKpnk7P-4f5lVdmmnSnceOGWiTVC6Qhgui8wg.E5SH8Mnwrx-FSmg9AG7SObw3CFgEbt2P1hi8h_uFatkg.JPEG.tnwjd9597%2FIMG_8057.jpg&type=sc960_832"></span>
+                    <span class="name">보령,부여,서천</span>
+                </div>
+
+                <div class="item">
+                    <span class="icon"><img class="icon"
+                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMjBfMTcg%2FMDAxNjY4OTAzNTkxOTkw.0ZMGuzjoMcin9rmSXtT8OO771dN02yNVwxl4W6fB2bwg.x3axSEWqKYk3JoPRUR8X7qEJvoMgmwH9WMUGJMXskREg.JPEG.windfollower%2Fw-221118014.jpg&type=sc960_832"></span>
+                    <span class="name">공주,논산,금산</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function filter() {
+
+            var value, name, item, i;
+
+            value = document.getElementById("value").value.toUpperCase();
+            item = document.getElementsByClassName("item");
+
+            for (i = 0; i < item.length; i++) {
+                name = item[i].getElementsByClassName("name");
+                if (name[0].innerHTML.toUpperCase().indexOf(value) > -1) {
+                    item[i].style.display = "flex";
+                } else {
+                    item[i].style.display = "none";
+                }
+            }
+        }
+
+        let click = document.querySelector("#value");
+        let atag = document.querySelector("#page");
+
+        click.addEventListener('click', function () {
+            let cont = document.querySelector(".container")
+            cont.style.display = 'block';
+            cont.style.borderRadius = '0'
+            let br = document.querySelector("#value");
+            click.style.borderRadius = '0';
+            click.style.boxShadow = 'none';
+        });
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

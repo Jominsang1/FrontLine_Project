@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+        .wrap {
+            max-width: 1240px;
+            /* display: flex; */
+            align-items: center;
+        }
+
+        .title {
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .items {
+            display: flex;
+            /* justify-content: center; */
+            width: 1240px;
+
+            /* overflow: hidden; */
+
+
+            /* transition: all 1s;
+            transform: translateX(0vw); */
+
+        }
+
+        .item {
+
+            flex-shrink: 0;
+
+
+            margin: 10px;
+
+            /* border: 1px solid black; */
+            border-radius: 20px;
+            width: 393px;
+            height: 200px;
+            overflow: hidden;
+
+
+        }
+
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: fill;
+        }
+
+        /* * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        } */
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btns #btn1 {
+            cursor: pointer;
+            border: none;
+            width: 20px;
+            height: 20px;
+            margin-right: 30px;
+            background-image: url("https://github.com/Jominsang1/FrontLine_Project/blob/main/images/arrow_left.png?raw=true");
+            background-size: cover;
+
+        }
+
+        .btns #btn2 {
+            cursor: pointer;
+            border: none;
+            width: 20px;
+            height: 20px;
+            margin-left: 30px;
+            background-image: url("https://github.com/Jominsang1/FrontLine_Project/blob/main/images/arrow_right.png?raw=true");
+            background-size: cover;
+
+        }
+
+        #count {
+            border: 1px solid black;
+            width: 100px;
+            height: 20px;
+        }
+
+        #weather {
+            margin: 5px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .best_food,
+        .best_play,
+        .chungnam_city {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .best_food div,
+        .best_play div {
+            margin: 20px;
+            border-radius: 20px;
+            width: 50%;
+            height: 200px;
+            border: 1px solid black;
+        }
+
+        .chungnam_city div {
+            margin: 20px;
+            border-radius: 50%;
+            width: 50%;
+            height: 150px;
+            border: 1px solid black;
+        }
+
+        .second_line {
+            margin: 10px;
+        }
+
+        .best_sleep {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        #sleep_img {
+            /* position: absolute; */
+            width: 90%;
+            border-radius: 20px;
+            margin: 10px;
+            border: 1px solid black;
+            height: 400px;
+            background-color: rgb(132, 0, 255);
+        }
+
+        #sleep_more {
+            border-radius: 20px;
+            position: absolute;
+            border: 1px solid black;
+            width: 40%;
+            height: 300px;
+            margin-top: 5%;
+            background-color: rgb(0, 0, 0);
+            opacity: 0.5;
+
+        }
+
+        #logoimg {
+            width: 10%;
+            margin: 5%;
+            margin-left: 38%;
+            display: inline-block;
+        }
+
+        #moreinn {
+            text-align: center;
+            /* font-family: Noto Sans KR; */
+        }
+
+        .hide {
+            margin-left: 100px;
+        }
+    </style>
+
+    <!-- <script src="./ch.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="cs">
+    </div>
+
+
+
+
+
+    <script>
+
+
+
+
+        bind();
+        function bind() {
+
+            var html = "";
+
+            html += `<div class="wrap">`
+            html += `<div class="best_travel">`
+            html += `<div id="weather">대충날씨</div>`
+            html += `<div class="title">충청남도<br>`
+            html += `베스트 여행지 </div>`
+            html += `<div class="items">`
+
+            html += `</div>`
+            html += `<div class="btns">`
+            html += `<input type="button" id="btn1">`
+            html += `<div id="count"></div>`
+            html += `<input type="button" id="btn2"></div>`
+
+            html += `</div>`
+            html += `<hr>`
+            html += `<div class="second_line">`
+            html += `<span>대충 놓치면 안될 먹거리</span><br>`
+            html += `<span>대충 의미 있는 천안맛집</span><br>`
+            html += `</div>`
+            html += `<div class="best_food">`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `</div>`
+            html += `<hr>`
+            html += `<div class="second_line">`
+            html += `<span>대충 나만의 여행을 위한</span><br>`
+            html += `<span>대충 유명한 천안의 이색장소</span><br>`
+            html += `</div>`
+            html += `<div class="best_play">`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `</div>`
+            html += `<div class="best_sleep">`
+            html += `<div id="sleep_img">1213</div>`
+            html += `<div id="sleep_more">`
+            html += `<div id="logoimg"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/simbol_white.png?raw=true">`
+            html += `</div>`
+            html += `<div id="moreinn" style="color: white;">멋진 숙소를 만나보세요</div>`
+            html += `</div>`
+            html += `</div>`
+            html += `<div class="chungnam_city">`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `<div>123</div>`
+            html += `</div>`
+            html += `<div>`
+
+            html += `</div>`
+
+            html += `</div>`
+
+            document.querySelector('#cs').innerHTML = html;
+        }
+
+    </script>
+    <!-- 
+    <script> $(document).ready(function () {
+            html = ""
+            $.ajax({
+                url: "ch_data.html",
+                success: function (data) {
+                    let e = $(data).find('.ch_travel .title'); // 찾으려는요소
+                    for (let i = 0; i < e.length; i++) {
+                        html += `<div class="item">${e[i]}</div>`
+                        // $(".item").html(e) // 추가위치
+                        // $(".items").append(html)
+                    }
+                    $(".items").html(html)
+                }
+            });
+        });
+
+    </script> -->
+
+    <script> $(document).ready(function () {
+            html = '';
+            $.ajax({
+                url: "ch_data.html",
+                dataType: 'html',
+                data: {
+                    data1: 'mydata1',
+                    data2: 'mydata2'
+                },
+                success: function (ch) {
+                    let htmlDom = new DOMParser().parseFromString(ch, 'text/html');
+                    let tableDom = htmlDom.documentElement
+
+                    // 천안 관련 카테고리 테이블 image class 배열값 dom
+                    let arr_ch_travel_img = tableDom.querySelectorAll(".ch_travel .image")
+                    let arr_ch_travel_title = tableDom.querySelectorAll(".ch_travel .title")
+
+                    let arr_ch_food_img = tableDom.querySelectorAll(".ch_food .image")
+                    let arr_ch_play_img = tableDom.querySelectorAll(".ch_play .image")
+                    let arr_ch_sleep_img = tableDom.querySelectorAll(".ch_sleep .image")
+
+                    for (let i = 0; i < arr_ch_travel_img.length; i++) {
+                        let ch_travel_img = arr_ch_travel_img[i].querySelector('img')
+
+                        // console.log(ch_travel_img) // ch_travel_img 이미지 태그값 출력값 확인
+
+                        // console.log(a[i]) // a[배열]값 consol 출력값 확인
+                        html += `<div class="item">${ch_travel_img.outerHTML}</div>`
+                    }
+                    // console.log(html) // html 출력값 확인
+                    document.querySelector('.items').innerHTML = html
+                    console.log(html)
+
+                }
+            });
+            leftbtn();
+            rightbtn();
+
+        });
+
+
+        function leftbtn() {
+            let counter = 0;
+
+            document.getElementById('btn1').addEventListener('click', function () {
+                console.log(counter)
+                let slides = document.querySelector('.items')
+                let slideimg = document.querySelectorAll('.item')
+                // counter =-1;
+
+
+
+                counter = 0;
+                for (let i = 0; i < slideimg.length; i++) {
+                    // if (counter > 0) {
+                    slideimg[i].style.transition = "transform 0.3s ease-in-out";
+                    slideimg[i].style.transform = "translateX(" + counter * "415" + "px)";
+                    // }
+                }
+
+
+                console.log("count :", counter)
+
+                // console.log(slideimg)
+                // console.log(slideimg[0])
+
+                // sildeimg[1].style.margin = "100px";
+
+                // for (let i = 0; i < sildeimg.length; i++) {
+                //     console.log(slideimg[i])
+                // }
+            })
+        }
+
+
+
+        // else if (counter >= 4) {
+        //             counter = 1;
+        //             document.getElementById('btn2').addEventListener('click', function () {
+        //                 slideimg[i].style.transition = "transform 0.3s ease-in-out";
+        //                 slideimg[i].style.transform = "translateX(" + counter * "415" + "px)";
+        //             })
+        //         }
+
+
+
+        function rightbtn() {
+            let counter = 0;
+
+            document.getElementById('btn2').addEventListener('click', function () {
+
+                console.log(counter)
+                let slides = document.querySelector('.items')
+                let slideimg = document.querySelectorAll('.item')
+                // console.log(slideimg.length)
+                if (counter >= 3) {
+                    counter = 0;
+                } else {
+                    counter++;
+                }
+                for (let i = 0; i < slideimg.length; i++) {
+                    if (counter <= 3) {
+                        slideimg[i].style.transition = "transform 0.3s ease-in-out";
+                        slideimg[i].style.transform = "translateX(-" + counter * "415" + "px)";
+                    }
+                }
+                console.log("co:", counter)
+            });
+
+
+            //     // counter--;
+            //     console.log(counter)
+            //     console.log(slideimg)
+            //     console.log(slideimg[0])
+
+            //     // sildeimg[1].style.margin = "100px";
+
+            //     // for (let i = 0; i < sildeimg.length; i++) {
+            //     //     console.log(slideimg[i])
+            //     // }
+            // })
+
+        }
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="wrap">
+        <div class="best_travel">
+            <div id="weather">대충날씨</div>
+            <div class="title">충청남도<br>
+                베스트 여행지</div>
+            <div class="items">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <div class="btns">
+                <input type="button" id="btn1">
+                <div id="count"></div>
+                <input type="button" id="btn2" </div>
+
+            </div>
+            <hr>
+            <div class="second_line">
+                <span>대충 놓치면 안될 먹거리</span><br>
+                <span>대충 의미 있는 천안맛집</span><br>
+            </div>
+            <div class="best_food">
+                <div>123</div>
+                <div>123</div>
+                <div>123</div>
+                <div>123</div>
+                <div>123</div>
+            </div>
+            <hr>
+            <div class="second_line">
+                <span>대충 나만의 여행을 위한</span><br>
+                <span>대충 유명한 천안의 이색장소</span><br>
+            </div>
+            <div class="best_play">
+                <div>123</div>
+                <div>123</div>
+                <div>123</div>
+                <div>123</div>
+                <div>123</div>
+            </div>
+            <div class="best_sleep">
+                <div id="sleep_img">1213</div>
+                <div id="sleep_more">
+                    <div id="logoimg"><img
+                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/simbol_white.png?raw=true">
+                    </div>
+                    <div id="moreinn" style="color: white;">멋진 숙소를 만나보세요.</div>
+                </div>
+            </div>
+            <div class="chungnam_city">
+                <div>123</div>
+                <div>123</div>
+                <div>123</div>
+                <div>123</div>
+                <div>123</div>
+                <div>123</div>
+            </div>
+            <div>
+
+            </div>
+
+        </div> -->
+
+</body>
+
+</html>
