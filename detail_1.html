@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+        .nanumgothic * {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+        .wrap {
+            max-width: 1440px;
+
+            /* align-items: center; */
+
+            /* margin-left: auto; */
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        p1 {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .best_food {
+            /* border: 1px solid black; */
+            width: 1240px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            /* text-align: center; */
+            overflow: hidden;
+            /* margin-left: 14%; */
+
+        }
+
+        .food {
+            flex-shrink: 0;
+            /* margin: 10px; */
+            /* border: 1px solid black; */
+            border-radius: 20px;
+            /* width: 1240px; */
+            height: 400px;
+            cursor: pointer;
+            /* text-align: center; */
+        }
+
+        .food_item {
+            /* border: 1px solid black; */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            /* flex-shrink: 0; */
+            /* margin-left: 95px; */
+            /* overflow: hidden; */
+        }
+
+        .food_item img,
+        #map {
+            /* position: absolute; */
+            width: 1240px;
+            border-radius: 20px;
+            /* margin-left: 6%; */
+            /* border: 1px solid black; */
+            height: 400px;
+            /* background-color: rgb(132, 0, 255); */
+            object-fit: cover;
+            /* flex-shrink: 0; */
+        }
+    </style>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5a611be24364678ff335af8c83f5d896&libraries=services"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+        window.addEventListener("load", function () {
+
+            let html = '';
+            let title = '';
+            let address = '';
+            let html_food = '';
+
+
+            $.ajax({
+                url: "ch_data.html",
+                dataType: 'html',
+                data: {
+                    data1: 'mydata1',
+                    data2: 'mydata2'
+                },
+                success: function (ch) {
+
+                    html += `<div class="wrap">`
+                    html += `<div class="title"><p1>${title}</p1></div><br>`
+                    html += `<div class="best_food">`
+
+                    html += `<div class="food_item">`
+
+                    html += `</div>`
+
+                    html += `</div><br>`
+                    html += `<div id="map" style="border : 1px solid black"></div>`
+                    html += `</div>`
+
+
+                    document.querySelector('#cs').innerHTML = html;
+
+
+                    let htmlDom = new DOMParser().parseFromString(ch, 'text/html');
+                    let tableDom = htmlDom.documentElement
+
+                    let arr_ch_food = tableDom.querySelectorAll(".ch_food")
+                    let arr_ch_food_img = tableDom.querySelectorAll(".ch_food .image")
+                    let arr_ch_food_title = tableDom.querySelectorAll(".ch_food .title")
+                    let arr_ch_food_address = tableDom.querySelectorAll(".ch_food .address")
+                    let ch_food_img;
+                    // console.log(ch_food_img)
+
+
+                    // for (let i = 0; i < arr_ch_food_img.length; i++) {
+                    //     // if(arr_ch_food[i] == arr_ch_food_img[i]){
+                    //     // console.log(arr_ch_food_img[i].innerHTML)
+                    //     // }
+                    // }
+
+
+
+                    for (let i = 0; i < arr_ch_food_img.length; i++) {
+
+                        ch_food_img = arr_ch_food_img[i];
+
+                        let ch_food_title = arr_ch_food_title[i].innerHTML
+                        let ch_food_address = arr_ch_food_address[i].innerHTML
+
+                        if (i == 5) {
+                            title = ch_food_title;
+                            address = ch_food_address;
+                        }
+
+                        // console.log(ch_food_img)
+
+                        // 만약 title 값이 ch_food_title[배열] 값과 같다면 사진을 출력해라 if 문
+                        if (title == ch_food_title) {
+                            html_food += `<div class="food">${ch_food_img.innerHTML}</div>`
+                        }
+                        // for (let j = 0; j < ch_food_img.length; j++) {
+                        //     let imgs = ch_food_img[j]
+                        //     // console.log(imgs)
+                        //     html_food += `<div class="food">${imgs.outerHTML}</div>`
+                        // }
+
+
+                    }
+                    // console.log(ch_food_img)
+
+                    document.querySelector('.food_item').innerHTML = html_food
+
+                    food_slide();
+
+
+
+
+                    // map();
+                    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                        mapOption = {
+                            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                            level: 2 // 지도의 확대 레벨
+                        };
+
+                    // 지도를 생성합니다    
+                    var map = new kakao.maps.Map(mapContainer, mapOption);
+
+                    // 주소-좌표 변환 객체를 생성합니다
+                    var geocoder = new kakao.maps.services.Geocoder();
+
+                    // 주소로 좌표를 검색합니다
+
+                    geocoder.addressSearch(address, function (result, status) {
+
+
+                        // 정상적으로 검색이 완료됐으면 
+                        if (status === kakao.maps.services.Status.OK) {
+
+                            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                            // 결과값으로 받은 위치를 마커로 표시합니다
+                            var marker = new kakao.maps.Marker({
+                                map: map,
+                                position: coords
+                            });
+
+                            // 인포윈도우로 장소에 대한 설명을 표시합니다
+                            var infowindow = new kakao.maps.InfoWindow({
+                                content: `<div style="width:150px;text-align:center;padding:6px 0;">${title}</div>`
+                            });
+                            infowindow.open(map, marker);
+
+                            // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                            map.setCenter(coords);
+                        }
+                    });
+                }
+
+            });
+
+
+        });
+
+        let currentIndex = 1;
+        function food_slide() {
+            let slides = document.querySelector('.food_item')
+            let slideimg = document.querySelectorAll('.food').length;
+            // console.log(currentIndex)
+            if (currentIndex >= slideimg) {
+                currentIndex = 0;
+            }
+            setInterval(function () {
+                slides.style.transform = "translateX(-" + currentIndex * "1245" + "px)";
+                slides.style.transition = "transform 0.4s ease-in-out";
+                currentIndex++;
+                //  console.log(currentIndex)
+
+                if (currentIndex === slideimg + 1) {
+                    currentIndex = - 1;
+                }
+            }, 1500);
+        }
+
+
+    </script>
+
+
+</head>
+
+
+
+
+
+<body>
+    <div id="cs">
+    </div>
+
+    </div>
+</body>
+
+</html>
