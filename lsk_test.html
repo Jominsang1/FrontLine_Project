@@ -33,7 +33,7 @@
     </script>
     <style>
         div {
-            border: 1px solid red;
+            /* border: 1px solid red; */
         }
         header {
             display: flex;
@@ -49,6 +49,7 @@
         }
 
         ul {
+            padding-top: 20px;
             list-style: none;
         }
 
@@ -57,12 +58,13 @@
             padding: 0;
             
             position: absolute;
-            top: 127px;
+            top: 87px;
             right: 58px;
             width: 100px;
 
-            border: 1px solid black;
+            /* border: 1px solid black; */
             background-color: white;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
             border-radius: 30px;
             width: 20%;
             height: 30%;
@@ -74,19 +76,57 @@
         .menu li{
             margin: 20px;
         }
+
+        .menu_logo img {
+            margin-top: 20px;
+        }
+        .menu_img {
+            cursor: pointer;;
+        }
+
+        .menu_input {
+            display: flex;
+            justify-content: center;
+            width: 70vh;
+        }
+
+        .menu_input input {
+            background-image: url("./images/Magnifier_2.png");
+            background-repeat: no-repeat;
+            background-size: 50px;
+
+            background-color: #F0F0F0;
+            border-radius: 30px;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+            
+            border: none;
+            outline: none;
+            
+            width: 80%;
+            height: 50px;
+            margin-top: 20px;
+
+            font-size: 20px;
+
+            text-align:center
+        }
+
+        .menu_input img {
+            height: 100%;
+        }
     </style>
 </head>
 <body>
     <header>
-        <div>
-            logo
+        <div class="menu_logo">
+            <a href="./main.html"><img src="./images/logo_main.png"></a>
         </div>
-        <div>
-            input
+        <div class="menu_input">
+            <input type="text">
         </div>
         <div>
             <ul>
-                <li class="button">menu</li>
+                <li class="button"><img class="menu_img" src="./images/세줄로고.png"></li>
                 <ul class="menu">
                     <li class="menu_login"><a href="./login.html">로그인</a></li>
                     <li class="menu_join"><a href="./join.html">회원가입</a></li>
