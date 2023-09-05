@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener("load", function () {
+            bind()
+        })
+
+        function bind() {
+            document.querySelector(".blockMenu").addEventListener("mouseover", function () {
+                // 16행은 그냥 css로
+                // let mainLink = document.querySelector(".clickMenu")
+                // mainLink.style.cursor = "pointer";
+                // let menuYellowBar = document.querySelector(".yellowMenu")
+                // menuYellowBar.style.z-index = "10";
+                let menuYellowBar = document.querySelector(".yellowMenu")
+                menuYellowBar.style.zIndex = "10";
+                console.log(1)
+                let menuWhiteBar = document.querySelector(".whiteMenu")
+                menuWhiteBar.style.zIndex = "9";
+            })
+            ///////////////////////////////////////////////
+            //////// 14행 26행 함수 : toggle기능 ///////////
+            ///////////////////////////////////////////////
+            document.querySelector(".blockMenu").addEventListener("mouseout", function () {
+                let menuYellowBar = document.querySelector(".yellowMenu")
+                menuYellowBar.style.zIndex = "9";
+
+
+                let menuWhiteBar = document.querySelector(".whiteMenu")
+                menuWhiteBar.style.zIndex = "10";
+            })
+
+            // document.querySelector(".tuning").addEventListener("click", function() {
+            //     let changeWhite = document.querySelector(".default")
+            //     changeWhite.style.color = "white";
+            //     let changeYellow = document.querySelector(".tuning")
+            //     changeYellow.style.color = "#FFD400";
+            // })
+
+            // 배열 : [회원관리, 게시물관리, 예약내역관리, 로그인관리, 회원가입]
+            let menuFont = document.querySelectorAll(".menuFont")
+            // console.log(menuFont)
+
+
+            // for (let i = 0; i < menuFont.length; i++) {
+            //     // let isActive = menuFont[i].classList.contains("active")
+
+            //     menuFont[i].addEventListener("click", function (event) {
+            //         // menuFont[i].classList.remove("active")
+            //         // if (isActive) {
+            //         //     menuFont[i].classList.remove("active")
+            //         //     menuFont[i].classList.add("tuning")
+            //         //     // return;
+            //         // } else {
+            //         //     menuFont[i].classList.add("active")
+            //         //     menuFont[i].classList.remove("tuning")
+            //         //     // return;
+
+            //         // }
+
+
+            //         // 모든 메뉴폰트에서 active를 빼버리고 
+            //         // 지금 클릭된 거에만 active를 준다.
+            //         // (event.target랑 event.커런트target)
+            //     })
+            // }
+
+            document.querySelector(".btn1").addEventListener("click", function () {
+                document.querySelector(".btn1").style.color = "#FFD400";
+                document.querySelector(".btn2").style.color = "#FFF";
+                document.querySelector(".btn3").style.color = "#FFF";
+                document.querySelector(".btn4").style.color = "#FFF";
+                document.querySelector(".btn5").style.color = "#FFF";
+            })
+            document.querySelector(".btn2").addEventListener("click", function () {
+                document.querySelector(".btn2").style.color = "#FFD400";
+                document.querySelector(".btn1").style.color = "#FFF";
+                document.querySelector(".btn3").style.color = "#FFF";
+                document.querySelector(".btn4").style.color = "#FFF";
+                document.querySelector(".btn5").style.color = "#FFF";
+            })
+            document.querySelector(".btn3").addEventListener("click", function () {
+                document.querySelector(".btn3").style.color = "#FFD400";
+                document.querySelector(".btn1").style.color = "#FFF";
+                document.querySelector(".btn2").style.color = "#FFF";
+                document.querySelector(".btn4").style.color = "#FFF";
+                document.querySelector(".btn5").style.color = "#FFF";
+            })
+            document.querySelector(".btn4").addEventListener("click", function () {
+                document.querySelector(".btn4").style.color = "#FFD400";
+                document.querySelector(".btn1").style.color = "#FFF";
+                document.querySelector(".btn2").style.color = "#FFF";
+                document.querySelector(".btn3").style.color = "#FFF";
+                document.querySelector(".btn5").style.color = "#FFF";
+            })
+            document.querySelector(".btn5").addEventListener("click", function () {
+                document.querySelector(".btn5").style.color = "#FFD400";
+                document.querySelector(".btn1").style.color = "#FFF";
+                document.querySelector(".btn2").style.color = "#FFF";
+                document.querySelector(".btn3").style.color = "#FFF";
+                document.querySelector(".btn4").style.color = "#FFF";
+            })
+
+
+
+        }
+    </script>
+    <style>
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        a,
+        a:link,
+        a visited {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .container {
+            width: 1240px;
+            height: 120px;
+            background-color: #474747;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            background-color: #474747;
+            all: unset;
+        }
+
+        .menuMargin {
+            margin: 45px;
+        }
+
+        .nav {
+            width: 220px;
+            height: 790px;
+            background-color: #474747;
+            padding: 20px;
+        }
+
+        .managerMenu {
+            /* margin: 20px; */
+            /* line-height: 50px; */
+            color: #fff;
+        }
+
+        .mainFont {
+            margin: 20px;
+            line-height: 90px;
+            font-size: 40px;
+        }
+
+        .menuFont {
+            margin: 20px;
+            line-height: 50px;
+            font-size: 22px;
+        }
+
+        .active {
+            color: #FFD400;
+        }
+
+        /* .default:hover {
+            color: #FFF;
+        } */
+
+        /****************** 호버시 노란색으로 바뀜 ****************/
+        /* .tuning:hover{
+            color: #FFD400;
+        } */
+        .tuning {
+            color: #FFF;
+        }
+
+        .clickMenu {
+            cursor: pointer;
+
+        }
+
+        .menuMargin {
+            cursor: pointer;
+        }
+
+        /* .menuMargin:hover{
+            
+        } */
+        .managerMenu {
+            cursor: pointer;
+        }
+
+        .blockMenu {
+            position: relative;
+        }
+
+        .whiteMenu {
+            position: relative;
+        }
+
+        .yellowMenu {
+            position: relative;
+            left: 156px;
+            /* left: 156px; */
+            /* display: none; */
+        }
+
+        /* .clickMenu:hover{
+           border-style: solid;
+           border-top: #FFD400;
+           border-left: #FFD400;
+        } */
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="menuMargin">
+                <button class="clickMenu"><img
+                        src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_yellow_white.png?raw=true"></button>
+            </div>
+            <div class="blockMenu">
+                <button class="menuMargin"><img class=yellowMenu
+                        src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/menu_yellow.png?raw=true"></button>
+                <button class="menuMargin"><img class="whiteMenu"
+                        src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/menu.png?raw=true"></button>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="nav">
+            <h1 class="managerMenu mainFont">
+                <button>관리</button>
+            </h1>
+            <ul>
+                <li class="managerMenu menuFont active btn1">
+                    <h4><button>회원관리</button></h4>
+                </li>
+                <li class="managerMenu menuFont btn2">
+                    <h4><button>게시물관리</button></h4>
+                </li>
+                <li class="managerMenu menuFont btn3">
+                    <h4><button>예약내역관리</button></h4>
+                </li>
+                <li class="managerMenu menuFont btn4">
+                    <h4><button>로그인관리</button></h4>
+                </li>
+                <li class="managerMenu menuFont btn5">
+                    <h4><button>회원가입</button></h4>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+
+</html>
