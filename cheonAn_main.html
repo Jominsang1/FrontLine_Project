@@ -391,8 +391,7 @@
             let html_location = '';
             let html_name = '';
 
-            $.ajax({
-                url: "ch_data.html",
+            $.ajax({ url: "ch_data.html",
                 dataType: 'html',
                 success: function (ch) {
 
@@ -470,7 +469,6 @@
                     document.querySelector('#cs').innerHTML = html;
 
 
-
                     let htmlDom = new DOMParser().parseFromString(ch, 'text/html');
                     let tableDom = htmlDom.documentElement
 
@@ -511,7 +509,9 @@
                         // let ch_food_address = arr_ch_food_address[i].innerHTML
 
                         html_food += `<div class="food">${ch_food_img.outerHTML}</div>`
+
                     }
+                
 
                     //  천안 놀거리관련 배열 길이만큼 for문 <놀거리이미지 및 놀거리타이틀>
                     for (let i = 0; i < 5; i++) {
@@ -554,7 +554,16 @@
                     sleep_slide();
                     sleep_more_btn();
 
-
+                    let foods = document.querySelectorAll('.food')
+                    for(let i=0; i<foods.length; i++){
+                        foods[i].addEventListener('click', function(){
+                            console.log(i)            
+                            if(i==2){
+                                location.href = "./food_detail.html"
+                            }                
+                        })
+                    }
+                    
                 }
             });
         });
