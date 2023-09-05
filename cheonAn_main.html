@@ -21,6 +21,10 @@
             /* font-weight: bold; */
         }
 
+        #cs {
+            margin: auto;
+        }
+
         p4 {
             font-size: 25px;
             font-weight: bold;
@@ -49,7 +53,7 @@
 
             /* align-items: center; */
 
-            margin-left: 4px;
+            /* margin-left: 4px; */
         }
 
         .title {
@@ -66,7 +70,7 @@
             overflow: hidden;
             display: flex;
             /* justify-content: space-evenly; */
-            justify-content: left;
+            /* justify-content: center; */
             align-items: center;
             align-content: center;
             flex-wrap: wrap;
@@ -75,12 +79,14 @@
 
         }
 
+
         .itemss {
             /* border: 1px solid black; */
             border-radius: 20px;
             display: flex;
             width: 415px;
             /* overflow: hidden; */
+            /* justify-content: center; */
 
         }
 
@@ -92,7 +98,7 @@
             border-radius: 20px;
             width: 393px;
             height: 200px;
-            overflow: hidden;
+            /* overflow: hidden; */
             cursor: pointer;
             text-align: center;
         }
@@ -102,7 +108,7 @@
             height: 200px;
             object-fit: cover;
             /* border: 1px solid black; */
-            border-radius: 20px;
+            /* border-radius: 20px; */
         }
 
         .btns {
@@ -152,8 +158,8 @@
         .best_play,
         .chungnam_city {
             display: flex;
-            justify-content: space-evenly;
-            /* justify-content: left; */
+            /* justify-content: space-evenly; */
+            justify-content: center;
             align-items: center;
             align-content: center;
             flex-wrap: wrap;
@@ -167,13 +173,9 @@
             border-radius: 20px;
             width: 200px;
             height: 200px;
-            /* border: 1px solid black; */
-
-            /* width: 200px; */
-            /* height: 200px; */
             overflow: hidden;
             cursor: pointer;
-            text-align: center;
+            /* text-align: center; */
 
         }
 
@@ -558,16 +560,17 @@
         });
 
 
-        let result = new Array(1);
+        let result = new Array(2);
 
         for (let i = 0; i < result.length; i++) {
-            result[i] = new Array(1);
+            result[i] = new Array(2);
         }
 
         result[0][0] = "천안"
 
 
         result[0][1] = "nx=63&ny=110"
+
 
 
         const time = Date.now();
@@ -636,7 +639,7 @@
 
                 for (let j = 0; j < item.length; j++) {
 
-                    // console.log(item[j])
+                    // console.log(item[29])
                     if (item[j].fcstTime == check_hours + "00") {
                         // console.log(item[j].category, item[j].fcstValue)
                         if (item[j].category == "PTY") {
