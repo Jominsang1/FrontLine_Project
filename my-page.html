@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./storage/css/style.css"> -->
+    <script>
+        window.addEventListener("load",function() {
+            bind()            
+        })
+
+        function bind() {
+            document.querySelector(".info").addEventListener("click",function() {
+                document.querySelector(".reser").style.color = "#A6A6A6";
+                console.log(1)
+                document.querySelector(".info").style.color = "#5498FF";
+                document.querySelector(".firstTitle").style.display = "block";
+                document.querySelector(".secondTitle").style.display = "none";
+
+
+            })
+            document.querySelector(".reser").addEventListener("click",function() {
+                document.querySelector(".info").style.color = "#A6A6A6";
+                document.querySelector(".reser").style.color = "#5498FF";
+                document.querySelector(".secondTitle").style.display = "inline-block";
+                document.querySelector(".secondTitle").style.top = "3px";
+                document.querySelector(".firstTitle").style.display = "none"
+           })
+        }
+    </script>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bigBox {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .headerBar {
+            width: 1280px;
+            height: 200px;
+            background-color: #5498FF;
+            position: relative;
+        }
+
+        .frontBar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+
+        .navBar {
+            width: 1280px;
+            display: flex;
+        }
+
+        .sideBar {
+            display: flex;
+            flex-direction: column;
+            /* text-align: center; */
+        }
+
+        /******버튼 스타일 0*****/
+        button {
+            all: unset;
+        }
+
+        .barMar {
+            margin: 20px;
+        }
+
+        .menuTitle {
+            position: relative;
+            margin-left: 10px;
+            padding: 10px;
+            color: #FFF;
+        }
+
+        .my {
+            /* line-height: 60px; */
+            padding: 10px;
+            margin: 10px;
+            line-height: 30px;
+        }
+
+        .info {
+            margin-top: 60px;
+            color: #5498FF;
+        }
+
+        .reser {
+            color: #A6A6A6;
+        }
+        .secondTitle{
+            bottom: 63px;
+            display:none;
+        }
+        .firstTitle{
+            display: block;
+        }
+        .lineBar{
+            margin-right: 25px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bigBox">
+        <header class="headerBar">
+            <div class="frontBar">
+                <div class="barMar logoBar"><button><img
+                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_yellow_white.png?raw=true"></button>
+                </div>
+                <div class="barMar lineBar"><button><img
+                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/menu.png?raw=true"></button>
+                </div>
+            </div>
+            <div class="menuTitle firstTitle">
+                <h1>내정보</h1>
+            </div>
+            <div class="menuTitle secondTitle">
+                <h1>예약내역</h1>
+            </div>
+
+        </header>
+        <nav class="navBar">
+            <div class="sideBar">
+                <div class="my">
+                    <h1 class="info"><button>내정보</button></h1>
+                </div>
+                <div class="my">
+                    <h1 class="reser"><button>예약내역</button></h1>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>
