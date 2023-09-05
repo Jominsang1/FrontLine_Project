@@ -232,22 +232,22 @@
 
         function focus(){
             document.querySelector(".input_id input").addEventListener("focus", function(){
-                document.querySelector(".input_id img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_after.png?raw=true")
+                document.querySelector(".input_id img").setAttribute("src", "./images/icon_id_after.png")
                 document.querySelector(".input_id").style.border = "2px solid black";
                 document.querySelector(".input_password").style.borderTop = "2px solid black";
             })
             document.querySelector(".input_id input").addEventListener("blur", function(){
-                document.querySelector(".input_id img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_before.png?raw=true")
+                document.querySelector(".input_id img").setAttribute("src", "./images/icon_id_before.png")
                 document.querySelector(".input_id").style.border = "2px solid lightgray";
                 document.querySelector(".input_password").style.border = "2px solid lightgray";
             })
 
             document.querySelector(".input_password input").addEventListener("focus", function(){
-                document.querySelector(".input_password img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_after.png?raw=true")
+                document.querySelector(".input_password img").setAttribute("src", "./images/icon_password_after.png")
                 document.querySelector(".input_password").style.border = "2px solid black";
             })
             document.querySelector(".input_password input").addEventListener("blur", function(){
-                document.querySelector(".input_password img").setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true")
+                document.querySelector(".input_password img").setAttribute("src", "./images/icon_password_before.png")
                 document.querySelector(".input_password").style.border = "2px solid lightgray";
             })
         }
@@ -284,13 +284,13 @@
 <body>
     <div class="main">
         <div class="main_top">
-            <h4><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/x.png?raw=true">로그인 또는 회원가입</h4>
+            <h4><img src="./images/x.png">로그인 또는 회원가입</h4>
         </div>
         <div class="main_bottom">
             <h3>놀아유에 오신걸 환영합니다</h3>
             <div class="main_input">
-                <div class="input_id"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_before.png?raw=true"><input type="text" placeholder="아이디"><img class="input_id_x" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/x.png?raw=true"></div>
-                <div class="input_password"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true"><input type="password" placeholder="비밀번호"><img class="input_password_x" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/x.png?raw=true"></div>
+                <div class="input_id"><img src="./images/icon_id_before.png"><input type="text" placeholder="아이디"><img class="input_id_x" src="./images/x.png"></div>
+                <div class="input_password"><img src="./images/icon_password_before.png"><input type="password" placeholder="비밀번호"><img class="input_password_x" src="./images/x.png"></div>
             </div>
             <div class="main_login">
                 로그인
@@ -299,7 +299,7 @@
                 <p>회원가입</p>
             </div>
             <div class="logo">
-                <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo.png?raw=true">
+                <img src="./images/logo.png">
             </div>
         </div>
     </div>

@@ -19,11 +19,11 @@
             for(let i = 0; i<eye.length; i++){
                 eye[i].addEventListener("click", function(){
                 //eye_dark 면 eye_light으로 아니면 반대로
-                if(eye[i].getAttribute("src") == "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/eye-dark.png?raw=true"){
-                    eye[i].setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/eye-light.png?raw=true")
+                if(eye[i].getAttribute("src") == "./images/eye_dark.png"){
+                    eye[i].setAttribute("src", "./images/eye_light.png")
                     password[i].setAttribute("type", "text")
                 } else {
-                    eye[i].setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/images/eye-dark.png?raw=true")
+                    eye[i].setAttribute("src", "./images/eye_dark.png")
                     password[i].setAttribute("type", "password")
                 }
             })
@@ -181,16 +181,16 @@
         <h1>회원가입 및 이용약관</h1>
         <div class="input_main">
             <div class="input_top">
-                <div class="section input_name"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_human.png?raw=true"><input type="text" placeholder="이름"></div>
-                <div class="section top input_id"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_check.png?raw=true"><input type="text" placeholder="아이디"></div>
-                <div class="section top input_password"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true"><input type="password" placeholder="비밀번호"><img class="eye" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/eye-dark.png?raw=true"></div>
-                <div class="section top input_password"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true"><input type="password" placeholder="비밀번호 확인"><img class="eye" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/eye-dark.png?raw=true"></div>
+                <div class="section input_name"><img src="./images/icon_human.png"><input type="text" placeholder="이름"></div>
+                <div class="section top input_id"><img src="./images/icon_check.png"><input type="text" placeholder="아이디"></div>
+                <div class="section top input_password"><img src="./images/icon_password_before.png"><input type="password" placeholder="비밀번호"><img class="eye" src="./images/eye_dark.png"></div>
+                <div class="section top input_password"><img src="./images/icon_password_before.png"><input type="password" placeholder="비밀번호 확인"><img class="eye" src="./images/eye_dark.png"></div>
                 <div class="check_password">비밀번호가 일치하지 않습니다.</div>
             </div>
             <div class="input_bottom">
-                <div class="section input_email"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_message.png?raw=true"><input type="text" placeholder="이메일"></div>
-                <div class="section top input_phone"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_call.png?raw=true"><input type="text" placeholder="휴대폰 번호"></div>
-                <div class="section top input_birth"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_gift.png?raw=true"><input type="text" placeholder="생년월일 8자리"></div>
+                <div class="section input_email"><img src="./images/icon_message.png"><input type="text" placeholder="이메일"></div>
+                <div class="section top input_phone"><img src="./images/icon_call.png"><input type="text" placeholder="휴대폰 번호"></div>
+                <div class="section top input_birth"><img src="./images/icon_gift.png"><input type="text" placeholder="생년월일 8자리"></div>
             </div>
             <div class="button1">가입하기</div><div class="button2">가입하기</div>
         </div>
