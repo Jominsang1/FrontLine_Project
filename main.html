@@ -68,31 +68,35 @@
             let input_hours;
             let check_hours;
 
-            if(month < 10){
+            if(Number(month) < 10){
                     month = "0"+month
                 }
 
-                if(date < 10){
+                if(Number(date) < 10){
                     date = "0"+date
                 }
 
-                if(hours < 10){
+                if(Number(hours) < 10){
                     hours = "0"+hours
                 }
 
-                if(hours2 < 10){
+                if(Number(hours2) < 10){
                     hours2 = "0"+hours
                 }
 
-                if(minutes < 30){
+                if(Number(minutes) < 30){
                     input_hours = hours2
                     check_hours = hours
                 } else {
                     input_hours = hours
-                    check_hours = hours+1
+                    check_hours = Number(hours)+1
                 }
 
-                if(check_hours == 24){
+                if(Number(check_hours) < 10){
+                    hours = "0"+hours
+                }
+
+                if(Number(check_hours) == 24){
                     check_hours = "00"
                 }
 
@@ -105,6 +109,7 @@
                 xhr.send();
                 xhr.onload = function () {
                 let data = JSON.parse(xhr.responseText)
+                console.log(input_hours)
                 // console.log(xhr.responseText)
                 // console.log(data)
                 //for문 돌려서 배열 data값 일치할때만 출력
