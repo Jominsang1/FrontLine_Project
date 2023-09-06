@@ -159,15 +159,16 @@
             margin-right: 30px;
         }
 
-        .ul{
+        .ul {
             list-style: none;
             /* display: flex;
             justify-content: space-between; */
         }
+
         li {
             float: left;
             margin-left: 8%;
-        } 
+        }
 
 
 
@@ -204,7 +205,7 @@
             /* text-align: center; */
             overflow: hidden;
             /* margin-left: 14%; */
-            
+
 
         }
 
@@ -217,7 +218,7 @@
             height: 500px;
             cursor: pointer;
             /* text-align: center; */
-            
+
         }
 
         .food_item {
@@ -279,6 +280,60 @@
 
         }
 
+
+        .div5 {
+            margin-top: 5%;
+        }
+
+        .review {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 35px;
+            color: #474747;
+        }
+
+        .comments_section {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 17px;
+            display: flex;
+            justify-content: center
+        }
+
+        .user_number {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 17px;
+        }
+
+        .comments {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 20px;
+        }
+
+        .div7 {
+            display: flex;
+            justify-content: center;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 20px;
+        }
+
+        .div6 {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 17px;
+            margin: 20px;
+
+        }
+
+        .comments {
+            color: #999999;
+        }
+
+        .bundle {
+            display: flex;
+            justify-content: space-between
+        }
+
+        .bt {
+            margin-right: 30px;
+        }
     </style>
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5a611be24364678ff335af8c83f5d896&libraries=services"></script>
@@ -340,9 +395,49 @@
                     html += `<ul class="ul4 info">`
 
                     html += `</ul>`
-     
+
                     html += `</div`
                     html += `</div>`
+
+
+
+                    html += `<div class="div5">`
+                    html += `<div class="div5 review" style="margin-left: 20px;">
+                리뷰<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/pencil-light.png?raw=true">`
+                    html += `</div>`
+                    html += ` <div class="div5 bt">`
+                    html += `   <input type="button" value="등록">`
+                    html += `  </div>`
+                    html += ` </div>`
+
+                    html += ` <div>`
+                    html += `   <hr style="margin:30px;">`
+                    html += ` </div>`
+
+                    html += ` <div class="comments_section">`
+                    html += `   <input type="text" placeholder="소중한 댓글을 남겨주세요"
+                    style = "width:1820px; height:142px; border-color: #474747; margin:20px;" >`
+                    html += ` </div>`
+
+                    html += ` <div class="review_list">`
+                    html += ` <div class="div6">`
+                    html += ` <span class="duv6 bundle">`
+                    html += ` <span class="div6 left">`
+                    // html += ` <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true">`
+                    html += `  <span class="div6 user_number"></span>`
+                    html += ` </span>`
+                    html += ` <span class="div6 right">`
+                    html += `   <input id="x1" type="button" value="삭제">`
+                    html += ` </span>`
+                    html += ` </span>`
+                    html += ` <div class="comments"></div>`
+                    html += `</div>`
+                    html += ` </div>`
+
+
+                    html += ` <span class="div7">`
+                    html += ` <input type="button" value="더보기">`
+
 
 
 
@@ -431,6 +526,7 @@
 
 
                     food_slide();
+                    comment();
 
 
 
@@ -501,6 +597,48 @@
             }, 1500);
         }
 
+        function comment() {
+            // 텍스트에 입력한 글자가 밑에 뜨도록
+
+            let count = 0;
+
+            document.querySelector(".bt").addEventListener("click", function () {
+                count++
+
+                let text = document.querySelector("[type=text]").value
+
+                let text_info = document.querySelector("[type=text]")
+
+                let result = document.querySelector(".comments")
+
+                let input = document.createElement("div")
+
+                input.innerHTML = "<span class='duv6 bundle'><span class='div6 left'><img src='https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true'><span class='div6 user_number'>익명1234</span></span><span class='div6 right'> <input id = 'x1' type='button' value='삭제'></span></span><div class='comments'> " + text + " </div>"
+
+                document.querySelector(".review_list").prepend(input)
+
+                text_info.value = "";
+
+                if (document.querySelector("#x1") !== null) {
+
+                    let x = document.querySelectorAll("#x1")
+
+                    for (let i = 0; i < x.length; i++) {
+
+                        x[i].addEventListener("click", function () {
+
+                            console.log(" x button click")
+                            this.parentNode.parentNode.parentNode.remove();
+
+                        })
+                    }
+                }
+
+                // console.log(text_info.value)
+
+
+            })
+        }
 
     </script>
 
