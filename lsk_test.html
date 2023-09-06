@@ -31,7 +31,9 @@
             })
         }
     </script>
-    <style>
+     <style>
+        /* 헤더 */
+
         div {
             /* border: 1px solid red; */
         }
@@ -43,13 +45,8 @@
             padding-right: 50px;
         }
 
-        main {
-            background-color: red;
-            height: 1000px;
-        }
-
         ul {
-            padding-top: 20px;
+            padding-top: 15px;
             list-style: none;
         }
 
@@ -67,10 +64,12 @@
             box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
             border-radius: 30px;
             width: 20%;
-            height: 30%;
+            height: 25%;
 
             text-align: center;
             font-size: 20px;
+
+            z-index: 1;
         }
 
         .menu li{
@@ -81,7 +80,7 @@
             margin-top: 20px;
         }
         .menu_img {
-            cursor: pointer;;
+            cursor: pointer;
         }
 
         .menu_input {
@@ -95,9 +94,9 @@
             background-repeat: no-repeat;
             background-size: 50px;
 
-            background-color: #F0F0F0;
+            background-color: white;
             border-radius: 30px;
-            box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
             
             border: none;
             outline: none;
@@ -110,10 +109,6 @@
 
             text-align:center
         }
-
-        .menu_input img {
-            height: 100%;
-        }
     </style>
 </head>
 <body>
@@ -122,7 +117,7 @@
             <a href="./main.html"><img src="./images/logo_main.png"></a>
         </div>
         <div class="menu_input">
-            <input type="text">
+            <input type="text" placeholder="어디로 갈까U?">
         </div>
         <div>
             <ul>
@@ -130,7 +125,7 @@
                 <ul class="menu">
                     <li class="menu_login"><a href="./login.html">로그인</a></li>
                     <li class="menu_join"><a href="./join.html">회원가입</a></li>
-                    <li class="menu_my"><a>내 정보</a></li>
+                    <li class="menu_my"><a href="./my_page.html">내 정보</a></li>
                     <li class="menu_reser"><a>예약내역</a></li>
                 </ul>
             </ul>
