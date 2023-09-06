@@ -177,11 +177,12 @@
             color: #999999;
         }
 
-        .bundle{
+        .bundle {
             display: flex;
             justify-content: space-between
-        } /*추가*/
-        
+        }
+
+        /*추가*/
     </style>
     <script>
 
@@ -192,7 +193,11 @@
 
         function comment() {
             // 텍스트에 입력한 글자가 밑에 뜨도록
+
+            let count = 0;
+
             document.querySelector(".bt").addEventListener("click", function () {
+                count++
 
                 let text = document.querySelector("[type=text]").value
 
@@ -202,21 +207,38 @@
 
                 let input = document.createElement("div")
 
-                input.innerHTML = "<span><img src='https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true'><span class='div6 user_number'>익명1234</span></span><div class='comments'>" + text + "</div>"
+                input.innerHTML = "<span class='duv6 bundle'><span class='div6 left'><img src='https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true'><span class='div6 user_number'>익명1234</span></span><span class='div6 right'> <input id = 'x1' type='button' value='삭제'></span></span><div class='comments'> " + text + " </div>"
 
                 document.querySelector(".review_list").prepend(input)
 
                 text_info.value = "";
 
+                if (document.querySelector("#x1") !== null) {
+
+                    let x = document.querySelectorAll("#x1")
+
+                    for (let i = 0; i < x.length; i++) {
+
+                        x[i].addEventListener("click", function () {
+
+                            console.log(" x button click")
+                            this.parentNode.parentNode.parentNode.remove();
+
+                        })
+                    }
+                }
+
                 // console.log(text_info.value)
-
-
-
-
 
 
             })
         }
+
+
+
+
+
+
     </script>
 </head>
 
@@ -282,11 +304,11 @@
             <div class="div6">
                 <span class="duv6 bundle">
                     <span class="div6 left">
-                    <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true">
-                    <span class="div6 user_number">익명1234</span>
+                        <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true">
+                        <span class="div6 user_number">익명1234</span>
                     </span>
                     <span class="div6 right">
-                    <input type="button" value="삭제">
+                        <input id="x1" type="button" value="삭제">
                     </span>
                 </span>
                 <div class="comments">안뇽하세요</div>
