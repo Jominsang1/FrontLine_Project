@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*셀렉트*/
+        .head {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 26%;
+        }       
+
+        #search {
+            display: inline-block;
+        }
+        .sb{
+            width: 80px;
+            height: 30px;
+            font-size: 14px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+        }
+        .sinput {
+            width: 150px;
+            height: 26px;
+            font-size: 14px;
+            text-align: center;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+        }
+        .sbtn{
+            width: 50px;
+            height: 30px;
+            font-size: 14px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+        }
+
+        /*표*/
+
+        .table {
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 0;
+
+        }
+
+        th,
+        td {
+            border: 1px solid #aaa;
+            padding: 0.6rem;
+            min-width: 50px;
+            text-align: center;
+            margin: auto;
+        }
+
+
+        thead th,
+        tbody th {
+            background-color: #f8f8f8;
+        }
+
+        /*페이징*/
+        .page_wrap {
+            text-align: center;
+            font-size: 0;
+        }
+
+        .page_nation {
+            display: inline-block;
+        }
+
+        .page_nation .none {
+            display: none;
+        }
+
+        .page_nation a {
+            display: block;
+            margin: 0px;
+            float: left;
+            border: 1px solid #e6e6e6;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            background-color: #fff;
+            font-size: 14px;
+            color: #999999;
+            text-decoration: none;
+        }
+
+        .page_nation .arrow {
+            border: 1px solid #ccc;
+        }
+
+        .page_nation .prev {
+            background: #f8f8f8 url('') no-repeat center center;
+            margin-right: 6px;
+            
+        }
+
+        .page_nation .next {
+            background: #f8f8f8 url('') no-repeat center center;
+            margin-left: 6px;
+        }
+
+        .page_nation a.active {
+            background-color: #42454c;
+            color: #fff;
+            border: 1px solid #42454c;
+        }
+        .arrow.prev{
+            margin-right: 10px;
+        }
+        .arrow.next{
+            margin-left: 10px;
+        }
+        
+    </style>
+        
+    <script>
+        window.addEventListener("load", function () {
+            bind()
+        })
+
+        function bind() {
+            document.querySelector(".blockMenu").addEventListener("mouseover", function () {
+                let menuYellowBar = document.querySelector(".yellowMenu")
+                menuYellowBar.style.zIndex = "10";
+                let menuWhiteBar = document.querySelector(".whiteMenu")
+                menuWhiteBar.style.zIndex = "9";
+            })
+            document.querySelector(".blockMenu").addEventListener("mouseout", function () {
+                let menuYellowBar = document.querySelector(".yellowMenu")
+                menuYellowBar.style.zIndex = "9";
+                let menuWhiteBar = document.querySelector(".whiteMenu")
+                menuWhiteBar.style.zIndex = "10";
+            })
+        }
+
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a, a:link, a visited {
+            color: inherit;
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+        }
+        .container {
+            width: 1240px;
+            height: 120px;
+            background-color: #474747;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button {
+            background-color: #474747;
+            all: unset;
+        }
+        .menuMargin {
+            margin: 45px;
+        }
+        .nav {
+            width: 220px;
+            height: 790px;
+            background-color: #474747;
+            padding: 20px;
+        }
+        .managerMenu {
+            color: #fff;
+        }
+        .mainFont {
+            margin: 20px;
+            line-height: 90px;
+            font-size: 40px;
+        }
+        .menuFont {
+            margin: 20px;
+            line-height: 60px;
+            font-size: 22px;
+        }
+        .active {
+            color: #FFD400;
+        }
+        .tuning {
+            color: #FFF;
+        }
+        .clickMenu {
+            cursor: pointer;
+        }
+        .menuMargin {
+            cursor: pointer;
+        }
+        .managerMenu {
+            cursor: pointer;
+        }
+        .blockMenu {
+            position: relative;
+        }
+        .whiteMenu {
+            position: relative;
+        }
+        .yellowMenu {
+            position: relative;
+            left: 156px;
+        }
+        .flus {
+            display: flex;
+        }
+        .members {
+            margin-top: 5%;
+            margin-left: 15%;
+        }
+        .autoPage {
+            width: 1280px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="autoPage">
+        <header>
+            <div class="container">
+                <div class="menuMargin">
+                    <button class="clickMenu"><img
+                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_yellow_white.png?raw=true"></button>
+                </div>
+                <div class="blockMenu">
+                    <button class="menuMargin"><img class=yellowMenu
+                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/menu_yellow.png?raw=true"></button>
+                    <button class="menuMargin"><img class="whiteMenu"
+                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/menu.png?raw=true"></button>
+                </div>
+            </div>
+        </header>
+        <div class="flus">
+            <nav>
+                <div class="nav">
+                    <h1 class="managerMenu mainFont">
+                        <button>관리</button>
+                    </h1>
+                    <ul>
+                        <li class="managerMenu menuFont">
+                            <a href="./manager-회원관리.html"><h4><button>회원관리</button></h4></a>
+                        </li>
+                        <li class="managerMenu menuFont active">
+                            <h4><button>게시물관리</button></h4>
+                        </li>
+                        <li class="managerMenu menuFont">
+                            <a href="./manager-예약내역관리.html"><h4><button>예약내역관리</button></h4></a>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </nav>
+            <div class="members">
+                <div class="head">
+                    <div id="hright">
+                        <select class="sb" name="ss">
+                            <option value="all" selected="selected">전체</option>
+                            <option value="num">글번호</option>
+                            <option value="id">아이디</option>
+                            <option value="date">작성일</option>
+                        </select>
+            
+                        <form id="search" method="GET" action="">
+                            <input class="sinput" type="text" placeholder="검색어를 입력해주세요">
+                            <input class="sbtn" type="submit" value="검색">
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <div class="table">
+                    <table id="tb">
+                        <thead>
+                            <tr>
+                                <th>글번호</th>
+                                <th>작성자아이디</th>
+                                <th>내용</th>
+                                <th>작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>qwer1234</td>
+                                <td>닭가슴살 그만 먹고싶어요</td>
+                                <td>2023-09-09</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>qwer1234</td>
+                                <td>저랑 뮤직클라우드 페스티발 같이 갈사람?
+                                </td>
+                                <td>2023-09-09</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>qwer1234</td>
+                                <td>하...</td>
+                                <td>2023-09-09</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>qwer1234</td>
+                                <td>하...</td>
+                                <td>2023-09-09</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>qwer1234</td>
+                                <td>하...</td>
+                                <td>2023-09-09</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>qwer1234</td>
+                                <td>하...</td>
+                                <td>2023-09-09</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>qwer1234</td>
+                                <td>하...</td>
+                                <td>2023-09-09</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>qwer1234</td>
+                                <td>하...</td>
+                                <td>2023-09-09</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>qwer1234</td>
+                                <td>하...</td>
+                                <td>2023-09-09</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>qwer1234</td>
+                                <td>하...</td>
+                                <td>2023-09-09</td>
+                            </tr>
+                            
+            
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="page_wrap">
+                    <a class="arrow prev" href="#"><button><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Group%202187.png?raw=true"></button></a>
+                    <div class="page_nation">
+                       <a href="#" class="active">1</a>
+                       <a href="#">2</a>
+                       <a href="#">3</a>
+                       <a href="#">4</a>
+                       <a href="#">5</a>
+                       <a href="#">6</a>
+                       <a href="#">7</a>
+                       <a href="#">8</a>
+                       <a href="#">9</a>
+                       <a href="#">10</a>
+                    </div>
+                    <a class="arrow next" href="#"><button><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Group%202188.png?raw=true"></button></a>  
+                 </div>
+            </div>
+    </div>
+</body>
+
+</html>
