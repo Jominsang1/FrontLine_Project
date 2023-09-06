@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+        .nanumgothic * {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+
+        * {
+            font-family: 'Nanum Gothic', sans-serif;
+            /* font-weight: bold; */
+        }
+
+        #cs {
+            margin: auto;
+        }
+
+        p4 {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        p5,
+        p6 {
+            font-size: 20px;
+        }
+
+        p6 {
+            color: #5498FF;
+        }
+
+        .best_travel {
+            text-align: center;
+        }
+
+        .weathers {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .wrap {
+            max-width: 1240px;
+            margin: auto;
+            /* align-items: center; */
+
+            /* margin-left: 4px; */
+        }
+
+        .title {
+            text-align: center;
+            /* border: 1px solid black; */
+        }
+
+        .items {
+            /* border: 1px solid black; */
+
+            /* display: flex; */
+            /* justify-content: center; */
+            width: 1240px;
+            overflow: hidden;
+            display: flex;
+            /* justify-content: space-evenly; */
+            /* justify-content: center; */
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+
+        }
+
+
+        .itemss {
+            /* border: 1px solid black; */
+            border-radius: 20px;
+            display: flex;
+            width: 415px;
+            /* overflow: hidden; */
+            /* justify-content: center; */
+
+        }
+
+        .item {
+
+            flex-shrink: 0;
+            margin: 10px;
+            /* border: 1px solid black; */
+            border-radius: 20px;
+            width: 393px;
+            height: 200px;
+            /* overflow: hidden; */
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            /* border: 1px solid black; */
+            /* border-radius: 20px; */
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btns #btn1 {
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            margin-right: -5px;
+            background-image: url("https://github.com/Jominsang1/FrontLine_Project/blob/main/images/arrow_left.png?raw=true");
+            background-size: cover;
+
+        }
+
+        .btns #btn2 {
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+            width: 20px;
+            height: 20px;
+            margin-left: -5px;
+            background-image: url("https://github.com/Jominsang1/FrontLine_Project/blob/main/images/arrow_right.png?raw=true");
+            background-size: cover;
+
+        }
+
+        #count {
+            width: 100px;
+            height: 20px;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #weather {
+            margin: 5px;
+            text-align: center;
+            /*border: 1px solid black;*/
+        }
+
+        .best_food,
+        .best_play,
+        .chungnam_city {
+            display: flex;
+            /* justify-content: space-evenly; */
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .best_food .food,
+        .best_play .play {
+            margin: 20px;
+            border-radius: 20px;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            cursor: pointer;
+            /* text-align: center; */
+
+        }
+
+        p1 {
+            font-size: 15px;
+        }
+
+        .food img,
+        .play img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+
+        /* .chungnam_city .location {
+            margin: 20px;
+            border-radius: 50%;
+            width: 50%;
+            height: 150px;
+            border: 3px solid rgba(0, 102, 255, 0.281);
+            border-style: dashed;
+            overflow: hidden;
+            cursor: pointer;
+            text-align: center;
+            padding-top: 20px;
+        } */
+
+        .chungnam_city .btn:hover,
+        .best_food .food:hover,
+        .best_play .play:hover {
+
+            transform: scale(1.1);
+        }
+
+        .location img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .second_line {
+            margin-left: 20px;
+        }
+
+        .best_sleep {
+            /* border: 1px solid black; */
+            width: 1240px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            /* text-align: center; */
+            overflow: hidden;
+            /* margin-left: 14%; */
+
+        }
+
+        #sleep_img {
+            /* border: 1px solid black; */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            /* flex-shrink: 0; */
+            /* margin-left: 95px; */
+            /* overflow: hidden; */
+        }
+
+        #sleep_img img {
+            /* position: absolute; */
+            width: 1240px;
+            border-radius: 20px;
+            /* margin-left: 6%; */
+            /* border: 1px solid black; */
+            height: 400px;
+            /* background-color: rgb(132, 0, 255); */
+            object-fit: fill;
+            /* flex-shrink: 0; */
+
+        }
+
+        .sleep {
+            flex-shrink: 0;
+            /* margin: 10px; */
+            /* border: 1px solid black; */
+            border-radius: 20px;
+            width: 1240px;
+            height: 400px;
+            cursor: pointer;
+            /* text-align: center; */
+        }
+
+        #sleep_more {
+            border-radius: 20px;
+            position: absolute;
+            /* border: 1px solid black; */
+            width: 35%;
+            height: 300px;
+            margin-top: 5%;
+            background-color: rgb(0, 0, 0, 0.7);
+
+        }
+
+        #logoimg {
+            width: 10%;
+            margin: 4%;
+            margin-left: 40%;
+            margin-top: 12%;
+            display: inline-block;
+        }
+
+        #logoimg img {
+            width: 85px;
+        }
+
+        p3 {
+            font-weight: bold;
+            color: white;
+            font-size: 16px;
+        }
+
+        #moreinn {
+            text-align: center;
+            /* font-family: Noto Sans KR; */
+        }
+
+        .sleep_more_btn {
+            width: 35%;
+            height: 5%;
+            cursor: pointer;
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: white 1.0;
+        }
+
+        .sleep_more_btn:hover {
+            transform: scale(1.1);
+        }
+
+        .chungnam_city {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+
+        }
+
+        /* .btn {
+            flex: 1 1 auto;
+            margin: 10px;
+            padding: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            font-size: 18px;
+            text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            width: 100px;
+            text-decoration: none;
+        } */
+
+
+/* 
+        .btn:hover {
+            background-position: right center;
+            
+        } */
+/* 
+        .location0 {
+            background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+        }
+
+        .location1 {
+            background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+        }
+
+        .location2 {
+            background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+        }
+
+        .location3 {
+            background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+        }
+
+        .location4 {
+            background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
+        }
+
+        .location5 {
+            background-image: linear-gradient(to right, #ffd396 0%, #ff8f69 51%, #7fff17 100%);
+        } */
+
+        .item_more {
+            text-decoration-line: none;
+            float: right;
+            margin-right: 3.5%;
+            cursor: pointer;
+            color: black;
+        }
+
+        .select_place {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .select_place_text {
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .select_place_list {
+            display: flex;
+            justify-content: space-evenly;
+            position: relative;
+            margin-top: 30px;
+
+        }
+
+        .select_place_list img {
+            cursor: pointer;
+            width: 180px;
+           
+
+        }
+        .select_place_list img:hover{
+            transform: scale(1.2);
+        }
+    </style>
+
+    <!-- <script src="./ch.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+
+            let html = '';
+            let html_travel = '';
+            let html_food = '';
+            let html_play = '';
+            let html_sleep = '';
+            let html_location = '';
+            let html_name = '';
+
+            $.ajax({
+                url: "asan_data.html",
+                dataType: 'html',
+                success: function (asan) {
+
+                    html += `<div class="wrap">`
+                    html += `<div class="best_travel">`
+                    html += `<div class="weathers">`
+                    html += `<div class="weather_img">`
+                    html += `<img class="sunny" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Sunny.png?raw=true">`
+                    html += `<img class="cloudy" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Cloudy.png?raw=true">`
+                    html += `<img class="rain" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Rain.png?raw=true">`
+                    html += `<img class="snow" src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Snow.png?raw=true">`
+                    html += `</div>`
+                    html += `<div id="weather"></div>`
+                    html += `</div>`
+                    html += `<div class="title"><p4>아산<br>`
+                    html += `베스트 여행지</p4> </div>`
+                    html += `<div class="items">`
+                    html += `<div class="itemss">`
+                    ////////////////////////////////// 이미지 배열 클래스 자동 추가란 //////////////////////////////////
+                    html += `</div>`
+                    html += `</div><div style="margin-top : 5px;"></div>`
+                    html += `<div class="btns">`
+                    html += `<input type="button" id="btn1">`
+                    html += `<div id="count"> 1 / 4 </div>`
+                    html += `<input type="button" id="btn2"></div>`
+                    html += `</div><br>`
+
+
+                    html += `<div class="second_line">`
+                    html += `<span><p4>대충 놓치면 안될 먹거리</p4></span><br><div style="margin-top : 5px;"></div>`
+                    html += `<span><p5>대충 의미 있는 천안맛집</p5></span><a href="./asan_foodMore.html" class="item_more"><p5>더보기</p5></a></span><br><br>`
+                    // html += `<div class="food_more"><p5>더보기</p5></div>`
+                    html += `</div>`
+
+                    html += `<div class="best_food">`
+                    ////////////////////////////////// 이미지 배열 클래스 자동 추가란 //////////////////////////////////    
+                    html += `</div><br>`
+
+
+                    html += `<div class="second_line">`
+                    html += `<span><p4>대충 나만의 여행을 위한</p4></span><br><div style="margin-top : 5px;"></div>`
+                    html += `<span><p5>대충 유명한 천안의 이색장소</p5></span><a href= "./asan_playMore.html" class="item_more"><p5>더보기</p5></a></span><br><br>`
+                    html += `</div>`
+
+                    html += `<div class="best_play">`
+                    ////////////////////////////////// 이미지 배열 클래스 자동 추가란 //////////////////////////////////
+                    html += `</div><br><br>`
+
+
+                    html += `<div class="best_sleep">`
+
+                    html += `<div id="sleep_img">`
+                    ////////////////////////////////// 이미지 배열 클래스 자동 추가란 //////////////////////////////////    
+                    html += `</div>`
+
+
+                    html += `<div id="sleep_more">`
+                    html += `<div id="logoimg"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/simbol_white.png?raw=true">`
+                    html += `</div>`
+                    html += `<div id="moreinn" style="color: white;"><p4>멋진 숙소를 만나보세요</p4><br><br><br>
+                                            <button type="button" class="sleep_more_btn"><p6>숙소 더보기</p6></div>`
+                    html += `</div>`
+                    html += `</div><br><br><br>`
+                    html += `<div style="text-align : center;"><p4>충청남도 관광도시</p4></div><br><br>`
+
+                    html += `<div class="select_place_list">`
+                    html += `<div class="select_place_img">`
+                    html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(1).png?raw=true" id="sp_1">`
+
+                    html += `</div>`
+
+                    html += `<div class="select_place_img">`
+                    html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(2).png?raw=true" id="sp_2">`
+
+                    html += `</div>`
+
+                    html += `<div class="select_place_img">`
+                    html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(3).png?raw=true" id="sp_3">`
+
+                    html += `</div>`
+
+                    html += `<div class="select_place_img">`
+                    html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(4).png?raw=true" id="sp_4">`
+
+                    html += `</div>`
+
+                    html += `<div class="select_place_img">`
+                    html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(5).png?raw=true" id="sp_5">`
+
+                    html += `</div>`
+
+                    html += `<div class="select_place_img">`
+                    html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(6).png?raw=true" id="sp_6">`
+
+                    html += `</div>`
+                    html += ` </div>`
+
+                    html += `<div class="chungnam_city">`
+                    ////////////////////////////////// 이미지 배열 클래스 자동 추가란 //////////////////////////////////    
+                    html += `</div>`
+                    html += `<div>`
+
+                    html += `</div>`
+                    html += `</div>`
+
+
+                    document.querySelector('#cs').innerHTML = html;
+
+
+                    let htmlDom = new DOMParser().parseFromString(asan, 'text/html');
+                    let tableDom = htmlDom.documentElement
+
+                    // 천안 관련 카테고리 테이블 image class 배열값 dom
+                    let arr_asan_travel_img = tableDom.querySelectorAll(".asan_travel .image")
+                    let arr_asan_travel_title = tableDom.querySelectorAll(".asan_travel .title")
+
+                    let arr_asan_food_img = tableDom.querySelectorAll(".asan_food .image")
+                    let arr_asan_food_title = tableDom.querySelectorAll(".asan_food .title")
+                    let arr_asan_food_address = tableDom.querySelectorAll(".asan_food .address")
+
+                    let arr_asan_play_img = tableDom.querySelectorAll(".asan_play .image")
+                    let arr_asan_play_title = tableDom.querySelectorAll(".asan_play .title")
+                    let arr_asan_play_address = tableDom.querySelectorAll(".asan_play .address")
+
+                    let arr_asan_sleep_img = tableDom.querySelectorAll(".asan_sleep .image")
+                    let arr_asan_sleep_title = tableDom.querySelectorAll(".asan_sleep .title")
+
+                    let arr_location_img = tableDom.querySelectorAll(".locations .image")
+                    let arr_location_title = tableDom.querySelectorAll(".locations .title")
+
+                    // console.log(arr_location_img)
+
+                    // 천안 여행지관련 배열 길이만큼 for문 <여행지이미지 및 여행지타이틀>
+                    for (let i = 0; i < arr_asan_travel_img.length; i++) {
+                        let asan_travel_img = arr_asan_travel_img[i].querySelector('img')
+                        let asan_travel_title = arr_asan_travel_title[i].innerHTML
+                        // console.log(asan_travel_img) // asan_travel_img 이미지 태그값 출력값 확인
+                        // console.log(a[i]) // a[배열]값 consol 출력값 확인
+
+                        html_travel += `<div class="item">${asan_travel_img.outerHTML}</div>`
+                    }
+
+                    // 천안 맛집관련 배열 길이만큼 for문 <맛집이미지 및 맛집타이틀>
+                    for (let i = 0; i < 5; i++) {
+                        let asan_food_img = arr_asan_food_img[i].querySelector('img')
+                        // let asan_food_title = arr_asan_food_title[i].innerHTML
+                        // let asan_food_address = arr_asan_food_address[i].innerHTML
+
+                        html_food += `<div class="food">${asan_food_img.outerHTML}</div>`
+
+                    }
+
+
+                    //  천안 놀거리관련 배열 길이만큼 for문 <놀거리이미지 및 놀거리타이틀>
+                    for (let i = 0; i < 5; i++) {
+                        let asan_play_img = arr_asan_play_img[i].querySelector('img')
+                        // let asan_play_title = arr_asan_play_title[i].innerHTML
+                        // let asan_address_title = arr_asan_play_address[i].innerHTML
+
+                        html_play += `<div class="play">${asan_play_img.outerHTML}</div>`
+                    }
+
+                    //  천안 숙소관련 배열 길이만큼 for문 <숙소이미지 및 숙소타이틀>
+                    for (let i = 0; i < arr_asan_sleep_img.length; i++) {
+                        let asan_sleep_img = arr_asan_sleep_img[i].querySelector('img')
+                        // let asan_sleep_title = arr_asan_sleep_title[i].innerHTML
+                        if (i + 1 < arr_asan_play_img.length) {
+                            html_sleep += `<div class="sleep">${asan_sleep_img.outerHTML}</div>`
+                        }
+                    }
+
+                    //  천안 시군관련 배열 길이만큼 for문 <시군이미지 및 시군타이틀>
+                    // for (let i = 0; i < arr_location_img.length; i++) {
+                    //     let cn_location_img = arr_location_img[i]
+
+                    //     let cn_location_title = arr_location_title[i].innerHTML
+                    //     html_location += `<a href="#" class="btn location${i}">${cn_location_title}</a>`
+                    // }
+
+                    // console.log(html) // html 출력값 확인
+                    // console.log(html_travel)
+                    // document.querySelector('.names').innerHTML = html_name
+                    document.querySelector('.itemss').innerHTML = html_travel
+                    document.querySelector('.best_food').innerHTML = html_food
+                    document.querySelector('.best_play').innerHTML = html_play
+                    document.querySelector('#sleep_img').innerHTML = html_sleep
+                    document.querySelector('.chungnam_city').innerHTML = html_location
+
+
+                    leftbtn();
+                    rightbtn();
+                    sleep_slide();
+                    sleep_more_btn();
+                    init();
+
+
+                    let foods = document.querySelectorAll('.food')
+                    for (let i = 0; i < foods.length; i++) {
+                        foods[i].addEventListener('click', function () {
+                            console.log(i)
+                            if (i == 2) {
+                                location.href = "./food_detail.html"
+                            }
+                        })
+                    }
+
+                }
+            });
+        });
+
+
+        let result = new Array(2);
+
+        for (let i = 0; i < result.length; i++) {
+            result[i] = new Array(2);
+        }
+
+        result[0][1] = "천안"
+
+
+        result[1][1]="nx=60&ny=110"
+
+
+
+        const time = Date.now();
+        const data = new Date(time)
+        const data2 = new Date(time - (1000 * 60 * 60))
+
+        let year = data.getFullYear()
+        let month = Number(data.getMonth() + 1)
+        let date = data.getDate()
+        let hours = data.getHours()
+        let hours2 = data2.getHours()
+        let minutes = data.getMinutes()
+
+        let input_hours;
+        let check_hours;
+
+        if (Number(month) < 10) {
+            month = "0" + month
+        }
+
+        if (Number(date) < 10) {
+            date = "0" + date
+        }
+
+        if (Number(hours) < 10) {
+            hours = "0" + hours
+        }
+
+        if (Number(hours2) < 10) {
+            hours2 = "0" + hours
+        }
+
+        if (Number(minutes) < 30) {
+            input_hours = hours2
+            check_hours = hours
+        } else {
+            input_hours = hours
+            check_hours = Number(hours) + 1
+        }
+
+        if (Number(check_hours) < 10) {
+            hours = "0" + hours
+        }
+
+        if (Number(check_hours) == 24) {
+            check_hours = "00"
+        }
+
+        // console.log("123", check_hours)
+        for (let i = 0; i < result.length; i++) {
+            let input_xy = result[i][1];
+            let xhr = new XMLHttpRequest();
+            //초단기예보조회 30분 기준
+            let url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey=p0SoGFiG3aqjvtpKGf3bVNkapK4cNQI6JDbPef4r6tHfXxZ7oWt%2F4Re%2Bbf8yQ2cSbE7zjUONKkBaZXRbgqh1vA%3D%3D&dataType=JSON&numOfRows=1000&pageNo=1&base_date=' + year.toString() + month + date + '&base_time=' + (input_hours).toString() + '30' + '&nx=60&ny=110'
+            // console.log(url)
+            xhr.open("GET", url);
+            xhr.send();
+            xhr.onload = function () {
+                let data = JSON.parse(xhr.responseText)
+
+                // console.log(xhr.responseText)
+                // console.log(data)
+                // for문 돌려서 배열 data값 일치할때만 출력
+
+                let item = data.response.body.items.item
+
+                for (let j = 0; j < item.length; j++) {
+
+                    // console.log(item[29])
+                    if (item[j].fcstTime == check_hours + "00") {
+                        // console.log(item[j].category, item[j].fcstValue)
+                        if (item[j].category == "PTY") {
+                            result[i][2] = item[j].fcstValue
+                        }
+                        if (item[j].category == "SKY") {
+                            result[i][3] = item[j].fcstValue
+                        }
+                        if (item[j].category == "T1H") {
+                            result[i][4] = item[j].fcstValue
+                        }
+                        if (item[j].category == "REH") {
+                            result[i][5] = item[j].fcstValue
+                        }
+                    }
+                }
+                // console.log("123",result[2][4])
+                let weather = document.querySelector("#weather")
+                let html_weather = '';
+
+                for (let i = 4; i < 5; i++) {
+
+                    html_weather += result[0][4];
+
+                    // console.log(html_weather)
+                    if (i == 4) {
+                        html_weather += "°<br>"
+                    }
+                }
+
+                weather.innerHTML = html_weather;
+                check(result[0]);
+            }
+        }
+
+
+
+
+
+        function check(result) {
+            let weather_img = document.querySelectorAll(".weather_img img")
+            for (let i = 0; i < weather_img.length; i++) {
+                weather_img[i].style.display = "none"
+            }
+
+            if (result[2] == 0) {
+                if (result[3] == 1) {
+                    document.querySelector(".sunny").style.display = "block"
+                } else {
+                    document.querySelector(".cloudy").style.display = "block"
+                }
+            } else {
+                if (result[2] == 1 || result[2] == 2 || result[2] == 5 || result[2] == 6) {
+                    document.querySelector(".rain").style.display = "block"
+                } else {
+                    document.querySelector(".snow").style.display = "block"
+                }
+            }
+
+            // pty=2  0없음 1비 2비/눈 3눈 5빗방울 6빗방울눈날림 7눈날림
+            // sky=3  1맑음 3구름많음 4흐림
+            // t1h=4
+            // reh=5
+        }
+
+
+        // check(result[0]);
+
+
+
+        // 숙소 더보기 클릭 메소드
+        function sleep_more_btn() {
+            let sleep_more_btn = document.querySelector('.sleep_more_btn')
+            sleep_more_btn.addEventListener('click', function () {
+                location.href = "./asan_sleepMore.html"
+            })
+        }
+
+
+
+        // 여행지 우클릭 슬라이드
+        let currentSlide = 1;
+        function rightbtn() {
+
+
+            document.getElementById('btn2').addEventListener('click', function () {
+                // let counter = 1;
+                // console.log(counter)
+                let slides = document.querySelector('.itemss')
+                let slideimg = document.querySelectorAll('.item').length;
+                let imgcount = document.querySelector('#count')
+                if (currentSlide == 4) {
+                    imgcount.innerHTML = ("1" + " " + "/" + " " + "4")
+                } else {
+                    imgcount.innerHTML = (currentSlide + 1 + " " + "/" + " " + 4)
+                }
+                // counter =-1;
+                // console.log(slideimg)
+                console.log(currentSlide);
+                if (currentSlide >= slideimg - 2) {
+                    currentSlide = 0;
+                }
+                slides.style.transform = "translateX(-" + currentSlide * "415" + "px)";
+                slides.style.transition = "transform 0.4s ease-in-out";
+                currentSlide++;
+            });
+
+        }
+        // 여행지 좌클릭 슬라이드           
+        function leftbtn() {
+            // let currentSlide = 1;
+
+            document.getElementById('btn1').addEventListener('click', function () {
+                let slides = document.querySelector('.itemss')
+                let slideimg = document.querySelectorAll('.item').length;
+                let imgcount = document.querySelector('#count')
+                if (currentSlide == 1) {
+                    imgcount.innerHTML = (4 + " " + "/" + " " + 4)
+                } else {
+                    imgcount.innerHTML = (currentSlide - 1 + " " + "/" + " " + 4)
+                }
+                console.log("abc :", imgcount)
+                // console.log('no2 :',slideimg)
+                // console.log('no2 :', currentSlide)
+                if (currentSlide === 1) {
+                    console.log(currentSlide)
+                    currentSlide = slideimg - 2;
+                } else {
+                    currentSlide--;
+                }
+                slides.style.transform = "translateX(-" + (currentSlide - 1) * "415" + "px)";
+                slides.style.transition = "transform 0.4s ease-in-out";
+
+            });
+
+        }
+
+        // 숙소 사진 슬라이드        
+        let currentIndex = 1;
+        function sleep_slide() {
+            let slides = document.querySelector('#sleep_img')
+            let slideimg = document.querySelectorAll('.sleep').length;
+            // console.log(currentIndex)
+            if (currentIndex >= slideimg) {
+                currentIndex = 0;
+            }
+            setInterval(function () {
+                slides.style.transform = "translateX(-" + currentIndex * "1240" + "px)";
+                slides.style.transition = "transform 0.4s ease-in-out";
+                currentIndex++;
+                //  console.log(currentIndex)
+
+                if (currentIndex === 6) {
+                    currentIndex = - 1;
+                }
+            }, 2000);
+        }
+
+        function init() {
+
+            let sel = document.getElementById('sp_1');
+
+            sel.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(1).png?raw=true");
+            })
+
+            sel.addEventListener('mouseleave', function () {
+                sel.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(1).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+
+            let sel_2 = document.getElementById('sp_2');
+
+            sel_2.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel_2.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(2).png?raw=true");
+            })
+
+            sel_2.addEventListener('mouseleave', function () {
+                sel_2.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(2).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+            let sel_3 = document.getElementById('sp_3');
+
+            sel_3.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel_3.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(3).png?raw=true");
+            })
+
+            sel_3.addEventListener('mouseleave', function () {
+                sel_3.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(3).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+            let sel_4 = document.getElementById('sp_4');
+
+            sel_4.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel_4.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(4).png?raw=true");
+            })
+
+            sel_4.addEventListener('mouseleave', function () {
+                sel_4.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(4).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+            let sel_5 = document.getElementById('sp_5');
+
+            sel_5.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel_5.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(5).png?raw=true");
+            })
+
+            sel_5.addEventListener('mouseleave', function () {
+                sel_5.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(5).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+
+            let sel_6 = document.getElementById('sp_6');
+
+            sel_6.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel_6.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(6).png?raw=true");
+            })
+
+            sel_6.addEventListener('mouseleave', function () {
+                sel_6.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(6).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+
+            sel.addEventListener('click', function (){
+                location.href = "./cheonAn_main.html"
+            })
+            sel_2.addEventListener('click', function (){
+                location.href = "./asan_main.html"
+            })
+            sel_3.addEventListener('click', function (){
+                location.href = "./cheonAn_main.html"
+            })
+            sel_4.addEventListener('click', function (){
+                location.href = "./cheonAn_main.html"
+            })
+            sel_5.addEventListener('click', function (){
+                location.href = "./cheonAn_main.html"
+            })
+            sel_6.addEventListener('click', function (){
+                location.href = "./cheonAn_main.html"
+            })
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="cs">
+    </div>
+
+
+
+
+</body>
+
+</html>

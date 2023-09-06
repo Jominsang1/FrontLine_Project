@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* /////////////남주님 css///////////// */
+        @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+        .nanumgothic * {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+        .div1 {
+            display: flex;
+            /* border: 1px solid red; */
+            flex-direction: column;
+            align-items: center;
+            /* margin: 15px; */
+            padding: 15px;
+        }
+
+        .area {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .photo {
+            box-sizing: border-box;
+            background-color: sandybrown;
+            background-image: none;
+            width: 1820px;
+            height: 550px;
+            border-radius: 25px;
+        }
+
+        .div2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px;
+        }
+
+        .map {
+            box-sizing: border-box;
+            background-color: darkblue;
+            width: 1820px;
+            height: 620px;
+            border-radius: 25px;
+        }
+
+        .div3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px;
+        }
+
+        .div4 {
+            display: flex;
+            flex-direction: column;
+            float: left;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 25px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+
+        }
+
+        .li2 {
+            margin-left: 500px;
+            /* margin-right: 500px; */
+        }
+
+        .li1 {
+            margin-right: 500px;
+
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .div5 {
+            display: flex;
+            justify-content: space-between
+        }
+
+        .place {
+            font-family: 'Noto Sans KR', sans-serif;
+            /* font-family: 'Roboto', sans-serif; */
+            font-size: 40px;
+        }
+
+        .title {
+            font-family: 'Noto Sans KR', sans-serif;
+            /* font-family: 'Roboto', sans-serif; */
+            font-size: 35px;
+            color: #474747;
+            text-align: center;
+        }
+
+        .text {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 20px;
+            line-height: 35px;
+            padding: 5%;
+        }
+
+        .area2 {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 30px;
+            color: #474747;
+        }
+
+        .review {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 35px;
+            color: #474747;
+        }
+
+        .comments_section {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 17px;
+            display: flex;
+            justify-content: center
+        }
+
+        .user_number {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 17px;
+        }
+
+        .comments {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 20px;
+        }
+
+        .div7 {
+            display: flex;
+            justify-content: center;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 20px;
+        }
+
+        .div6 {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 17px;
+            margin: 20px;
+
+        }
+
+        .bt {
+            margin-right: 30px;
+        }
+
+        .ul{
+            list-style: none;
+            /* display: flex;
+            justify-content: space-between; */
+        }
+        li {
+            float: left;
+            margin-left: 8%;
+        } 
+
+
+
+
+        /* /////////////민상 css///////////// */
+
+        #cs {
+            max-width: 1280px;
+            margin: auto;
+        }
+
+        .wrap {
+            max-width: 1280px;
+
+            /* align-items: center; */
+
+            margin: auto;
+        }
+
+
+        p1 {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .best_play {
+            /* border: 1px solid black; */
+            width: 1240px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            /* text-align: center; */
+            overflow: hidden;
+            /* margin-left: 14%; */
+            
+
+        }
+
+        .play {
+            flex-shrink: 0;
+            /* margin: 10px; */
+            /* border: 1px solid black; */
+            border-radius: 20px;
+            /* width: 1240px; */
+            height: 500px;
+            cursor: pointer;
+            /* text-align: center; */
+            
+        }
+
+        .play_item {
+            /* border: 1px solid black; */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            /* flex-shrink: 0; */
+            /* margin-left: 95px; */
+            /* overflow: hidden; */
+
+            /* display: flex; */
+            /* justify-content: center; */
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .play_item img {
+            /* position: absolute; */
+            width: 1240px;
+            border-radius: 20px;
+            /* margin-left: 6%; */
+            /* border: 1px solid black; */
+            height: 500px;
+            /* background-color: rgb(132, 0, 255); */
+            object-fit: cover;
+            /* flex-shrink: 0; */
+        }
+
+        #map {
+            /* position: absolute; */
+            width: 1100px;
+            border-radius: 20px;
+            /* margin-left: 6%; */
+            /* border: 1px solid black; */
+            height: 400px;
+            /* background-color: rgb(132, 0, 255); */
+            /* object-fit: cover; */
+            /* flex-shrink: 0; */
+            border: 1px solid #4747478f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 20px;
+            flex-wrap: wrap;
+
+        }
+
+    </style>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5a611be24364678ff335af8c83f5d896&libraries=services"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+        window.addEventListener("load", function () {
+            let html = '';
+            let address = '';
+            let title = '';
+            let titleSub = '';
+            let info = '';
+            let desc = '';
+
+            let html_play = '';
+
+
+            $.ajax({
+                url: "ch_data.html",
+                dataType: 'html',
+                success: function (ch) {
+
+                    html += `<div class="wrap">`
+                    html += `<div class="div1">`
+                    html += `<div class="div1 area">`
+                    html += `<img class="area1"
+                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Location_icon.png?raw=true">`
+                    html += `<div class="area2">천안시</div>`
+                    html += `</div>`
+
+                    html += `<div class="div1 place"></div>`
+
+                    html += `<div class="best_play">`
+
+                    html += `<div class="play_item">`
+
+                    html += `</div>`
+
+                    html += `</div><br>`
+
+                    html += `<div class="div2">`
+                    html += `<span class="div2 img"><img
+                    src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/abd4804f1a43745a0ff936a8ba1c64227c0618d0/images/quotation_marks.png"></span>`
+                    html += `<span class="div2 title">text</span>`
+                    html += `<span class="div2 img"><img
+                    src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/7da459fdc0919fd19c1b2f1517354f19d0c0c86a/images/quotation_marks2.png"></span>`
+                    html += `<span class="div2 text"></span>`
+                    html += `</div>`
+
+
+
+
+
+                    html += `<div id="map"></div>`
+                    html += `</div>`
+
+                    html += `<div class="list">`
+
+                    html += `<ul class="ul4 info">`
+
+                    html += `</ul>`
+     
+                    html += `</div`
+                    html += `</div>`
+
+
+
+                    document.querySelector('#cs').innerHTML = html;
+
+
+                    let htmlDom = new DOMParser().parseFromString(ch, 'text/html');
+                    let tableDom = htmlDom.documentElement
+
+                    let arr_ch_play = tableDom.querySelectorAll(".ch_play")
+                    let arr_ch_play_img = tableDom.querySelectorAll(".ch_play .image")
+                    let arr_ch_play_title = tableDom.querySelectorAll(".ch_play .title")
+                    let arr_ch_play_address = tableDom.querySelectorAll(".ch_play .address")
+                    let arr_ch_play_info = tableDom.querySelectorAll(".ch_play .info")
+                    let arr_ch_play_desc = tableDom.querySelectorAll(".ch_play .desc")
+                    let arr_ch_play_tell = tableDom.querySelectorAll(".ch_play .tell")
+
+                    let div_title = document.querySelector('.place')
+                    let div_text = document.querySelector('.text')
+                    let div_title_sub = document.querySelector('.title')
+                    let div_info = document.querySelector('.info')
+                    let div_info1 = document.querySelector('.info1')
+                    // let div_tell = document.querySelector('.info')
+
+                    let ch_play_img;
+                    // console.log(ch_play_img)
+
+
+                    // for (let i = 0; i < arr_ch_play_img.length; i++) {
+                    //     // if(arr_ch_play[i] == arr_ch_play_img[i]){
+                    //     // console.log(arr_ch_play_img[i].innerHTML)
+                    //     // }
+                    // }
+
+
+
+                    console.log(title)
+                    for (let i = 0; i < arr_ch_play_img.length; i++) {
+
+                        ch_play_img = arr_ch_play_img[i];
+
+                        let ch_play_title = arr_ch_play_title[i].innerHTML
+                        let ch_play_address = arr_ch_play_address[i].innerHTML
+                        let ch_play_info = arr_ch_play_info[i].innerHTML
+                        let ch_play_desc = arr_ch_play_desc[i].innerHTML
+                        let ch_play_tell = arr_ch_play_tell[i].innerHTML
+
+                        if (i == 1) {
+                            title = ch_play_title;
+                            // console.log(title)
+                            address = ch_play_address;
+                            info = ch_play_info;
+                            desc = ch_play_desc;
+                            tell = ch_play_tell;
+                            console.log(address)
+                        }
+
+                        // console.log(ch_play_img)
+
+                        // 만약 title 값이 ch_play_title[배열] 값과 같다면 사진을 출력해라 if 문
+                        if (title == ch_play_title) {
+                            titleSub += '천안 맛집으로 소문난<br>'
+                            html_play += `<div class="play">${ch_play_img.innerHTML}</div>`
+
+                        }
+                        // for (let j = 0; j < ch_play_img.length; j++) {
+                        //     let imgs = ch_play_img[j]
+                        //     // console.log(imgs)
+                        //     html_play += `<div class="play">${imgs.outerHTML}</div>`
+                        // }
+
+
+                    }
+                    // console.log(ch_play_img)
+
+                    // document.querySelector(".div1").innerHTML = title
+                    document.querySelector('.play_item').innerHTML = html_play
+                    div_title.innerHTML = title
+                    div_text.innerHTML = desc
+                    div_title_sub.innerHTML = titleSub + title
+
+                    div_info.innerHTML += `<li>문의 및 안내 : ${tell}</li>`
+                    div_info.innerHTML += `<li>편의 정보 : ${info}</li><br>`
+                    div_info.innerHTML += `<li>주소 : ${address}</li>`
+
+
+
+                    play_slide();
+
+
+
+
+                    // map();
+                    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                        mapOption = {
+                            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                            level: 2 // 지도의 확대 레벨
+                        };
+
+                    // 지도를 생성합니다    
+                    var map = new kakao.maps.Map(mapContainer, mapOption);
+
+                    // 주소-좌표 변환 객체를 생성합니다
+                    var geocoder = new kakao.maps.services.Geocoder();
+
+                    // 주소로 좌표를 검색합니다
+
+                    geocoder.addressSearch(address, function (result, status) {
+
+
+                        // 정상적으로 검색이 완료됐으면 
+                        if (status === kakao.maps.services.Status.OK) {
+
+                            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                            // 결과값으로 받은 위치를 마커로 표시합니다
+                            var marker = new kakao.maps.Marker({
+                                map: map,
+                                position: coords
+                            });
+
+                            // 인포윈도우로 장소에 대한 설명을 표시합니다
+                            var infowindow = new kakao.maps.InfoWindow({
+                                content: `<div style="width:150px;text-align:center;padding:6px 0;">${title}</div>`
+                            });
+                            infowindow.open(map, marker);
+
+                            // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                            map.setCenter(coords);
+                        }
+                    });
+                }
+
+            });
+
+
+        });
+
+        let currentIndex = 1;
+        function play_slide() {
+            let slides = document.querySelector('.play_item')
+            let slideimg = document.querySelectorAll('.play').length;
+            // console.log(currentIndex)
+            if (currentIndex >= slideimg) {
+                currentIndex = 0;
+            }
+            setInterval(function () {
+                slides.style.transform = "translateX(-" + currentIndex * "1245" + "px)";
+                slides.style.transition = "transform 0.4s ease-in-out";
+                currentIndex++;
+                //  console.log(currentIndex)
+
+                if (currentIndex === slideimg + 1) {
+                    currentIndex = - 1;
+                }
+            }, 1500);
+        }
+
+
+    </script>
+
+
+</head>
+
+
+
+
+
+<body>
+    <div id="cs">
+    </div>
+
+    </div>
+</body>
+
+</html>
