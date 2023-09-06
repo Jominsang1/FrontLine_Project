@@ -7,6 +7,7 @@
     <script>
         window.addEventListener("load", function(){
             menu()
+            test()
         })
 
         let count = 0;
@@ -30,10 +31,109 @@
                     
             })
         }
+
+        function test(){
+            let xhr = new XMLHttpRequest();
+                    //초단기예보조회 30분 기준
+            let url = "./ch_data.html"
+            xhr.open("GET", url);
+            xhr.send();
+                
+            xhr.onload = function () {
+                let str = xhr.responseText
+                let parser = new DOMParser()
+                let data = parser.parseFromString(str, "text/html")
+
+                let ch = data.querySelectorAll(".ch_travel img")[11]
+
+                document.querySelector(".ch").prepend(ch)
+            }
+
+            let xhr2 = new XMLHttpRequest();
+            let url2 = "./Asan_trip.html"
+            xhr2.open("GET", url2);
+            xhr2.send();
+            xhr2.onload = function () {
+                let str = xhr2.responseText
+                let parser = new DOMParser()
+                let data = parser.parseFromString(str, "text/html")
+
+                let as = data.querySelectorAll(".asan_trip_info img")[5]
+
+                document.querySelector(".as").prepend(as)
+            }
+
+            let xhr3 = new XMLHttpRequest();
+            let url3 = "./tsd.html"
+            xhr3.open("GET", url3);
+            xhr3.send();
+            xhr3.onload = function () {
+                let str = xhr3.responseText
+                let parser = new DOMParser()
+                let data = parser.parseFromString(str, "text/html")
+
+                console.log(data)
+
+                let tsd = data.querySelectorAll(".taean_travel img")[0]
+
+                document.querySelector(".tsd").prepend(tsd)
+            }
+
+            let xhr4 = new XMLHttpRequest();
+            let url4 = "./yhc.html"
+            xhr4.open("GET", url4);
+            xhr4.send();
+            xhr4.onload = function () {
+                let str = xhr4.responseText
+                let parser = new DOMParser()
+                let data = parser.parseFromString(str, "text/html")
+
+                console.log(data)
+
+                let yhc = data.querySelectorAll(".yesan_travel img")[0]
+
+                document.querySelector(".yhc").prepend(yhc)
+            }
+
+            let xhr5 = new XMLHttpRequest();
+            let url5 = "./BoBuSeo_trip.html"
+            xhr5.open("GET", url5);
+            xhr5.send();
+            xhr5.onload = function () {
+                let str = xhr5.responseText
+                let parser = new DOMParser()
+                let data = parser.parseFromString(str, "text/html")
+
+                console.log(data)
+
+                let bbs = data.querySelectorAll("img")[4]
+
+                document.querySelector(".bbs").prepend(bbs)
+            }
+
+            let xhr6 = new XMLHttpRequest();
+            let url6 = "./data.html"
+            xhr6.open("GET", url6);
+            xhr6.send();
+            xhr6.onload = function () {
+                let str = xhr6.responseText
+                let parser = new DOMParser()
+                let data = parser.parseFromString(str, "text/html")
+
+                console.log(data)
+
+                let gss = data.querySelectorAll("img")[0]
+
+                document.querySelector(".gss").prepend(gss)
+            }
+        }
     </script>
      <style>
         /* 헤더 */
-
+        main {
+            background-color: red;
+            height: 1000px;
+        }
         div {
             /* border: 1px solid red; */
         }
@@ -46,8 +146,12 @@
         }
 
         ul {
-            padding-top: 15px;
             list-style: none;
+            padding: 0;
+        }
+
+        .menu_wrap, .menu_wrap ul {
+            padding-top: 15px;
         }
 
         .menu{
@@ -62,7 +166,8 @@
             /* border: 1px solid black; */
             background-color: white;
             box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
-            border-radius: 30px;
+
+            border: 30px;
             width: 20%;
             height: 25%;
 
@@ -76,52 +181,99 @@
             margin: 20px;
         }
 
-        .menu_logo img {
+        .header_logo img {
             margin-top: 20px;
         }
-        .menu_img {
+        .header_img {
             cursor: pointer;
         }
 
-        .menu_input {
-            display: flex;
-            justify-content: center;
-            width: 70vh;
+        .header_input {
+            /* border: 1px solid red; */
+            
+            width: 50%;
         }
 
-        .menu_input input {
+        .input_wrap {
+            width: 100%;
+        }
+
+        .input_list li {
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .input_list img {
+            width: 50px;
+            height: 50px;
+
+            border-radius: 50%;
+        }
+
+        .input {
             background-image: url("./images/Magnifier_2.png");
             background-repeat: no-repeat;
             background-size: 50px;
 
             background-color: white;
-            border-radius: 30px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+            /* border-radius: 30px; */
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
             
+            /* border: 1px solid red; */
             border: none;
             outline: none;
             
-            width: 80%;
+            width: 100%;
             height: 50px;
             margin-top: 20px;
+            padding: 0;
 
             font-size: 20px;
 
             text-align:center
         }
+
+        .input_list {
+            /* display: none; */
+            position: relative;
+
+            background-color: white;
+            width: 100%;
+
+            /* border: 1px solid red; */
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+
+            
+        }
+        
     </style>
 </head>
 <body>
     <header>
-        <div class="menu_logo">
+        <div class="header_logo">
             <a href="./main.html"><img src="./images/logo_main.png"></a>
         </div>
-        <div class="menu_input">
-            <input type="text" placeholder="어디로 갈까U?">
+        <div class ="header_input">
+            <ul class = "input_wrap">
+                <li ><input class="input" type="text" placeholder="어디로 갈까U?"></li>
+                <ul class="input_list">
+                    <li class="ch">천안</li>
+                    <li class="as">아산</li>
+                    <li class="tsd">태안, 서산, 당진</li>
+                    <li class="yhc">예산, 홍성, 청양</li>
+                    <li class="bbs">보령, 부여, 서천</li>
+                    <li class="gss">공주, 논산, 금산</li>
+                </ul>
+            </ul>
+            
         </div>
         <div>
-            <ul>
-                <li class="button"><img class="menu_img" src="./images/세줄로고.png"></li>
+            <ul class="menu_wrap">
+                <li class="button"><img class="header_img" src="./images/세줄로고.png"></li>
                 <ul class="menu">
                     <li class="menu_login"><a href="./login.html">로그인</a></li>
                     <li class="menu_join"><a href="./join.html">회원가입</a></li>
@@ -132,7 +284,7 @@
         </div>
     </header>
     <main>
-
+        
     </main>
 </body>
 </html>

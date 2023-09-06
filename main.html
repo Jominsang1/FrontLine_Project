@@ -143,39 +143,40 @@
             for(let i = 0; i<result.length; i++){
                 let input_xy = result[i][1];
                 let xhr = new XMLHttpRequest();
-                //초단기예보조회 30분 기준
+                    //초단기예보조회 30분 기준
                 let url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey=ZVVKvZ%2F9XZ0XNbYrTeRqtelsi5YnTmeE0eXfkBXt319boYdmGKbF0L712MaVdYhwHBb5%2BV0Ic%2BrRwxIVuIBwYQ%3D%3D&dataType=JSON&numOfRows=1000&pageNo=1&base_date='+year.toString()+month+date+'&base_time='+(input_hours).toString()+'30'+'&'+input_xy+''
                 xhr.open("GET", url);
                 xhr.send();
+                
                 xhr.onload = function () {
-                let data = JSON.parse(xhr.responseText)
-                // console.log(xhr.responseText)
-                console.log(data)
-                //for문 돌려서 배열 data값 일치할때만 출력
+                    let data = JSON.parse(xhr.responseText)
+                    // console.log(xhr.responseText)
+                    console.log(data)
+                    //for문 돌려서 배열 data값 일치할때만 출력
 
-                let item = data.response.body.items.item
+                    let item = data.response.body.items.item
 
-                for(let j = 0; j<item.length; j++){
+                    for(let j = 0; j<item.length; j++){
 
-                    // console.log(item[j])
-                    if(item[j].fcstTime == check_hours+"00"){
-                        // console.log(item[j].category, item[j].fcstValue)
-                        if(item[j].category == "PTY"){
-                            result[i][2] = item[j].fcstValue
-                        }
-                        if(item[j].category == "SKY"){
-                            result[i][3] = item[j].fcstValue
-                        }
-                        if(item[j].category == "T1H"){
-                            result[i][4] = item[j].fcstValue
-                        }
-                        if(item[j].category == "REH"){
-                            result[i][5] = item[j].fcstValue
+                        // console.log(item[j])
+                        if(item[j].fcstTime == check_hours+"00"){
+                            // console.log(item[j].category, item[j].fcstValue)
+                            if(item[j].category == "PTY"){
+                                result[i][2] = item[j].fcstValue
+                            }
+                            if(item[j].category == "SKY"){
+                                result[i][3] = item[j].fcstValue
+                            }
+                            if(item[j].category == "T1H"){
+                                result[i][4] = item[j].fcstValue
+                            }
+                            if(item[j].category == "REH"){
+                                result[i][5] = item[j].fcstValue
+                            }
                         }
                     }
                 }
             }
-        }
         
         function hover(){
             let 천안 = document.querySelector(".천안")
