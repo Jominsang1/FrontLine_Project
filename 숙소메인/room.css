@@ -1,0 +1,23 @@
+.room_logo {
+    text-align: center;
+}
+
+.room {
+    display: inline-block;
+    margin: 80px 70px 80px 70px;
+    cursor: pointer;
+}
+
+.room_text{
+    margin-top: 20px;
+}
+
+.room_main {
+    text-align: center;
+    padding: 0px 10px 0px 10px;
+}
+
+.room_main_img img {
+    cursor: pointer;
+    width: 100%;
+}
