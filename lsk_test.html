@@ -6,35 +6,14 @@
     <title>Document</title>
     <script>
         window.addEventListener("load", function(){
+            image()
             menu()
-            test()
+            pop()
         })
 
-        let count = 0;
-
-        function menu(){
-            document.querySelector(".button").addEventListener("click",function(){
-                console.log("click")
-
-                let menu = document.querySelector(".menu")
-
-                console.log(menu)
-
-                if(count == 0){
-                    menu.style.display = "block"
-                    count = 1;
-                } else {
-                    menu.style.display = "none"
-                    count = 0;
-                }
-                
-                    
-            })
-        }
-
-        function test(){
+        function image(){
+            // 순서대로 천안부터 금산까지 이미지 불러오기
             let xhr = new XMLHttpRequest();
-                    //초단기예보조회 30분 기준
             let url = "./ch_data.html"
             xhr.open("GET", url);
             xhr.send();
@@ -127,6 +106,82 @@
                 document.querySelector(".gss").prepend(gss)
             }
         }
+
+        function menu(){
+            // 카운트값 이용해서 마우스 위치 파악해서 메뉴팝업
+            let pop_count = 0;
+            let count = 0;
+            let menu_img = document.querySelector(".header_img")
+            let menu_list = document.querySelector(".menu")
+            let display = document.querySelector("body")
+
+            menu_img.addEventListener("click", function(){
+                if(count == 0){
+                    menu_list.style.display = "block"
+                    count = 1;
+                } else {
+                    menu_list.style.display = "none"
+                    count = 0;
+                }
+            })
+
+            menu_img.addEventListener("mouseover", function(){
+                pop_count = 1;
+            })
+
+            menu_img.addEventListener("mouseout", function(){
+                pop_count = 0;
+            })
+
+            menu_list.addEventListener("mouseover", function(){
+                pop_count = 1;
+            })
+
+            menu_list.addEventListener("mouseout", function(){
+                pop_count = 0;
+            })
+
+            display.addEventListener("click", function(){
+                if(pop_count == 0){
+                    menu_list.style.display = "none"
+                    count = 0;
+                }
+            })
+        }
+
+        function pop(){
+            // 카운트값 이용해서 마우스 위치 파악해서 메뉴팝업
+            let pop_count = 0;
+            let target = document.querySelector(".input_wrap")
+            let display = document.querySelector("body")
+            let input = document.querySelector(".input")
+
+            target.addEventListener("mouseover", function(){
+                pop_count = 1;
+            })
+            target.addEventListener("mouseout", function(){
+                pop_count = 0;
+            })
+
+            display.addEventListener("click", function(){
+                if(pop_count == 0){
+                    let input = document.querySelector(".input")
+                    input.style.borderBottomRightRadius = "30px"
+                    input.style.borderBottomLeftRadius = "30px"
+                    document.querySelector(".input_list").style.display = "none"
+                }
+            })
+
+            input.addEventListener("click", function(){
+                if(pop_count == 1){
+                    input.style.borderBottomRightRadius = "0"
+                    input.style.borderBottomLeftRadius = "0"
+                    document.querySelector(".input_list").style.display = "block"
+                }
+            })
+        }
+
+        
     </script>
      <style>
         /* 헤더 */
@@ -216,9 +271,10 @@
             background-size: 50px;
 
             background-color: white;
-            /* border-radius: 30px; */
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
             box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
             
             /* border: 1px solid red; */
@@ -227,7 +283,7 @@
             
             width: 100%;
             height: 50px;
-            margin-top: 20px;
+            margin-top: 10px;
             padding: 0;
 
             font-size: 20px;
@@ -236,7 +292,7 @@
         }
 
         .input_list {
-            /* display: none; */
+            display: none;
             position: relative;
 
             background-color: white;
