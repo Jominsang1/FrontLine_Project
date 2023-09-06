@@ -1,0 +1,89 @@
+.main{
+    margin: 0 auto;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.map_logo {
+    line-height: 30px;
+    width: 20px;
+}
+
+.map_title{
+    font-weight: bold;
+    margin: 0px 0px 0px 10px;
+}
+
+.header_text {
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.items {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.itemss {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    flex-shrink: 0;
+    margin: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.item img {
+    width: 550px;
+    height: 250px;
+    object-fit: cover;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+}
+
+.btns #btn1 {
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: -5px;
+    background-image: url("https://github.com/Jominsang1/FrontLine_Project/blob/main/images/arrow_left.png?raw=true");
+    background-size: cover;
+
+}
+
+.btns #btn2 {
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    width: 20px;
+    height: 20px;
+    margin-left: -5px;
+    background-image: url("https://github.com/Jominsang1/FrontLine_Project/blob/main/images/arrow_right.png?raw=true");
+    background-size: cover;
+
+}
+
+#count {
+    width: 100px;
+    height: 20px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
