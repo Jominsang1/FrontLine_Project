@@ -14,32 +14,36 @@
         }
 
         .searchbox {
-            width: 40%;
-            margin: 10px auto;
-            position: relative;
+
+            margin: auto;
+           
         }
 
         .header_dh {
+            margin: auto;
+            width: 100%;
+            height: 100px;
             background: #ECDFBF;
             overflow: hidden;
-            padding: 20px;
+            padding: 0;
             text-align: center;
-            z-index: 1;
+            
         }
 
 
 
         #value {
+            
             margin: auto;
             border: none;
             background: #ffffff;
             padding: 6px;
             font-size: 18px;
-            width: 76%;
+            width: 30%;
             border-radius: 6px;
             color: rgb(0, 0, 0);
-            box-shadow: 2px 2px 2px 2px #E0D3B699;
-            z-index: 2;
+            box-shadow: 2px 2px 2px #E0D3B699;
+           
 
         }
 
@@ -48,16 +52,19 @@
         }
 
         .container {
+            position: absolute;
+            top: 50;
+            left: 34.5%;
             border: none;
-            width: 74%;
+            width: 29.4%;
             margin: auto;
             padding: 10px;
             background: #ffffff;
             border-radius: 10px;
-            box-shadow: 2px 2px 2px 2px #E0D3B699;
-            z-index: 3;
+            box-shadow: 2px 2px 2px #E0D3B699;
+            
 
-            margin-top: -10px;
+            margin-top: -4px;
 
 
         }
@@ -198,8 +205,9 @@
             event.stopPropagation();
             // div 요소를 보이게 설정합니다.
             atag.style.display = 'block';
-            click.style.borderRadius = '0';
-            click.style.boxShadow = 'none';
+            atag.style.borderRadius ='0px 0px 10px 10px';
+            
+          
 
         });
         // 문서의 어느 곳이든 클릭할 때 이벤트 처리
