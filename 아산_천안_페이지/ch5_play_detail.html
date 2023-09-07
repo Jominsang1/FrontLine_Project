@@ -7,6 +7,67 @@
     <title>Document</title>
 
     <style>
+        .findWay {
+            background: #3D4C53;
+            margin: 20px auto;
+            width: 200px;
+            height: 50px;
+            overflow: hidden;
+            text-align: center;
+            transition: .2s;
+            cursor: pointer;
+            border-radius: 3px;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
+        }
+
+        .btnTwo {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            margin-top: -100px;
+            padding-top: 2px;
+            background: #5498FF;
+            left: -250px;
+            transition: .3s;
+        }
+
+        .btnText {
+            color: white;
+            transition: .3s;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 16px;
+        }
+
+        .btnText2 {
+            margin-top: 60px;
+            margin-right: -130px;
+            color: #FFF;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 16px;
+        }
+
+        .findWay:hover .btnTwo {
+            /*When hovering over .button change .btnTwo*/
+            left: -130px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 16px;
+        }
+
+        .findWay:hover .btnText {
+            /*When hovering over .button change .btnText*/
+            margin-left: 65px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 16px;
+        }
+
+        .findWay:active {
+            /*Clicked and held*/
+            box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 16px;
+        }
+
+
         /* /////////////남주님 css///////////// */
         @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
@@ -159,15 +220,16 @@
             margin-right: 30px;
         }
 
-        .ul{
+        .ul {
             list-style: none;
             /* display: flex;
             justify-content: space-between; */
         }
+
         li {
             float: left;
             margin-left: 8%;
-        } 
+        }
 
 
 
@@ -204,7 +266,7 @@
             /* text-align: center; */
             overflow: hidden;
             /* margin-left: 14%; */
-            
+
 
         }
 
@@ -217,7 +279,7 @@
             height: 500px;
             cursor: pointer;
             /* text-align: center; */
-            
+
         }
 
         .play_item {
@@ -278,7 +340,6 @@
             flex-wrap: wrap;
 
         }
-
     </style>
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5a611be24364678ff335af8c83f5d896&libraries=services"></script>
@@ -288,6 +349,7 @@
         window.addEventListener("load", function () {
             let html = '';
             let address = '';
+            let address1 = "휴먼교육센터";
             let title = '';
             let titleSub = '';
             let info = '';
@@ -330,6 +392,12 @@
 
 
 
+                    html += ` <div class="findWay">`
+                    html += `<p class="btnText">READY?</p>`
+                    html += `<div class="btnTwo">`
+                    html += ` <p class="btnText2">GO!</p>`
+                    html += ` </div>`
+                    html += `</div>`
 
 
                     html += `<div id="map"></div>`
@@ -340,7 +408,7 @@
                     html += `<ul class="ul4 info">`
 
                     html += `</ul>`
-     
+
                     html += `</div`
                     html += `</div>`
 
@@ -445,6 +513,26 @@
                     // 지도를 생성합니다    
                     var map = new kakao.maps.Map(mapContainer, mapOption);
 
+                    if (navigator.geolocation) {
+
+                        // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+                        navigator.geolocation.getCurrentPosition(function (position) {
+
+                            var lat = position.coords.latitude, // 위도
+                                lon = position.coords.longitude; // 경도
+
+                            var locPosition = new kakao.maps.LatLng(lat, lon) // geolocation으로 얻어온 좌표
+                            presentPosition = locPosition;
+
+                            map.setCenter(locPosition);
+
+                        });
+
+                    } else { // HTML5의 GeoLocation을 사용할 수 없을때 
+
+                        var locPosition = new kakao.maps.LatLng(37.566826, 126.9786567)
+                        alert('현재 위치를 찾을 수 없습니다!');
+                    }
                     // 주소-좌표 변환 객체를 생성합니다
                     var geocoder = new kakao.maps.services.Geocoder();
 
@@ -473,6 +561,10 @@
                             // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
                             map.setCenter(coords);
                         }
+                        let find = document.querySelector('.findWay')
+                        find.addEventListener('click', function () {
+                            location.href = "https://map.kakao.com/?sName=" + address1 + "&eName=" + address
+                        })
                     });
                 }
 

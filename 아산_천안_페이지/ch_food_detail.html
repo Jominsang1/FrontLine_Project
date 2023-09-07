@@ -7,6 +7,75 @@
     <title>Document</title>
 
     <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:700);
+
+        .findWay {
+            background: #3D4C53;
+            margin: 20px auto;
+            width: 200px;
+            height: 50px;
+            overflow: hidden;
+            text-align: center;
+            transition: .2s;
+            cursor: pointer;
+            border-radius: 3px;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
+        }
+
+        .btnTwo {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            margin-top: -100px;
+            padding-top: 2px;
+            background: #5498FF;
+            left: -250px;
+            transition: .3s;
+        }
+
+        .btnText {
+            color: white;
+            transition: .3s;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 16px;
+        }
+
+        .btnText2 {
+            margin-top: 60px;
+            margin-right: -130px;
+            color: #FFF;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 16px;
+        }
+
+        .findWay:hover .btnTwo {
+            /*When hovering over .button change .btnTwo*/
+            left: -130px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 16px;
+        }
+
+        .findWay:hover .btnText {
+            /*When hovering over .button change .btnText*/
+            margin-left: 65px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 16px;
+        }
+
+        .findWay:active {
+            /*Clicked and held*/
+            box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 16px;
+        }
+
+
+
+
+
+
+
+
         /* /////////////남주님 css///////////// */
         @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
@@ -165,7 +234,8 @@
             justify-content: space-between; */
         }
 
-        li {
+        li4 {
+            display: list-item;
             float: left;
             margin-left: 8%;
         }
@@ -178,6 +248,7 @@
         #cs {
             max-width: 1280px;
             margin: auto;
+            height: 100%;
         }
 
         .wrap {
@@ -334,6 +405,36 @@
         .bt {
             margin-right: 30px;
         }
+
+        li {
+            list-style-image: url("https://github.com/Jominsang1/FrontLine_Project/blob/main/images/User_icon.png?raw=true");
+            margin-left: 3%;
+            margin-top: 3%;
+        }
+
+        #submit-comment {
+            width: 60px;
+            height: 35px;
+            border-radius: 20px;
+            border: none;
+            background-color: #5498FF;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .reply,
+        .delete {
+            margin-left: 2%;
+            width: 100px;
+            height: 35px;
+            border-radius: 20px;
+            border: none;
+            background-color: #5498FF;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5a611be24364678ff335af8c83f5d896&libraries=services"></script>
@@ -343,6 +444,8 @@
         window.addEventListener("load", function () {
             let html = '';
             let address = '';
+
+            let address1 = "휴먼교육센터";
             let title = '';
             let titleSub = '';
             let info = '';
@@ -386,6 +489,12 @@
 
 
 
+                    html += ` <div class="findWay">`
+                    html += `<p class="btnText">READY?</p>`
+                    html += `<div class="btnTwo">`
+                    html += ` <p class="btnText2">GO!</p>`
+                    html += ` </div>`
+                    html += `</div>`
 
                     html += `<div id="map"></div>`
                     html += `</div>`
@@ -406,7 +515,7 @@
                 리뷰<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/pencil-light.png?raw=true">`
                     html += `</div>`
                     html += ` <div class="div5 bt">`
-                    html += `   <input type="button" value="등록">`
+                    html += `   <input id="submit-comment" type="button" value="등록">`
                     html += `  </div>`
                     html += ` </div>`
 
@@ -415,28 +524,32 @@
                     html += ` </div>`
 
                     html += ` <div class="comments_section">`
-                    html += `   <input type="text" placeholder="소중한 댓글을 남겨주세요"
+                    html += `   <input id="comment-input" type="text" placeholder="소중한 댓글을 남겨주세요"
                     style = "width:1820px; height:142px; border-color: #474747; margin:20px;" >`
                     html += ` </div>`
 
-                    html += ` <div class="review_list">`
-                    html += ` <div class="div6">`
-                    html += ` <span class="duv6 bundle">`
-                    html += ` <span class="div6 left">`
-                    // html += ` <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true">`
-                    html += `  <span class="div6 user_number"></span>`
-                    html += ` </span>`
-                    html += ` <span class="div6 right">`
-                    html += `   <input id="x1" type="button" value="삭제">`
-                    html += ` </span>`
-                    html += ` </span>`
-                    html += ` <div class="comments"></div>`
-                    html += `</div>`
-                    html += ` </div>`
+                    // html += ` <div class="review_list">`
+                    // html += ` <div class="div6">`
 
 
-                    html += ` <span class="div7">`
-                    html += ` <input type="button" value="더보기">`
+                    html += ` <ul id="comment-list"></ul>`
+
+
+                    // html += ` <span class="div6 left">`
+                    // // html += ` <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true">`
+                    // html += `  <span class="div6 user_number"></span>`
+                    // html += ` </span>`
+                    // html += ` <span class="div6 right">`
+                    // html += `   <input id="x1" type="button" value="삭제">`
+                    // html += ` </span>`
+                    // html += ` </span>`
+                    // html += ` <div class="comments"></div>`
+                    // html += `</div>`
+                    // html += ` </div>`
+
+
+                    // html += ` <span class="div7">`
+                    // html += ` <input type="button" value="더보기">`
 
 
 
@@ -519,15 +632,84 @@
                     div_text.innerHTML = desc
                     div_title_sub.innerHTML = titleSub + title
 
-                    div_info.innerHTML += `<li>문의 및 안내 : ${tell}</li>`
-                    div_info.innerHTML += `<li>편의 정보 : ${info}</li><br>`
-                    div_info.innerHTML += `<li>주소 : ${address}</li>`
+                    div_info.innerHTML += `<li4>문의 및 안내 : ${tell}</li4>`
+                    div_info.innerHTML += `<li4>편의 정보 : ${info}</li4><br>`
+                    div_info.innerHTML += `<li4>주소 : ${address}</li4>`
 
 
 
                     food_slide();
-                    comment();
+                    // comment();
 
+
+                    let comment_li = document.getElementById("comment-list");
+                    let comment_ipt = document.getElementById("comment-input");
+                    let submit_btn = document.getElementById("submit-comment");
+
+
+                    // 댓글 버튼 등록
+                    submit_btn.addEventListener("click", function () {
+                        // 댓글 인풋창 값 문자열을 좌우 공백 제거하고 comment_txt 변수에 집어넣어라
+                        let comment_txt = comment_ipt.value.trim();
+                        let hr_line = document.createElement("hr")
+
+                        // console.log(hr_line)
+                        // 만약 입력값이 있다면 commentItem 에 newComment(전달인자) 메소드 실행
+                        // List태그 형식이면 자연스럽게 들어쓰기가 가능하기떄문에 깔끔쓰
+                        if (comment_txt !== "") {
+                            let commentItem = newCommnet(comment_txt);
+                            // <ul>태그에 appendChild 로 CommentItem 에 들어가있는 들어쓰기 메소드값이 적용
+                            comment_li.appendChild(commentItem);
+                            comment_li.appendChild(hr_line)
+                            comment_ipt.value = "";
+
+                            // 만약 입력값이 없으면 alert 발생
+                        } else {
+                            alert("내용을 입력해주세요")
+                        }
+                    });
+
+                    // 대댓글 생성
+
+                    let count = 0;
+                    function newCommnet(text) {
+                        // li 태그 생성자
+                        let li = document.createElement("li");
+                        li.setAttribute('class', 'cmt_list')
+                        // 생성 후 text 입력값 넣기
+                        li.textContent = text;
+
+                        // 답글,삭제 버튼 요소 생성
+                        let reply_btn = document.createElement("button");
+                        let delete_btn = document.createElement("button");
+
+                        delete_btn.setAttribute('class', 'delete');
+                        delete_btn.textContent = "삭제";
+                        reply_btn.setAttribute('class', 'reply');
+                        reply_btn.textContent = "답글 작성";
+
+                        reply_btn.addEventListener("click", function () {
+                            let reply = prompt("답글을 입력하세요:");
+                            if (reply == "") {
+                                alert("대댓글 내용을 입력해주세요")
+                            } else {
+                                let replyItem = newCommnet(reply);
+                                li.appendChild(replyItem);
+                            }
+                        });
+                        let list = document.querySelectorAll('.cmt_list');
+                        console.log(list)
+                        for (let i = 0; i < list.length+1; i++) {
+                            delete_btn.addEventListener("click", function () {
+                                li.remove();
+                            })
+                        }
+
+                        li.appendChild(reply_btn);
+                        li.appendChild(delete_btn);
+                        return li;
+
+                    }
 
 
 
@@ -541,10 +723,31 @@
                     // 지도를 생성합니다    
                     var map = new kakao.maps.Map(mapContainer, mapOption);
 
-                    // 주소-좌표 변환 객체를 생성합니다
+                    if (navigator.geolocation) {
+
+
+                        navigator.geolocation.getCurrentPosition(function (position) {
+
+                            var lat = position.coords.latitude,
+                                lon = position.coords.longitude;
+
+                            var locPosition = new kakao.maps.LatLng(lat, lon)
+                            presentPosition = locPosition;
+
+                            map.setCenter(locPosition);
+                            console.log(lat, lon)
+                        });
+
+                    } else {
+
+                        var locPosition = new kakao.maps.LatLng(37.566826, 126.9786567)
+                        alert('현재 위치를 찾을 수 없습니다!');
+                    }
+
+
+
                     var geocoder = new kakao.maps.services.Geocoder();
 
-                    // 주소로 좌표를 검색합니다
 
                     geocoder.addressSearch(address, function (result, status) {
 
@@ -569,6 +772,11 @@
                             // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
                             map.setCenter(coords);
                         }
+
+                        let find = document.querySelector('.findWay')
+                        find.addEventListener('click', function () {
+                            location.href = "https://map.kakao.com/?sName=" + address1 + "&eName=" + address
+                        })
                     });
                 }
 
@@ -597,48 +805,51 @@
             }, 1500);
         }
 
-        function comment() {
-            // 텍스트에 입력한 글자가 밑에 뜨도록
-
-            let count = 0;
-
-            document.querySelector(".bt").addEventListener("click", function () {
-                count++
-
-                let text = document.querySelector("[type=text]").value
-
-                let text_info = document.querySelector("[type=text]")
-
-                let result = document.querySelector(".comments")
-
-                let input = document.createElement("div")
-
-                input.innerHTML = "<span class='duv6 bundle'><span class='div6 left'><img src='https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true'><span class='div6 user_number'>익명1234</span></span><span class='div6 right'> <input id = 'x1' type='button' value='삭제'></span></span><div class='comments'> " + text + " </div>"
-
-                document.querySelector(".review_list").prepend(input)
-
-                text_info.value = "";
-
-                if (document.querySelector("#x1") !== null) {
-
-                    let x = document.querySelectorAll("#x1")
-
-                    for (let i = 0; i < x.length; i++) {
-
-                        x[i].addEventListener("click", function () {
-
-                            console.log(" x button click")
-                            this.parentNode.parentNode.parentNode.remove();
-
-                        })
-                    }
-                }
-
-                // console.log(text_info.value)
 
 
-            })
-        }
+
+        // function comment() {
+        //     // 텍스트에 입력한 글자가 밑에 뜨도록
+
+        //     let count = 0;
+
+        //     document.querySelector(".bt").addEventListener("click", function () {
+        //         count++
+
+        //         let text = document.querySelector("[type=text]").value
+
+        //         let text_info = document.querySelector("[type=text]")
+
+        //         let result = document.querySelector(".comments")
+
+        //         let input = document.createElement("div")
+
+        //         input.innerHTML = "<span class='duv6 bundle'><span class='div6 left'><img src='https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true'><span class='div6 user_number'>익명1234</span></span><span class='div6 right'> <input id = 'x1' type='button' value='삭제'></span></span><div class='comments'> " + text + " </div>"
+
+        //         document.querySelector(".review_list").prepend(input)
+
+        //         text_info.value = "";
+
+        //         if (document.querySelector("#x1") !== null) {
+
+        //             let x = document.querySelectorAll("#x1")
+
+        //             for (let i = 0; i < x.length; i++) {
+
+        //                 x[i].addEventListener("click", function () {
+
+        //                     console.log(" x button click")
+        //                     this.parentNode.parentNode.parentNode.remove();
+
+        //                 })
+        //             }
+        //         }
+
+        //         // console.log(text_info.value)
+
+
+        //     })
+        // }
 
     </script>
 

@@ -50,7 +50,7 @@
 
         .wrap {
             max-width: 1240px;
-            margin: auto;
+            margin: 0 auto;
             /* align-items: center; */
 
             /* margin-left: 4px; */
@@ -329,54 +329,6 @@
 
         }
 
-        /* .btn {
-            flex: 1 1 auto;
-            margin: 10px;
-            padding: 30px;
-            text-align: center;
-            text-transform: uppercase;
-            transition: 0.5s;
-            background-size: 200% auto;
-            color: white;
-            font-size: 18px;
-            text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-            box-shadow: 0 0 20px #eee;
-            border-radius: 10px;
-            width: 100px;
-            text-decoration: none;
-        } */
-
-
-/* 
-        .btn:hover {
-            background-position: right center;
-            
-        } */
-/* 
-        .location0 {
-            background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
-        }
-
-        .location1 {
-            background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
-        }
-
-        .location2 {
-            background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
-        }
-
-        .location3 {
-            background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
-        }
-
-        .location4 {
-            background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
-        }
-
-        .location5 {
-            background-image: linear-gradient(to right, #ffd396 0%, #ff8f69 51%, #7fff17 100%);
-        } */
-
         .item_more {
             text-decoration-line: none;
             float: right;
@@ -406,11 +358,173 @@
         .select_place_list img {
             cursor: pointer;
             width: 180px;
-           
+
 
         }
-        .select_place_list img:hover{
+
+        .select_place_list img:hover {
             transform: scale(1.2);
+        }
+
+
+        /* footer */
+
+        /* @import url("/css/reset.css"); */
+
+
+        footer {
+            margin-top: 50px;
+            font-family: 'Noto Sans KR', sans-serif;
+            /* font-family: 'Roboto', sans-serif; */
+            /* font-weight: 400; */
+            color: #FFFFFF;
+            font-size: 25px;
+            line-height: 34.05px;
+
+        }
+
+        .footer_div {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            /* border: solid 1px red; */
+        }
+
+
+        footer {
+            position: relative;
+            top: 100%;
+
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 230px;
+            background-color: #474747;
+        }
+
+        .textdiv {
+            display: inline-block;
+            padding-top: 30px;
+            /* padding-left: 30px; */
+            margin-left: 40px;
+        }
+
+        .icondiv {
+            /* display: flex;
+    justify-content: flex-end;
+    display: inline-block; */
+            padding-top: 30px;
+            margin-right: 40px;
+        }
+
+
+
+        .number {
+            font-size: 35px;
+            /* font-weight: 600; */
+            text-align: right;
+            /* margin-right: 34px; */
+            margin-right: 25px;
+            /* margin-bottom:30px; */
+            margin-top: -35px;
+        }
+
+        .rightText {
+            text-align: right;
+            /* font-weight: 600; */
+            /* margin-right: 34px; */
+            /* vertical-align: top; */
+            margin-right: 25px;
+            margin-bottom: 20px;
+            margin-top: -30px;
+        }
+
+        .footer_top {
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid white;
+            /* border-bottom: 1px solid white; */
+
+        }
+
+        .footer_bottom {
+            /* height: 500px; */
+            /* border: 1px solid red; */
+            padding: 0px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .text_footer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .logo_footer {
+            margin-left: 40px;
+            margin-top: -15px;
+        }
+
+        .footer {
+            height: 10px;
+            /* background-color: red; */
+            /*내용 높이입니다 */
+        }
+
+
+        /* header */
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #ffffff;
+            height: 100px;
+        }
+
+        .header_logo {
+            /* position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); */
+            /* margin-left: 50px;  */
+            width: 150px;
+            margin: 30px 10px 30px 50px;
+            cursor: pointer;
+        }
+
+        .search {
+            line-height: 100px;
+            position: relative;
+        }
+
+        .search input {
+            height: 40px;
+            width: 500px;
+            border: none;
+            padding-inline-start: 45px;
+            border-radius: 30px;
+            font-size: inherit;
+            box-shadow: 3px 2px 5px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .search img {
+            position: absolute;
+            width: 25px;
+            left: 15px;
+            top: 40px
+        }
+
+        .header_threeline {
+            width: 50px;
+            height: 35px;
+            margin: 35px 50px 35px 10px;
+            cursor: pointer;
+        }
+
+        .header_line {
+            margin: 0;
+            height: 2px;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.1);
         }
     </style>
 
@@ -433,6 +547,27 @@
                 success: function (ch) {
 
                     html += `<div class="wrap">`
+
+                    html += `<header class="header">`
+                    html += ` <div>`
+                    html += ` <img class="header_logo"
+                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_main.png?raw=true">`
+                    html += ` </div>`
+
+                    html += ` <div class="search">`
+                    html += `  <input type="text" placeholder="travel" aria-expanded="false">`
+                    html += `  <img class="search_3"
+                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Magnifier_2.png?raw=true">`
+                    html += `</div>`
+
+                    html += ` <div>`
+                    html += `    <img class="header_threeline"
+                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/%EC%84%B8%EC%A4%84%EB%A1%9C%EA%B3%A0.png?raw=true">`
+                    html += ` </div>`
+                    html += ` </header>`
+                    html += ` <hr class="header_line">`
+
+
                     html += `<div class="best_travel">`
                     html += `<div class="weathers">`
                     html += `<div class="weather_img">`
@@ -532,8 +667,46 @@
                     html += `<div>`
 
                     html += `</div>`
+
+                    html += ` <footer>`
+                    html += ` <div class="footer_div footer_wrap">`
+                    html += `  <div class="footer_div footer_top">`
+                    html += `  <div class="footer_div textdiv">`
+                    html += `  <span>이용약관&nbsp;</span>|`
+                    html += ` <span>개인정보처리방침&nbsp;</span>|`
+                    html += ` <span>고객센터</span>`
+                    html += `  </div>`
+                    html += ` <div class="footer_div icondiv">`
+                    html += `                <span><img
+                                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Facebook.png?raw=true">&nbsp;&nbsp;</span>`
+                    html += `             <span><img
+                                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/YouTube.png?raw=true">&nbsp;&nbsp;</span>`
+                    html += ` <span><img
+                                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Instagram.png?raw=true"></span>`
+                    html += ` </div>`
+                    html += ` </div>`
+                    html += `<div class="footer_div line2"></div>`
+
+
+                    html += ` <div class="footer_div footer_bottom">`
+                    html += `    <div class="footer_div logo_footer">`
+                    html += `      <img id="logo"
+                                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/%EB%86%80%EC%95%84%EC%9C%A0_white.png?raw=true">`
+                    html += `  </div>`
+
+                    html += `  <div class="footer_div text_footer">`
+                    html += `     <div class="footer_div rightText">고객센터</div>`
+                    html += `     <div class="footer_div number">1313-1212</div>`
+                    html += `   </div>`
+
+                    html += ` </div>`
+                    html += `   </div>`
+
+                    html += ` </footer>`
+
                     html += `</div>`
 
+                    
 
                     document.querySelector('#cs').innerHTML = html;
 
@@ -644,10 +817,10 @@
                             if (i == 4) {
                                 location.href = "ch5_food_detail.html"
                             }
-                          
+
                         })
                     }
-                    
+
                     let plays = document.querySelectorAll('.play')
                     for (let i = 0; i < plays.length; i++) {
                         plays[i].addEventListener('click', function () {
@@ -667,7 +840,7 @@
                             if (i == 4) {
                                 location.href = "ch5_play_detail.html"
                             }
-                          
+
                         })
                     }
 
@@ -991,22 +1164,22 @@
             })
 
 
-            sel.addEventListener('click', function (){
+            sel.addEventListener('click', function () {
                 location.href = "./cheonAn_main.html"
             })
-            sel_2.addEventListener('click', function (){
+            sel_2.addEventListener('click', function () {
                 location.href = "./asan_main.html"
             })
-            sel_3.addEventListener('click', function (){
+            sel_3.addEventListener('click', function () {
                 location.href = "./cheonAn_main.html"
             })
-            sel_4.addEventListener('click', function (){
+            sel_4.addEventListener('click', function () {
                 location.href = "./cheonAn_main.html"
             })
-            sel_5.addEventListener('click', function (){
+            sel_5.addEventListener('click', function () {
                 location.href = "./cheonAn_main.html"
             })
-            sel_6.addEventListener('click', function (){
+            sel_6.addEventListener('click', function () {
                 location.href = "./cheonAn_main.html"
             })
 
