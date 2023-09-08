@@ -5,97 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-
         window.addEventListener("load",function(){
-            comment()
-            comment2();
+            input()
         })
 
-        let count = 0;
+        function input(){
+            let div = document.createElement("div")
+            let text = document.querySelector(".text")
 
-        function comment(){
-            let button = document.querySelector(".main .button")
-            let text = document.querySelector(".main .text")
-            let result = document.querySelector(".main .result")
-
-            button.addEventListener("click",function(){
-                // console.log("click")
-                let div = document.createElement("div")
-                let form = document.querySelector(".re_wrap").outerHTML
-                console.log("form", form)
-                
-                div.innerHTML = form
-                
-                div.firstChild.classList.remove("re_wrap")
-
-                console.log("div", div)
-                let data = text.value
-
-                div.querySelector(".result").innerHTML = data
-
-                div.classList.remove("count"+(Number(count)-1))
-                div.classList.add("count"+count)
-
-                result.append(div)
-
-                count += 1;
-            })
-        }
-
-        function comment2(){
-            let re_button = document.querySelectorAll(".result .re_button")
-
-            for (let i = 0; i<re_button.length; i++){
-                re_button[i].addEventListener("click",function(){
-                    console.log("re_button", re_button)
-                    let target = this.parentNode.parentNode.querySelector(".re_bottom")
-
-                    console.log("target", target)
-                    if(target.style.display == "none"){
-                            target.style.display = "block"
-                            console.log("pop")
-                    } else {
-                            target.style.display = "none"
-                            console.log("none")
-                    }
-                        
-                })
-            }
+            console.log(div)
         }
     </script>
-    <style>
-        .re_wrap {
-            display: none;
-        }
-        .re_bottom {
-            display: none;
-        }
-    </style>
 </head>
 <body>
-    <div class="re_wrap">
-        <div class="result">
-            
-        </div>
-        <div>
-            <input class="re_button" type="button" value="답글">
-        </div>
-        <di class="re_bottom">
-            <input class="text" type="text">
-            <input class="button" type="button" value="등록">
-        </div>
-        <div class="re_result">
-
-        </div>
-    </div>
-    <div class="main">
-        <div>
-            <input class="text" type="text">
-            <input class="button" type="button" value="등록">
-        </div>
-        <div class="result">
-    
-        </div>
+    <div>
+        <input class = "text" type="text">
+        <input class = "button" type="button">
     </div>
 </body>
 </html>
