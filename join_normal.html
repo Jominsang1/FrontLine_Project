@@ -8,14 +8,13 @@
         //헤더
         
         window.addEventListener("load", function(){
-            image()
-            menu()
-            pop()
-            search()
-            pop_hover()
+            header_image()
+            header_menu()
+            header_pop()
+            header_search()
         })
 
-        function image(){
+        function header_image(){
             // 순서대로 천안부터 금산까지 이미지 불러오기
             let xhr = new XMLHttpRequest();
             let url = "./ch_data.html"
@@ -29,7 +28,7 @@
 
                 let ch = data.querySelectorAll(".ch_travel img")[11]
 
-                document.querySelector(".ch").prepend(ch)
+                document.querySelector(".header_ch").prepend(ch)
             }
 
             let xhr2 = new XMLHttpRequest();
@@ -43,7 +42,7 @@
 
                 let as = data.querySelectorAll(".asan_trip_info img")[5]
 
-                document.querySelector(".as").prepend(as)
+                document.querySelector(".header_as").prepend(as)
             }
 
             let xhr3 = new XMLHttpRequest();
@@ -59,7 +58,7 @@
 
                 let tsd = data.querySelectorAll(".taean_travel img")[0]
 
-                document.querySelector(".tsd").prepend(tsd)
+                document.querySelector(".header_tsd").prepend(tsd)
             }
 
             let xhr4 = new XMLHttpRequest();
@@ -75,7 +74,7 @@
 
                 let yhc = data.querySelectorAll(".yesan_travel img")[0]
 
-                document.querySelector(".yhc").prepend(yhc)
+                document.querySelector(".header_yhc").prepend(yhc)
             }
 
             let xhr5 = new XMLHttpRequest();
@@ -91,7 +90,7 @@
 
                 let bbs = data.querySelectorAll("img")[4]
 
-                document.querySelector(".bbs").prepend(bbs)
+                document.querySelector(".header_bbs").prepend(bbs)
             }
 
             let xhr6 = new XMLHttpRequest();
@@ -107,16 +106,16 @@
 
                 let gss = data.querySelectorAll("img")[0]
 
-                document.querySelector(".gss").prepend(gss)
+                document.querySelector(".header_gss").prepend(gss)
             }
         }
 
-        function menu(){
+        function header_menu(){
             // 카운트값 이용해서 마우스 위치 파악해서 메뉴팝업
             let pop_count = 0;
             let count = 0;
-            let menu_img = document.querySelector(".header_img")
-            let menu_list = document.querySelector(".menu")
+            let menu_img = document.querySelector("header .header_img")
+            let menu_list = document.querySelector("header .menu")
             let display = document.querySelector("body")
 
             menu_img.addEventListener("click", function(){
@@ -153,14 +152,14 @@
             })
         }
 
-        function search(){
-            let input = document.querySelector(".input")
+        function header_search(){
+            let input = document.querySelector("header .input")
 
             input.addEventListener("keyup", function(){
                 // console.log(document.querySelector(".ch").textContent)
                 // console.log(input.value)
                 let count = 0;
-                let list = document.querySelectorAll(".input_list li")
+                let list = document.querySelectorAll("header .input_list li")
 
                 // console.log("result", String(list[0].textContent).search(input.value))
                 // 일치 != -1 / 불일치 = -1
@@ -188,12 +187,12 @@
             })
         }
 
-        function pop(){
+        function header_pop(){
             // 카운트값 이용해서 마우스 위치 파악해서 메뉴팝업
             let pop_count = 0;
-            let target = document.querySelector(".input_wrap")
+            let target = document.querySelector("header .input_wrap")
             let display = document.querySelector("body")
-            let input = document.querySelector(".input")
+            let input = document.querySelector("header .input")
 
             target.addEventListener("mouseover", function(){
                 pop_count = 1;
@@ -204,10 +203,10 @@
 
             display.addEventListener("click", function(){
                 if(pop_count == 0){
-                    let input = document.querySelector(".input")
+                    let input = document.querySelector("header .input")
                     input.style.borderBottomRightRadius = "30px"
                     input.style.borderBottomLeftRadius = "30px"
-                    document.querySelector(".input_list").style.display = "none"
+                    document.querySelector("header .input_list").style.display = "none"
                 }
             })
 
@@ -215,7 +214,7 @@
                 if(pop_count == 1){
                     input.style.borderBottomRightRadius = "0"
                     input.style.borderBottomLeftRadius = "0"
-                    document.querySelector(".input_list").style.display = "block"
+                    document.querySelector("header .input_list").style.display = "block"
                 }
             })
         }
@@ -378,16 +377,16 @@
             padding-right: 50px;
         }
 
-        ul {
+        header ul {
             list-style: none;
             padding: 0;
         }
 
-        .menu_wrap, .menu_wrap ul {
+        header .menu_wrap, header .menu_wrap ul {
             padding-top: 15px;
         }
 
-        .menu{
+        header .menu{
             display: none;
             padding: 0;
             
@@ -409,41 +408,41 @@
             z-index: 1;
         }
 
-        .menu li{
+        header .menu li{
             width: 100%;
             height: 25%;
             /* background-color: white; */
             /* border: 1px solid red; */
         }
 
-        a {
+        header a {
             color: black;
             text-decoration: none;
             outline: none;
         }
 
-        .menu li a:hover{
+        header .menu li a:hover{
             color: lightblue;
         }
 
-        .header_logo img {
+        header .header_logo img {
             margin-top: 20px;
         }
-        .header_img {
+        header .header_img {
             cursor: pointer;
         }
 
-        .header_input {
+        header .header_input {
             /* border: 1px solid red; */
             
             width: 50%;
         }
 
-        .input_wrap {
+        header .input_wrap {
             width: 100%;
         }
 
-        .input_list li {
+        header .input_list li {
             font-size: 20px;
             padding: 10px;
 
@@ -451,7 +450,7 @@
             align-items: center;
         }
 
-        .input_list img {
+        header .input_list img {
             width: 50px;
             height: 50px;
 
@@ -460,7 +459,7 @@
             margin-right: 3%;
         }
 
-        .input {
+        header .input {
             background-image: url("./images/Magnifier_2.png");
             background-repeat: no-repeat;
             background-size: 50px;
@@ -486,7 +485,7 @@
             text-align:center
         }
 
-        .input_list {
+        header .input_list {
             display: none;
             position: relative;
 
@@ -499,7 +498,7 @@
             box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
         }    
 
-        .input_list li:hover {
+        header .input_list li:hover {
             color: blue;
         }
     </style>
@@ -547,7 +546,7 @@
             display: none;
         }
         
-        input {
+        main input {
             cursor: pointer;
         }
         
@@ -631,12 +630,12 @@
             <ul class = "input_wrap">
                 <li ><input class="input" type="text" placeholder="어디로 갈까U?"></li>
                 <ul class="input_list">
-                    <a href="./아산_천안_페이지/cheonAn_main.html"><li class="ch">천안</li></a>
-                    <a href="./아산_천안_페이지/asan_main.html"><li class="as">아산</li></a>
-                    <li class="tsd">태안, 서산, 당진</li>
-                    <li class="yhc">예산, 홍성, 청양</li>
-                    <li class="bbs">보령, 부여, 서천</li>
-                    <li class="gss">공주, 논산, 금산</li>
+                    <a href="./아산_천안_페이지/cheonAn_main.html"><li class="header_ch">천안</li></a>
+                    <a href="./아산_천안_페이지/asan_main.html"><li class="header_as">아산</li></a>
+                    <li class="header_tsd">태안, 서산, 당진</li>
+                    <li class="header_yhc">예산, 홍성, 청양</li>
+                    <li class="header_bbs">보령, 부여, 서천</li>
+                    <li class="header_gss">공주, 논산, 금산</li>
                 </ul>
             </ul>
             
