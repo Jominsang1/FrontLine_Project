@@ -767,10 +767,11 @@
                     //  천안 숙소관련 배열 길이만큼 for문 <숙소이미지 및 숙소타이틀>
                     for (let i = 0; i < arr_ch_sleep_img.length; i++) {
                         let ch_sleep_img = arr_ch_sleep_img[i].querySelector('img')
+                 
                         // let ch_sleep_title = arr_ch_sleep_title[i].innerHTML
-                        if (i + 1 < arr_ch_play_img.length) {
+              
                             html_sleep += `<div class="sleep">${ch_sleep_img.outerHTML}</div>`
-                        }
+                    
                     }
 
                     //  천안 시군관련 배열 길이만큼 for문 <시군이미지 및 시군타이틀>
