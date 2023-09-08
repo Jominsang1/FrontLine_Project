@@ -7,7 +7,8 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="./style.css">
-    
+    <script src="main.js"></script>
+
     <script>
         window.addEventListener("load", init);
 
@@ -15,60 +16,60 @@
 
             let sel = document.getElementById('sp_1');
 
-            sel.addEventListener('mouseenter', function(){
+            sel.addEventListener('mouseenter', function () {
                 // console.log("마우스 올라감")
                 sel.setAttribute("src", "./이미지/지역선택 (1).png");
             })
 
-            sel.addEventListener('mouseleave', function(){
+            sel.addEventListener('mouseleave', function () {
                 sel.setAttribute("src", "./이미지/지역선택_원본 (1).png");
                 // console.log("마우스 벗어남")
             })
 
             let sel_2 = document.getElementById('sp_2');
 
-            sel_2.addEventListener('mouseenter', function(){
+            sel_2.addEventListener('mouseenter', function () {
                 // console.log("마우스 올라감")
                 sel_2.setAttribute("src", "./이미지/지역선택 (2).png");
             })
 
-            sel_2.addEventListener('mouseleave', function(){
+            sel_2.addEventListener('mouseleave', function () {
                 sel_2.setAttribute("src", "./이미지/지역선택_원본 (2).png");
                 // console.log("마우스 벗어남")
             })
 
             let sel_3 = document.getElementById('sp_3');
 
-            sel_3.addEventListener('mouseenter', function(){
+            sel_3.addEventListener('mouseenter', function () {
                 // console.log("마우스 올라감")
                 sel_3.setAttribute("src", "./이미지/지역선택 (3).png");
             })
 
-            sel_3.addEventListener('mouseleave', function(){
+            sel_3.addEventListener('mouseleave', function () {
                 sel_3.setAttribute("src", "./이미지/지역선택_원본 (3).png");
                 // console.log("마우스 벗어남")
             })
 
             let sel_4 = document.getElementById('sp_4');
 
-            sel_4.addEventListener('mouseenter', function(){
+            sel_4.addEventListener('mouseenter', function () {
                 // console.log("마우스 올라감")
                 sel_4.setAttribute("src", "./이미지/지역선택 (4).png");
             })
 
-            sel_4.addEventListener('mouseleave', function(){
+            sel_4.addEventListener('mouseleave', function () {
                 sel_4.setAttribute("src", "./이미지/지역선택_원본 (4).png");
                 // console.log("마우스 벗어남")
             })
 
             let sel_5 = document.getElementById('sp_5');
 
-            sel_5.addEventListener('mouseenter', function(){
+            sel_5.addEventListener('mouseenter', function () {
                 // console.log("마우스 올라감")
                 sel_5.setAttribute("src", "./이미지/지역선택 (5).png");
             })
 
-            sel_5.addEventListener('mouseleave', function(){
+            sel_5.addEventListener('mouseleave', function () {
                 sel_5.setAttribute("src", "./이미지/지역선택_원본 (5).png");
                 // console.log("마우스 벗어남")
             })
@@ -76,16 +77,16 @@
 
             let sel_6 = document.getElementById('sp_6');
 
-            sel_6.addEventListener('mouseenter', function(){
+            sel_6.addEventListener('mouseenter', function () {
                 // console.log("마우스 올라감")
                 sel_6.setAttribute("src", "./이미지/지역선택 (6).png");
             })
 
-            sel_6.addEventListener('mouseleave', function(){
+            sel_6.addEventListener('mouseleave', function () {
                 sel_6.setAttribute("src", "./이미지/지역선택_원본 (6).png");
                 // console.log("마우스 벗어남")
             })
-            
+
         }
     </script>
 </head>
@@ -122,13 +123,13 @@
 
             <div class="header_text">최고의 숙소와 함께하세요!</div>
 
-            <div class="items">
-                <div class="itemss">
-                    <div class="item"><img src="./예시이미지.jpg"></div>
-                    <div class="item"><img src="./예시이미지.jpg"></div>
-                    <div class="item"><img src="./예시이미지.jpg"></div>
-                    <div class="item"><img src="./예시이미지.jpg"></div>
-                    <div class="item"><img src="./예시이미지.jpg"></div>
+            <div class="slide">
+                <div class="slide_list">
+                    <div class="slide_item"><img src="./예시이미지.jpg"></div>
+                    <div class="slide_item"><img src="./예시이미지.jpg"></div>
+                    <div class="slide_item"><img src="./예시이미지.jpg"></div>
+                    <div class="slide_item"><img src="./예시이미지.jpg"></div>
+                    <div class="slide_item"><img src="./예시이미지.jpg"></div>
                 </div>
             </div>
 
@@ -145,11 +146,17 @@
 
         <div class="room_logo">
             <div class="room"><img
-                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/motel.png?raw=true"><div class="room_text">모텔</div></div>
+                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/motel.png?raw=true">
+                <div>모텔</div>
+            </div>
             <div class="room"><img
-                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/hotel.png?raw=true"><div class="room_text">호텔</div></div>
+                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/hotel.png?raw=true">
+                <div class="room_text">호텔</div>
+            </div>
             <div class="room"><img
-                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/camp.png?raw=true"><div class="room_text">펜션 & 캠핑</div></div>
+                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/camp.png?raw=true">
+                <div class="room_text">펜션 & 캠핑</div>
+            </div>
         </div>
 
         <!--숙소 메인이미지는 따로 만들어서 이벤트페이지 형식으로 제작 총 12개 제작예정 -->
@@ -254,6 +261,10 @@
         </footer>
 
     </div>
+
+
 </body>
+
+
 
 </html>
