@@ -238,6 +238,7 @@
             display: list-item;
             float: left;
             margin-left: 8%;
+            margin-bottom: 3%;
         }
 
 
@@ -248,7 +249,8 @@
         #cs {
             max-width: 1280px;
             margin: auto;
-            height: 100%;
+            height: 3000px;
+
         }
 
         .wrap {
@@ -332,7 +334,7 @@
             /* background-color: rgb(132, 0, 255); */
             /* object-fit: cover; */
             /* flex-shrink: 0; */
-            border: 1px solid #4747478f;
+            border: 1px solid #000000;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -651,7 +653,7 @@
                     submit_btn.addEventListener("click", function () {
                         // 댓글 인풋창 값 문자열을 좌우 공백 제거하고 comment_txt 변수에 집어넣어라
                         let comment_txt = comment_ipt.value.trim();
-                        let hr_line = document.createElement("hr")
+                        // let hr_line = document.createElement("hr")
 
                         // console.log(hr_line)
                         // 만약 입력값이 있다면 commentItem 에 newComment(전달인자) 메소드 실행
@@ -660,7 +662,7 @@
                             let commentItem = newCommnet(comment_txt);
                             // <ul>태그에 appendChild 로 CommentItem 에 들어가있는 들어쓰기 메소드값이 적용
                             comment_li.appendChild(commentItem);
-                            comment_li.appendChild(hr_line)
+                            // comment_li.appendChild(hr_line)
                             comment_ipt.value = "";
 
                             // 만약 입력값이 없으면 alert 발생
@@ -695,13 +697,24 @@
                             } else {
                                 let replyItem = newCommnet(reply);
                                 li.appendChild(replyItem);
+                                li.style.textDecoration = "solid";
                             }
                         });
+
                         let list = document.querySelectorAll('.cmt_list');
                         console.log(list)
-                        for (let i = 0; i < list.length+1; i++) {
+                        // let hr_delete = document.getElementsByTagName('hr')
+                        for (let i = 0; i < list.length + 1; i++) {
                             delete_btn.addEventListener("click", function () {
-                                li.remove();
+                                // console.log(hr_delete)
+                                li.innerHTML = '삭제된 글입니다.';
+                                li.appendChild(delete_btn);
+                                for (let j = 0; j < i+1; j++) {
+                                    delete_btn.addEventListener('click', function(){
+                                        li.remove();
+                                    })
+                                }
+
                             })
                         }
 
@@ -723,26 +736,26 @@
                     // 지도를 생성합니다    
                     var map = new kakao.maps.Map(mapContainer, mapOption);
 
-                    if (navigator.geolocation) {
+                    // if (navigator.geolocation) {
 
 
-                        navigator.geolocation.getCurrentPosition(function (position) {
+                    //     navigator.geolocation.getCurrentPosition(function (position) {
 
-                            var lat = position.coords.latitude,
-                                lon = position.coords.longitude;
+                    //         var lat = position.coords.latitude,
+                    //             lon = position.coords.longitude;
 
-                            var locPosition = new kakao.maps.LatLng(lat, lon)
-                            presentPosition = locPosition;
+                    //         var locPosition = new kakao.maps.LatLng(lat, lon)
+                    //         presentPosition = locPosition;
 
-                            map.setCenter(locPosition);
-                            console.log(lat, lon)
-                        });
+                    //         map.setCenter(locPosition);
+                    //         console.log(lat, lon)
+                    //     });
 
-                    } else {
+                    // } else {
 
-                        var locPosition = new kakao.maps.LatLng(37.566826, 126.9786567)
-                        alert('현재 위치를 찾을 수 없습니다!');
-                    }
+                    //     var locPosition = new kakao.maps.LatLng(37.566826, 126.9786567)
+                    //     alert('현재 위치를 찾을 수 없습니다!');
+                    // }
 
 
 

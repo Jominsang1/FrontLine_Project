@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name_dh="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Montserrat";
+
+        }
+
+        .searchbox_dh {
+
+            margin: auto;
+           
+        }
+
+        .header_dh {
+            margin: auto;
+            width: 100%;
+            height: 100px;
+            background: #ECDFBF;
+            overflow: hidden;
+            padding: 0;
+            text-align: center;
+            
+        }
+
+
+
+        #value_dh {
+            
+            margin: auto;
+            border: none;
+            background: #ffffff;
+            padding: 6px;
+            font-size: 18px;
+            width: 30%;
+            border-radius: 6px;
+            color: rgb(0, 0, 0);
+            box-shadow: 2px 2px 2px #E0D3B699;
+           
+
+        }
+
+        #value_dh:focus {
+            outline: none;
+        }
+
+        .container_dh {
+            position: absolute;
+            top: 50;
+            left: 34.5%;
+            border: none;
+            width: 29.4%;
+            margin: auto;
+            padding: 10px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px #E0D3B699;
+            
+
+            margin-top: -4px;
+
+
+        }
+
+        .item_dh {
+            margin: 3% 0px;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon_dh {
+            width: 44px;
+            height: 44px;
+            background: #E0D3B6;
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            line-height: 25px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .name_dh {
+            font-size: 20px;
+            font-weight: 470;
+            color: skyblue;
+        }
+
+        .all {
+            border: 1px solid white;
+            width: 350px;
+            margin: 10px auto;
+            color: skyblue;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px #E0D3B699;
+        }
+
+        #ch {
+            font-weight: bolder;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="searchbox_dh">
+        <div class="header_dh">
+
+            <input onkeyup="filter()" type="text" id="value_dh" placeholder="어디로 갈까U?">
+
+            <div class="container_dh" style="display: none;">
+                <div class="item_dh">
+                    <a id="page" class="all" href="./cheonAn_main.html">
+                        <span class="name_dh" id="ch">충남 숙소더보기</span>
+                    </a>
+                </div>
+
+                <div class="item_dh">
+                    <span class="icon_dh"><a id="page"
+                            href="http://127.0.0.1:5501/%EB%8C%80%EC%B6%A9/%EC%B2%9C%EC%95%88pg.html"><img class="icon_dh"
+                                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MjZfMjcx%2FMDAxNjg3NzQwNTAxODE5.plZABfD8UjJVP3wO4OF2YOKB3xmMg1p7SfGy4aS_f2Ig.--qh7eGnsa8BgDG9XHJdtweLbxTZwzFgcdZDQbM91s0g.JPEG.kmg132%2F20230514%25A3%25DF112330.jpg&type=a340"></span></a>
+                    <span class="name_dh"><a href="./cheonAn_main.html">
+                            천안</span></a>
+                </div>
+
+                <div class="item_dh">
+                    <span class="icon_dh"><img class="icon_dh"
+                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20140601_192%2Fmissionhkc_1401603482124tl4pz_JPEG%2FIMG_4558.JPG&type=sc960_832"></span>
+                    <span class="name_dh"><a href="./cheonAn_main.html">
+                            아산</span></a>
+                </div>
+
+                <div class="item_dh">
+                    <span class="icon_dh"><img class="icon_dh"
+                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MDZfMTI3%2FMDAxNjg2MDQ0NDQyMDAx.LhYqQPprDTgOLUvT49YBcICRlBmg3BbL_oYapVpgul8g.dTe3B6AguFl1CssViUS881lvTfUkrTed4pwA-n8b4Rsg.JPEG.hangirrokr%2F20230606%25A3%25DF114237.jpg&type=sc960_832"></span>
+                    <span class="name_dh"><a href="./cheonAn_main.html">
+                            태안,서산,당진</span></a>
+                </div>
+
+                <div class="item_dh">
+                    <span class="icon_dh"><img class="icon_dh"
+                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMzFfMjE5%2FMDAxNjgwMjU1NzM1MTA3.oV_UhtaVpSE3Zhey5SOYDjRTkvbR2omoBTR1MNoSfZog.GJZ7Y5wO5_l9znZF2P6y_XRENcw6-r5T0-XaoMJPJYIg.JPEG.parksb44%2FDSC_0107.jpg&type=sc960_832"></span>
+                    <span class="name_dh"><a href="./cheonAn_main.html">
+                            예산,홍성,청양</span></a>
+                </div>
+
+                <div class="item_dh">
+                    <span class="icon_dh"><img class="icon_dh"
+                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA0MDJfMjEg%2FMDAxNjgwNDQyODk2OTg0.xMuVhYEgKpnk7P-4f5lVdmmnSnceOGWiTVC6Qhgui8wg.E5SH8Mnwrx-FSmg9AG7SObw3CFgEbt2P1hi8h_uFatkg.JPEG.tnwjd9597%2FIMG_8057.jpg&type=sc960_832"></span>
+                    <span class="name_dh"><a href="./cheonAn_main.html">
+                            보령,부여,서천</span></a>
+                </div>
+
+                <div class="item_dh">
+                    <span class="icon_dh"><img class="icon_dh"
+                            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMjBfMTcg%2FMDAxNjY4OTAzNTkxOTkw.0ZMGuzjoMcin9rmSXtT8OO771dN02yNVwxl4W6fB2bwg.x3axSEWqKYk3JoPRUR8X7qEJvoMgmwH9WMUGJMXskREg.JPEG.windfollower%2Fw-221118014.jpg&type=sc960_832"></span>
+                    <span class="name_dh"><a href="./cheonAn_main.html">
+                            공주,논산,금산</span></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filter() {
+
+            var value, name, item, i;
+
+            value = document.getElementById("value_dh").value.toUpperCase();
+            item = document.getElementsByClassName("item_dh");
+
+            for (i = 0; i < item.length; i++) {
+                name = item[i].getElementsByClassName("name_dh");
+                if (name[0].innerHTML.toUpperCase().indexOf(value) > -1) {
+                    item[i].style.display = "flex";
+                } else {
+                    item[i].style.display = "none";
+                }
+            }
+        }
+        // 인풋 요소와 div 요소를 가져옵니다.
+        let click = document.querySelector("#value_dh");
+        let atag = document.querySelector(".container_dh");
+
+        // 인풋 요소를 클릭할 때 이벤트 처리
+        click.addEventListener('click', (event) => {
+            // 이벤트 버블링을 막아서 document의 클릭 이벤트가 발생하지 않도록 합니다.
+            event.stopPropagation();
+            // div 요소를 보이게 설정합니다.
+            atag.style.display = 'block';
+            atag.style.borderRadius ='0px 0px 10px 10px';
+            
+          
+
+        });
+        // 문서의 어느 곳이든 클릭할 때 이벤트 처리
+        document.addEventListener('click', (event) => {
+            // div 요소가 보이고 있으면 클릭한 곳이 div 요소 내부인지 확인합니다.
+            if (atag.style.display === 'block' && !atag.contains(event.target)) {
+                // div 요소 바깥을 클릭한 경우, div를 숨깁니다.
+                atag.style.display = 'none';
+
+            }
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>
