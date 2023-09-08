@@ -4,15 +4,13 @@ window.addEventListener("load", bind);
     function bind(){
             // 여행지 우클릭 슬라이드
             let currentSlide = 1;
-            console.log(23)
-
 
             document.getElementById('btn2').addEventListener('click', function () {
                 console.log(1)
                 // let counter = 1;
                 // console.log(counter)
                 let slides = document.querySelector('.slide_list')
-                let slideimg = document.querySelectorAll('.slide_item').length;
+                let slideimg = document.querySelectorAll('.sleep').length;
                 let imgcount = document.querySelector('#count')
                 if (currentSlide == 4) {
                     imgcount.innerHTML = ("1" + " " + "/" + " " + "4")
@@ -35,7 +33,7 @@ window.addEventListener("load", bind);
 
             document.getElementById('btn1').addEventListener('click', function () {
                 let slides = document.querySelector('.slide_list')
-                let slideimg = document.querySelectorAll('.slide_item').length;
+                let slideimg = document.querySelectorAll('.sleep').length;
                 let imgcount = document.querySelector('#count')
                 if (currentSlide == 1) {
                     imgcount.innerHTML = (4 + " " + "/" + " " + 4)
@@ -47,7 +45,7 @@ window.addEventListener("load", bind);
                 // console.log('no2 :', currentSlide)
                 if (currentSlide === 1) {
                     console.log(currentSlide)
-                    currentSlide = slideimg - 2;
+                    currentSlide = slideimg - 1;
                 } else {
                     currentSlide--;
                 }

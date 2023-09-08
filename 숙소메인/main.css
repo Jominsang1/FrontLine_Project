@@ -26,7 +26,7 @@
 }
 .slide{
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin-top: 20px;
 }
 
@@ -37,7 +37,7 @@
     transition: 1s;
 }
 
-.slide_item{
+.sleep{
     flex-shrink: 0;
     width: 550px;
     height: 250px;

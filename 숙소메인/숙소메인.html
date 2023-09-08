@@ -8,11 +8,37 @@
 
     <link rel="stylesheet" href="./style.css">
     <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <script>
-        window.addEventListener("load", init);
+        window.addEventListener("load", function () {
 
-        function init() {
+            $.ajax({
+                url: "./아산_천안_페이지/ch_data.html",
+                dataType: 'html',
+                success: function (ch) {
+
+                    let htmlDom = new DOMParser().parseFromString(ch, 'text/html');
+                    let tableDom = htmlDom.documentElement
+
+                    let arr_ch_sleep_img = tableDom.querySelectorAll(".ch_sleep .image")
+                    let arr_ch_sleep_title
+                    for (let i = 0; i < 5; i++) {
+
+                        let ch_sleep_img = arr_ch_sleep_img[i].querySelector('img')
+                        document.querySelector('.slide_list').innerHTML += `<div class="sleep">${ch_sleep_img.outerHTML}</div>`
+
+                    }
+
+                    for (let i = 0; i < 10; i++) {
+
+                        let ch_sleep_img = arr_ch_sleep_img[i].querySelector('img')
+                        document.querySelector('.hot_room_list').innerHTML += `<div class="hotsleep">${ch_sleep_img.outerHTML}</div>`
+                        // document.querySelector('.hot_room_list2').innerHTML += `<div class="hotsleep">${ch_sleep_img.outerHTML}</div>`
+
+                    }
+                }
+            });
 
             let sel = document.getElementById('sp_1');
 
@@ -26,6 +52,10 @@
                 // console.log("마우스 벗어남")
             })
 
+            sel.addEventListener('click', function () {
+                location.href = "./아산_천안_페이지/cheonAn_main.html"
+            })
+
             let sel_2 = document.getElementById('sp_2');
 
             sel_2.addEventListener('mouseenter', function () {
@@ -36,6 +66,10 @@
             sel_2.addEventListener('mouseleave', function () {
                 sel_2.setAttribute("src", "./이미지/지역선택_원본 (2).png");
                 // console.log("마우스 벗어남")
+            })
+
+            sel_2.addEventListener('click', function () {
+                location.href = "./아산_천안_페이지/asan_main.html"
             })
 
             let sel_3 = document.getElementById('sp_3');
@@ -87,17 +121,23 @@
                 // console.log("마우스 벗어남")
             })
 
-        }
+            document.querySelector('.header_logo').addEventListener('click', function () {
+                location.href = "./main.html"
+            })
+
+            // console.log(11)
+        });
+
     </script>
 </head>
 
 <body>
     <div id="wrap">
         <header class="header">
-            <div>
-                <img class="header_logo"
+            <div class="header_logo">
+                <img
                     src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_main.png?raw=true">
-            </div>
+            </div class="header_logo">
 
             <div class="search">
                 <input type="text" placeholder="travel" aria-expanded="false">
@@ -125,11 +165,11 @@
 
             <div class="slide">
                 <div class="slide_list">
+                    <!-- <div class="slide_item"><img src="./예시이미지.jpg"></div>
                     <div class="slide_item"><img src="./예시이미지.jpg"></div>
                     <div class="slide_item"><img src="./예시이미지.jpg"></div>
                     <div class="slide_item"><img src="./예시이미지.jpg"></div>
-                    <div class="slide_item"><img src="./예시이미지.jpg"></div>
-                    <div class="slide_item"><img src="./예시이미지.jpg"></div>
+                    <div class="slide_item"><img src="./예시이미지.jpg"></div> -->
                 </div>
             </div>
 
@@ -147,7 +187,7 @@
         <div class="room_logo">
             <div class="room"><img
                     src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/motel.png?raw=true">
-                <div>모텔</div>
+                <div class="room_text">모텔</div>
             </div>
             <div class="room"><img
                     src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/hotel.png?raw=true">
@@ -167,20 +207,20 @@
         <div class="hot_text">지금 핫한 🔥<br>베스트 숙소</div>
 
         <div class="hot_room_list">
+            <!-- <div class="hot_room_img"><img src="./예시이미지.jpg"></div>
             <div class="hot_room_img"><img src="./예시이미지.jpg"></div>
             <div class="hot_room_img"><img src="./예시이미지.jpg"></div>
             <div class="hot_room_img"><img src="./예시이미지.jpg"></div>
-            <div class="hot_room_img"><img src="./예시이미지.jpg"></div>
-            <div class="hot_room_img"><img src="./예시이미지.jpg"></div>
+            <div class="hot_room_img"><img src="./예시이미지.jpg"></div> -->
         </div>
 
-        <div class="hot_room_list2">
+        <!-- <div class="hot_room_list2">
             <div class="hot_room_img2"><img src="./예시이미지.jpg"></div>
             <div class="hot_room_img2"><img src="./예시이미지.jpg"></div>
             <div class="hot_room_img2"><img src="./예시이미지.jpg"></div>
             <div class="hot_room_img2"><img src="./예시이미지.jpg"></div>
             <div class="hot_room_img2"><img src="./예시이미지.jpg"></div>
-        </div>
+        </div> -->
         <div class="hot_more">더보기</div>
 
         <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -261,8 +301,6 @@
         </footer>
 
     </div>
-
-
 </body>
 
 

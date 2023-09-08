@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+        #cs {
+            margin: auto;
+        }
+
+        * {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 12px;
+            color: rgb(0, 0, 0);
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .address {
+            margin-top: -5%;
+            height: 55px;
+        }
+
+
+        p {
+
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        p1 {
+            font-size: 14px;
+        }
+
+        p2 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .nanumgothic * {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+        .wrap {
+            max-width: 1240px;
+            /* display: flex; */
+            align-items: center;
+            /*  margin-left: 300px; */
+        }
+
+        .chungnam_city {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .best_play {
+            max-width: 1240px;
+            /*margin-left: 300px; */
+        }
+
+        #play_img {
+            display: flex;
+            /* justify-content: space-evenly; */
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0 auto;
+
+        }
+
+        #play_img .play {
+            margin: 20px;
+            border-radius: 20px;
+            width: 200px;
+            height: 300px;
+            /* border: 1px solid black; */
+            /* width: 200px; */
+            /* height: 200px; */
+            overflow: hidden;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .play img {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .select_place {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .select_place_text {
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .select_place_list {
+            display: flex;
+            justify-content: space-evenly;
+            position: relative;
+            margin-top: 30px;
+
+        }
+
+        .select_place_list img {
+            cursor: pointer;
+            width: 180px;
+
+
+        }
+
+        .select_place_list img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+
+        window.addEventListener("load", function () {
+
+            html = '';
+            html_location = '';
+            html_play = '';
+
+
+
+            html += `<div class="wrap">`
+                html += `<div class="select_place_list">`
+            html += `<div class="select_place_img">`
+            html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(1).png?raw=true" id="sp_1">`
+
+            html += `</div>`
+
+            html += `<div class="select_place_img">`
+            html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(2).png?raw=true" id="sp_2">`
+
+            html += `</div>`
+
+            html += `<div class="select_place_img">`
+            html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(3).png?raw=true" id="sp_3">`
+
+            html += `</div>`
+
+            html += `<div class="select_place_img">`
+            html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(4).png?raw=true" id="sp_4">`
+
+            html += `</div>`
+
+            html += `<div class="select_place_img">`
+            html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(5).png?raw=true" id="sp_5">`
+
+            html += `</div>`
+
+            html += `<div class="select_place_img">`
+            html += `<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(6).png?raw=true" id="sp_6">`
+
+            html += `</div>`
+            html += ` </div>`
+            html += `</div>`
+
+
+            // html += `<hr role="tournament1">`
+
+            html += `<div class="best_play">`
+
+            html += `<div id="play_img">`
+            ////////////////////////////////// 이미지 배열 클래스 자동 추가란 //////////////////////////////////    
+            html += `</div>`
+
+
+            $.ajax({
+                url: "ch_data.html",
+                dataType: 'html',
+                data: {
+                    data1: 'mydata1',
+                    data2: 'mydata2'
+                },
+                success: function (ch) {
+
+
+
+                    document.querySelector('#cs').innerHTML = html;
+
+                    let htmlDom = new DOMParser().parseFromString(ch, 'text/html');
+                    let tableDom = htmlDom.documentElement;
+
+                    let arr_location_img = tableDom.querySelectorAll(".locations .image");
+                    let arr_location_title = tableDom.querySelectorAll(".locations .title");
+
+                    let arr_ch_play_img = tableDom.querySelectorAll(".ch_play .image");
+                    let arr_ch_play_title = tableDom.querySelectorAll(".ch_play .title");
+                    let arr_ch_play_address = tableDom.querySelectorAll(".ch_play .address");
+                    let arr_ch_play_price = tableDom.querySelectorAll(".ch_play .info");
+
+
+                    // for (let i = 0; i < arr_location_img.length; i++) {
+                    //     let cn_location_img = arr_location_img[i]
+
+                    //     let cn_location_title = arr_location_title[i].innerHTML
+                    //     html_location += `<a href="#" class="btn location${i}">${cn_location_title}</a>`
+
+                    // }
+
+                    // document.querySelector('.chungnam_city').innerHTML = html_location
+
+
+                    let location_btn = document.getElementsByTagName('a')
+                    // 지역 버튼 클릭시 페이지 이동 메소드
+                    for (let i = 0; i < location_btn.length; i++) {
+                        location_btn[i].addEventListener('click', function () {
+                            if (i == 0) {
+                                location.href = "./cheonAn_main.html"
+                            } else if (i == 1) {
+                                console.log(1)
+                            } else if (i == 2) {
+                                console.log(2)
+                            } else if (i == 3) {
+                                console.log(3)
+                            } else if (i == 4) {
+                                console.log(4)
+                            } else {
+                                console.log(5)
+                            }
+                        })
+                    }
+                    for (let i = 0; i < arr_ch_play_img.length; i++) {
+                        let ch_play_img = arr_ch_play_img[i].querySelector('img')
+                        let ch_play_title = arr_ch_play_title[i].innerHTML
+                        let ch_play_address = arr_ch_play_address[i].innerHTML
+                        let ch_play_price = arr_ch_play_price[i].innerHTML
+                        html_play += `<div class="play">${ch_play_img.outerHTML}<div class="playTitle"><p>${ch_play_title}</p></div><div class="address"><p1>${ch_play_address}</p1></div><div class="price"><p2>${ch_play_price}</p2></div></div>`
+                    }
+                    document.querySelector('#play_img').innerHTML = html_play
+
+                    init();
+                }
+            });
+
+        });
+
+        function init() {
+
+            let sel = document.getElementById('sp_1');
+
+            sel.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(1).png?raw=true");
+            })
+
+            sel.addEventListener('mouseleave', function () {
+                sel.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(1).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+
+            let sel_2 = document.getElementById('sp_2');
+
+            sel_2.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel_2.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(2).png?raw=true");
+            })
+
+            sel_2.addEventListener('mouseleave', function () {
+                sel_2.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(2).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+            let sel_3 = document.getElementById('sp_3');
+
+            sel_3.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel_3.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(3).png?raw=true");
+            })
+
+            sel_3.addEventListener('mouseleave', function () {
+                sel_3.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(3).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+            let sel_4 = document.getElementById('sp_4');
+
+            sel_4.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel_4.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(4).png?raw=true");
+            })
+
+            sel_4.addEventListener('mouseleave', function () {
+                sel_4.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(4).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+            let sel_5 = document.getElementById('sp_5');
+
+            sel_5.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel_5.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(5).png?raw=true");
+            })
+
+            sel_5.addEventListener('mouseleave', function () {
+                sel_5.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(5).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+
+            let sel_6 = document.getElementById('sp_6');
+
+            sel_6.addEventListener('mouseenter', function () {
+                // console.log("마우스 올라감")
+                sel_6.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D%20(6).png?raw=true");
+            })
+
+            sel_6.addEventListener('mouseleave', function () {
+                sel_6.setAttribute("src", "https://github.com/Jominsang1/FrontLine_Project/blob/main/%EC%88%99%EC%86%8C%EB%A9%94%EC%9D%B8/%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A7%80%EC%97%AD%EC%84%A0%ED%83%9D_%EC%9B%90%EB%B3%B8%20(6).png?raw=true");
+                // console.log("마우스 벗어남")
+            })
+
+
+            sel.addEventListener('click', function () {
+                location.href = "./cheonAn_main.html"
+            })
+            sel_2.addEventListener('click', function () {
+                location.href = "./asan_main.html"
+            })
+            sel_3.addEventListener('click', function () {
+                location.href = "./cheonAn_main.html"
+            })
+            sel_4.addEventListener('click', function () {
+                location.href = "./cheonAn_main.html"
+            })
+            sel_5.addEventListener('click', function () {
+                location.href = "./cheonAn_main.html"
+            })
+            sel_6.addEventListener('click', function () {
+                location.href = "./cheonAn_main.html"
+            })
+
+
+
+        }
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div id="cs">
+    </div>
+
+
+</body>
+
+</html>

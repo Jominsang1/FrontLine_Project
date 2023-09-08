@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener("load", function(){
+            join()
+        })
+
+        function join(){
+            document.querySelector(".join_normal").addEventListener("click", function(){
+                // alert("일반 회원가입 페이지로 이동합니다.")
+                location.href="./join_normal.html"
+            })
+
+            document.querySelector(".join_google").addEventListener("click", function(){
+                // alert("구글 회원가입 페이지로 이동합니다.")
+                location.href="./join_google.html"
+            })
+
+            document.querySelector(".join_naver").addEventListener("click", function(){
+                // alert("네이버 회원가입 페이지로 이동합니다.")
+                location.href="./join_naver.html"
+            })
+        }
+    </script>
+    <style>
+        h1 {
+            border-bottom: 1px solid black;
+            padding-bottom: 20px;
+        }
+        .join_main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .join_main div{
+            border: 3px solid black;
+            width: 300px;
+            height: 50px;
+            margin: 15px;
+            padding-left: 15px;
+            cursor: pointer;
+            line-height: 50px;
+        }
+
+        .join_main div:hover{
+            border: 3px solid blueviolet;
+            padding-left: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="join_main">
+        <h1>
+            회원가입 방법을 선택하세요
+        </h1>
+        <div class="join_normal">
+            일반 회원가입
+        </div>
+        <div class="join_google">
+            구글 아이디로 회원가입
+        </div>
+        <div class="join_naver">
+            네이버 아이디로 회원가입
+        </div>
+    </div>
+</body>
+</html>

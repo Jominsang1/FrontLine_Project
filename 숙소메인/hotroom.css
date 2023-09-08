@@ -7,25 +7,36 @@
 
 .hot_room_list{
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 1180px;
+    justify-content:space-between;
     margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-.hot_room_list .hot_room_img{
+.hot_room_list .hotsleep{
+    /* flex-shrink: 1; */
     border-radius: 20px;
     overflow: hidden;
-    margin: 20px;
-    width: 200px;
-    height: 200px;
+    margin: 10px 10px 10px 10px;
+    width: 216px;
+    height: 216px;
+}
+
+.hotsleep img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
 }
 
-.hot_room_list2{
+/* .hot_room_list2{
     display: flex;
     justify-content: space-evenly;
-}
+} */
 
-.hot_room_list2 .hot_room_img2{
+/* .hot_room_list2 .hotsleep{
     text-align: center;
     overflow: hidden;
     border-radius: 20px;
@@ -33,7 +44,7 @@
     width: 200px;
     height: 200px;
     cursor: pointer;
-}
+} */
 
 .hot_more{
     margin-top: 20px;
