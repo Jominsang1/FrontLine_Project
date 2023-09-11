@@ -54,7 +54,7 @@ header a {
 }
 
 header .menu li a:hover{
-    color: lightblue;
+    color: #5498FF;
 }
 
 header .header_logo img {
@@ -135,7 +135,7 @@ header .input_list {
 }    
 
 header .input_list li:hover {
-    color: blue;
+    color: #5498FF;
 }
 
 body {
