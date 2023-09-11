@@ -23,84 +23,190 @@
             let cancel = document.querySelector(".cancel");
             let apply = document.querySelector(".apply");
             let popUp_text = document.querySelector(".popUp_text")
-            let t1 = document.querySelector(".t1")
-            let t2 = document.querySelector(".t2")
-            let t3 = document.querySelector(".t3")
+            let t1_id = document.querySelector(".t1_id")
+            let t2_id = document.querySelector(".t2_id")
+            let t1_mail = document.querySelector(".t1_mail")
+            let t2_mail = document.querySelector(".t2_mail")
+            let t1_call = document.querySelector(".t1_call")
+            let t2_call = document.querySelector(".t2_call")
+            let t1_pw = document.querySelector(".t1_pw")
+            let t2_pw = document.querySelector(".t2_pw")
+            let t3_pw = document.querySelector(".t3_pw")
             let xBox = document.querySelector(".xBox")
             let tbox1 = document.querySelector(".tbox1")
-            // document.querySelector(".")
-            // let name = document.getElementById("이름")
-            // let pw = document.getElementById("비밀번호")
-            // let email = document.getElementById("이메일주소")
-            // let phoneNum = document.getElementById("전화번호")
+            let tbox2 = document.querySelector(".tbox2")
+            let tbox3 = document.querySelector(".tbox3")
+            let tbox4 = document.querySelectorAll(".tbox4")
+            let innerId = document.querySelector(".innerId")
+            let inputNone = document.querySelector(".inputNone")
+            let alertBox = document.querySelector(".alertBox")
+            let alertBox2 = document.querySelector(".alertBox2")
+            let menu_wrap = document.querySelector(".menu_wrap")
+            let menu_ul = document.querySelector(".menu_ul")
+            let lineBar = document.querySelector(".lineBar")
+            let viewBar = document.querySelector(".viewBar")
+
+            lineBar.addEventListener("click", function () {
+                let toggle = menu_wrap.classList.contains("viewBar")
+
+                if (toggle) {
+                    menu_wrap.classList.remove("viewBar")
+                } else {
+                    menu_wrap.classList.add("viewBar")
+                }
+                // menu_wrap.style.display = "block"
+            })
+
+
 
             for (let i = 0; i < adjust.length; i++) {
-                
                 adjust[i].addEventListener("click", function () {
+                    t1_id.style.display = "none";
+                    t2_id.style.display = "none";
+                    t1_mail.style.display = "none";
+                    t2_mail.style.display = "none";
+                    t1_call.style.display = "none";
+                    t2_call.style.display = "none";
+                    t1_pw.style.display = "none";
+                    t2_pw.style.display = "none";
+                    t3_pw.style.display = "none";
                     background.style.display = "block";
-                    
-                    // switch(adjust) {
-                        //     case 1: 
-                        //     popUp_title.setAttribute("placeholder", "비밀번호 변경")
-                        
-                        // tbox1 =  tbox1.innerHTML;
-                        // t1.innerHTML = tbox1;
-                        
-                        // }
-                        if(i == 0) {
-                            title_h2.innerHTML= "이름 변경"
-                            // t1.innerHTML = tbox1.innerHTML
-                            // t1.setAttribute("value", tbox1.innerHTML)
-                            // t1.setAttribute("disabled")
-                            t1.setAttribute("placeholder", "데이브")
-                            t2.setAttribute("placeholder", "새 이름")
-                            t3.style.display="none";
-                            // t3.setAttribute("placeholder", "새 이름 확인")
-                        } else if(i == 1){
-                            title_h2.innerHTML= "비밀번호 변경"
-                            t1.setAttribute("placeholder", "현재 비밀번호")
-                            t2.setAttribute("placeholder", "새 비밀번호")
-                            t3.setAttribute("placeholder", "새 비밀번호 확인")
-                        } else if( i == 2){
-                            title_h2.innerHTML= "이메일주소 변경"
-                            t1.setAttribute("placeholder", "현재 이메일주소")
-                            t2.setAttribute("placeholder", "새 이메일주소")
-                            t3.setAttribute("placeholder", "새 이메일주소 확인")
-                        } else if(i == 3){
-                            title_h2.innerHTML= "휴대폰번호 변경"
-                            t1.setAttribute("placeholder", "현재 휴대폰번호")
-                            t2.setAttribute("placeholder", "새 휴대폰번호")
-                            t3.setAttribute("placeholder", "새 휴대폰번호 확인")
+                    innerId.style.display = "none";
+                    t2_id.value = "";
+                    t2_mail.value = "";
+                    t2_call.value = "";
+                    t1_pw.value = "";
+                    t2_pw.value = "";
+                    t3_pw.value = "";
+                    alertBox.style.display = "none"
+                    alertBox2.style.display = "none"
+
+
+                    if (i == 0) {
+                        title_h2.innerHTML = "이름 변경"
+                        // t1_1.innerHTML = tbox1.innerHTML
+                        t1_id.style.display = "block";
+                        t2_id.style.display = "block";
+                        innerId.style.display = "block";
+                        innerId.innerHTML = "현재 아이디";
+                        t1_id.setAttribute("value", tbox1.innerHTML)
+                        t2_id.setAttribute("placeholder", "새 이름")
+                    } else if (i == 1) {
+                        title_h2.innerHTML = "비밀번호 변경"
+                        t1_pw.style.display = "block";
+                        t2_pw.style.display = "block";
+                        t3_pw.style.display = "block";
+                        t1_pw.setAttribute("placeholder", "현재 비밀번호")
+                        t2_pw.setAttribute("placeholder", "새 비밀번호")
+                        t3_pw.setAttribute("placeholder", "새 비밀번호 확인")
+                    } else if (i == 2) {
+                        title_h2.innerHTML = "이메일주소 변경"
+                        t1_mail.style.display = "block";
+                        t2_mail.style.display = "block";
+                        innerId.style.display = "block"
+                        innerId.innerHTML = "현재 이메일주소";
+                        t1_mail.setAttribute("value", tbox2.innerHTML)
+                        t2_mail.setAttribute("placeholder", "새 이메일주소")
+                    } else if (i == 3) {
+                        title_h2.innerHTML = "휴대폰번호 변경"
+                        t1_call.style.display = "block";
+                        t2_call.style.display = "block";
+                        innerId.style.display = "block"
+                        innerId.innerHTML = "현재 휴대폰번호";
+                        t1_call.setAttribute("value", tbox3.innerHTML)
+                        // t1_call.setAttribute("placeholder", "현재 휴대폰번호")
+                        t2_call.setAttribute("placeholder", "새 휴대폰번호")
+                    }
+
+                    t1_pw.addEventListener("focusout", function () {
+                        console.log(inputNone.value.length)
+                        if (inputNone.value.length != t1_pw.value.length) {
+                            // alert("일치하지않습니다.")
+                            // t1_pw.setAttribute("placeholder", "일치하지 않습니다.")
+                            t1_pw.setAttribute("value", "")
+                            alertBox.style.display = "block"
+                        } else if (inputNone.value.length == t1_pw.value.length) {
+                            alertBox.style.display = "none"
+                        }
+                    })
+
+                    t2_pw.addEventListener("focusout", function () {
+                        if (t2_pw.value.length != t3_pw.value.length) {
+                            alertBox2.style.display = "block"
+                        } else if (t2_pw.value.length == t3_pw.value.length) {
+                            alertBox2.style.display = "none"
+                        }
+                    })
+
+                    t3_pw.addEventListener("focusout", function () {
+                        // t3_pw.classList.add("success")
+                        //  let success = t3_pw.classList.contains("success")
+
+                        //  console.log(t1_pw)
+                        if (t2_pw.value.length == t3_pw.value.length) {
+                            alertBox2.style.display = "none"
+                        } else if (t2_pw.value.length != t3_pw.value.length) {
+                            alertBox2.style.display = "block"
+                        }
+                    })
+                    cancel.addEventListener("click", function () {
+                        background.style.display = "none";
+
+                    })
+                    apply.addEventListener("click", function () {
+                        background.style.display = "none";
+
+                        if (i == 0) {
+                            if (t2_id.value != "") {
+                                tbox1.innerHTML = t2_id.value
+                            } else {
+                                t2_id.setAttribute("placeholder", "입력은 필수입니다")
+                                background.style.display = "block";
+                            }
+                        } else if (i == 2) {
+                            if (t2_mail.value != "") {
+                                tbox2.innerHTML = t2_mail.value
+                            } else {
+                                t2_mail.setAttribute("placeholder", "입력은 필수입니다")
+                                background.style.display = "block";
+                            }
+                        } else if (i == 3) {
+                            if (t2_call.value != "") {
+                                tbox3.innerHTML = t2_call.value
+                            } else {
+                                t2_call.setAttribute("placeholder", "입력은 필수입니다")
+                                background.style.display = "block"
+                            }
+                        } else if (i == 1) {
+                            if (t2_pw.value.length == t3_pw.value.length) {
+                                inputNone.setAttribute("value", t3_pw.value)
+                                tbox4.innerHTML = t3_pw.value
+                            } else {
+                                background.style.display = "block"
+                            }
+                            // if(success){
+                            //   tbox4.innerHTML = t3_pw.value
+                            // }else{
+                            //     background.style.display = "block"
+                            // }
                         }
 
-                        cancel.addEventListener("click", function () {
-                            background.style.display = "none";
-                        })
-                        apply.addEventListener("click", function () {
-                            if(i == 0){
-
-                                background.style.display = "none";
-                                tbox1.innerHTML = t2.value;
-                                console.log(tbox1)
-                                console.log(1)
-                            }
-                        })
-                        xBox.addEventListener("click", function () {
-                            background.style.display = "none";
-                        })
-                        // t2.addEventListener("input",function() {
-                        //      t2 = t2.value;
-                        //     tbox.innerHTML = t2;
-                        //     console.log(tbox)
-                        // })
-                        
                     })
-                }
-                
-                
+                    xBox.addEventListener("click", function () {
+                        background.style.display = "none";
+                    })
+
+                })
             }
+
+
+        }
     </script>
     <style>
+        .viewBar {
+            display: none;
+        }
+
         body {
             margin: 0;
         }
@@ -212,9 +318,10 @@
             line-height: 45px;
             margin-left: 5px;
         }
-        .textbox .tname{
+
+        .textbox .tname {
             font-size: 13px;
-            color:#999999;
+            color: #999999;
         }
 
 
@@ -320,6 +427,7 @@
             height: 30px;
             margin: 5px;
             margin-left: 10px;
+            /* display: none; */
         }
 
         .popUp {
@@ -354,6 +462,66 @@
         .popUp-title {
             margin: 10px;
         }
+
+        .menu_wrap {
+            position: absolute;
+            right: 30px;
+            top: 70px;
+            /* display: none; */
+
+        }
+
+        .menu_ul {
+            background-color: white;
+            font-size: 20px;
+            border-radius: 20px;
+            list-style: none;
+            text-align: center;
+            line-height: 65px;
+            width: 210px;
+            height: 70px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .t1_id {
+            display: none;
+        }
+
+        .t2_id {
+            display: none;
+        }
+
+        .t1_pw {
+            display: none;
+        }
+
+        .t2_pw {
+            display: none;
+        }
+
+        .t3_pw {
+            display: none;
+        }
+
+        .t1_mail {
+            display: none;
+        }
+
+        .t2_mail {
+            display: none;
+        }
+
+        .t1_call {
+            display: none;
+        }
+
+        .t2_call {
+            display: none;
+        }
+
+        .inputNone {
+            all: unset;
+        }
     </style>
 </head>
 
@@ -361,9 +529,11 @@
     <div class="bigBox">
         <header class="headerBar">
             <div class="frontBar">
-                <div class="barMar logoBar hov"><button><img
-                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_yellow_white.png?raw=true"></button>
-                </div>
+                <a href="./main.html">
+                    <div class="barMar logoBar hov"><button><img
+                                src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_yellow_white.png?raw=true"></button>
+                    </div>
+                </a>
                 <div class="barMar lineBar hov"><button><img
                             src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/menu.png?raw=true"></button>
                 </div>
@@ -395,10 +565,27 @@
                         <div class="popUp-Line">
                             <hr>
                         </div>
+                        <div class="innerId" style="font-size: 12px; margin-left: 10px; padding-top: 10px; color:000;">
+                        </div>
                         <div>
-                            <div><input class="popUp-text t1" type="text" placeholder="" value=""></div>
-                            <div><input class="popUp-text t2" type="text" placeholder="" value=""></div>
-                            <div><input class="popUp-text t3" type="text" placeholder="" value=""></div>
+                            <div><input class="popUp-text t1_id" readonly="readonly" type="text" placeholder=""
+                                    value=""></div>
+                            <div><input class="popUp-text t2_id" type="text" placeholder="" value=""></div>
+                            <div><input class="popUp-text t1_pw" type="password" placeholder="" value=""></div>
+                            <div class="alertBox" style="font-size: 10px; color:red; margin-left: 10px; display:none;">
+                                일치하지않습니다.</div>
+                            <div><input class="popUp-text t2_pw" type="password" placeholder="" value=""></div>
+                            <div><input class="popUp-text t3_pw" type="password" placeholder="" value=""></div>
+                            <div class="alertBox2" style="font-size: 10px; color:red; margin-left: 10px; display:none;">
+                                일치하지않습니다.</div>
+                            <!-- <div class="innerMail" style="font-size: 12px; margin-left: 10px; padding-top: 10px; color:#000;"></div> -->
+                            <div><input class="popUp-text t1_mail" readonly="readonly" type="text" placeholder=""
+                                    value=""></div>
+                            <div><input class="popUp-text t2_mail" type="text" placeholder="" value=""></div>
+                            <!-- <div class="innerCall" style="font-size: 12px; margin-left: 10px; padding-top: 10px; color:#000;"></div> -->
+                            <div><input class="popUp-text t1_call" readonly="readonly" type="text" placeholder=""
+                                    value=""></div>
+                            <div><input class="popUp-text t2_call" type="text" placeholder="" value=""></div>
                         </div>
                         <div class="popUp-set">
                             <div class="popUp cancel">취소</div>
@@ -406,26 +593,39 @@
                         </div>
                     </div>
                 </div>
+
+                <!---------------팝업창 :로그아웃----------------->
+                <div>
+                    <div class="menu_wrap viewBar">
+                        <!-- <li class="button"><img class="header_img" src="./images/세줄로고.png"></li> -->
+                        <a href="./login.html">
+                            <div class="menu_ul">로그아웃</div>
+                        </a>
+                    </div>
+                </div>
+                <!---------------------------------------------->
                 <div>
                     <div class="textbox top">
                         <img style="position:relative; top: 5px; left:5px;"
                             src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_human.png?raw=true">
                         <div class="tbox tname">이름</div>
                         <div class="tbox tbox1">데이브</div>
-                        <input style="position:relative; top: 6px; left:110px;" class="adjust" id="이름" type="button"
-                            value="수정">
+                        <input style="position:relative; top: 6px; left:110px;" class="adjust" id="이름"
+                            readonly="readonly" type="button" value="수정">
                     </div>
                     <div class="textbox">
                         <img style="position:relative; top: 5px; left:5px;"
                             src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_id_before.png?raw=true">
-                            <div class="tbox tname">아이디</div>
-                            <div class="tbox">qwer1234</div>
+                        <div class="tbox tname">아이디</div>
+                        <div class="tbox">qwer1234</div>
                     </div>
                     <div class="textbox bottom">
                         <img style="position:relative; top: 5px; left:5px;"
                             src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_password_before.png?raw=true">
-                            <div class="tbox tname">비밀번호</div>
-                        <input style="position:relative; top: 6px; left:270px;" class="adjust" type="button" id="비밀번호"
+                        <div class="tbox tname">비밀번호</div>
+                        <div class="tbox tbox4"><input class="inputNone" type="password" value="rkskekfk"
+                                readonly="readonly"></div>
+                        <input style="position:relative; top: 6px; left:115px;" class="adjust" type="button" id="비밀번호"
                             value="수정">
 
                     </div>
@@ -441,8 +641,8 @@
                             src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/icon_message.png?raw=true">
                         <div class="tbox tname">이메일주소</div>
                         <div class="tbox tbox2">qwer1234@naver.com</div>
-                        <input style="position:relative; top: 6px; left:110px;" class="adjust" type="button"
-                            id="이메일주소" value="수정">
+                        <input style="position:relative; top: 6px; left:110px;" class="adjust" type="button" id="이메일주소"
+                            value="수정">
                     </div>
                     <div class="textbox">
                         <img style="position:relative; top: 6px; left:5px;"

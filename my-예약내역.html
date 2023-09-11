@@ -9,6 +9,23 @@
         window.addEventListener("load", function () {
             bind()
         })
+
+        function bind() {
+            let menu_wrap = document.querySelector(".menu_wrap")
+            let lineBar = document.querySelector(".lineBar")
+            let viewBar = document.querySelector(".viewBar")
+
+            lineBar.addEventListener("click", function() {
+                let toggle = menu_wrap.classList.contains("viewBar")
+
+                if(toggle){
+                    menu_wrap.classList.remove("viewBar")
+                }else{
+                    menu_wrap.classList.add("viewBar")
+                }
+            })
+
+        }
     </script>
     <style>
         a,
@@ -142,6 +159,28 @@
         .flus{
             display: flex;
         }
+        .menu_wrap {
+            position: absolute;
+            right: 30px;
+            top: 70px;
+            /* display: none; */
+
+        }
+
+        .menu_ul {
+            background-color: white;
+            font-size: 20px;
+            border-radius: 20px;
+            list-style: none;
+            text-align: center;
+            line-height: 65px;
+            width: 210px;
+            height: 70px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        } 
+        .viewBar {
+            display: none;
+        }
     </style>
 </head>
 
@@ -174,6 +213,16 @@
                         </div>
                     </div>
                 </nav>
+                <!---------------팝업창 :로그아웃----------------->
+                <div>
+                    <div class="menu_wrap viewBar">
+                        <!-- <li class="button"><img class="header_img" src="./images/세줄로고.png"></li> -->
+                        <a href="./login.html">
+                            <div class="menu_ul">로그아웃</div>
+                        </a>
+                    </div>
+                </div>
+                <!---------------------------------------------->
                 <div class="bigWindow">
                     <div class="boxes">
                         <div>￦ 300,000 / 3박</div>
