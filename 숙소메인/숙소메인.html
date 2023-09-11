@@ -7,7 +7,6 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="./style.css">
-    <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <script>
@@ -40,116 +39,58 @@
                 }
             });
 
-            let sel = document.getElementById('sp_1');
-
-            sel.addEventListener('mouseenter', function () {
-                // console.log("마우스 올라감")
-                sel.setAttribute("src", "./이미지/지역선택 (1).png");
-            })
-
-            sel.addEventListener('mouseleave', function () {
-                sel.setAttribute("src", "./이미지/지역선택_원본 (1).png");
-                // console.log("마우스 벗어남")
-            })
-
-            sel.addEventListener('click', function () {
-                location.href = "./아산_천안_페이지/cheonAn_main.html"
-            })
-
-            let sel_2 = document.getElementById('sp_2');
-
-            sel_2.addEventListener('mouseenter', function () {
-                // console.log("마우스 올라감")
-                sel_2.setAttribute("src", "./이미지/지역선택 (2).png");
-            })
-
-            sel_2.addEventListener('mouseleave', function () {
-                sel_2.setAttribute("src", "./이미지/지역선택_원본 (2).png");
-                // console.log("마우스 벗어남")
-            })
-
-            sel_2.addEventListener('click', function () {
-                location.href = "./아산_천안_페이지/asan_main.html"
-            })
-
-            let sel_3 = document.getElementById('sp_3');
-
-            sel_3.addEventListener('mouseenter', function () {
-                // console.log("마우스 올라감")
-                sel_3.setAttribute("src", "./이미지/지역선택 (3).png");
-            })
-
-            sel_3.addEventListener('mouseleave', function () {
-                sel_3.setAttribute("src", "./이미지/지역선택_원본 (3).png");
-                // console.log("마우스 벗어남")
-            })
-
-            let sel_4 = document.getElementById('sp_4');
-
-            sel_4.addEventListener('mouseenter', function () {
-                // console.log("마우스 올라감")
-                sel_4.setAttribute("src", "./이미지/지역선택 (4).png");
-            })
-
-            sel_4.addEventListener('mouseleave', function () {
-                sel_4.setAttribute("src", "./이미지/지역선택_원본 (4).png");
-                // console.log("마우스 벗어남")
-            })
-
-            let sel_5 = document.getElementById('sp_5');
-
-            sel_5.addEventListener('mouseenter', function () {
-                // console.log("마우스 올라감")
-                sel_5.setAttribute("src", "./이미지/지역선택 (5).png");
-            })
-
-            sel_5.addEventListener('mouseleave', function () {
-                sel_5.setAttribute("src", "./이미지/지역선택_원본 (5).png");
-                // console.log("마우스 벗어남")
-            })
-
-
-            let sel_6 = document.getElementById('sp_6');
-
-            sel_6.addEventListener('mouseenter', function () {
-                // console.log("마우스 올라감")
-                sel_6.setAttribute("src", "./이미지/지역선택 (6).png");
-            })
-
-            sel_6.addEventListener('mouseleave', function () {
-                sel_6.setAttribute("src", "./이미지/지역선택_원본 (6).png");
-                // console.log("마우스 벗어남")
-            })
-
             document.querySelector('.header_logo').addEventListener('click', function () {
                 location.href = "./main.html"
             })
 
-            // console.log(11)
         });
-
     </script>
+
+
+
+
 </head>
 
 <body>
     <div id="wrap">
-        <header class="header">
+        <div class="header">
             <div class="header_logo">
-                <img
-                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_main.png?raw=true">
+                <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_main.png?raw=true">
             </div class="header_logo">
 
-            <div class="search">
-                <input type="text" placeholder="travel" aria-expanded="false">
-                <img class="search_3"
-                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Magnifier_2.png?raw=true">
+            <div class="header_search">
+                <input class="search" type="text" placeholder="travel" aria-expanded="false">
+                <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Magnifier_2.png?raw=true">
+                <ul class="input_list">
+                    <a href="./아산_천안_페이지/cheonAn_main.html">
+                        <li class="header_ch">1. 천안</li>
+                    </a>
+                    <hr>
+                    <a href="./아산_천안_페이지/asan_main.html">
+                        <li class="header_as">2. 아산</li>
+                    </a>
+                    <hr>
+                    <li class="header_tsd">3. 태안, 서산, 당진</li>
+                    <hr>
+                    <li class="header_yhc">4. 예산, 홍성, 청양</li>
+                    <hr>
+                    <li class="header_bbs">5. 보령, 부여, 서천</li>
+                    <hr>
+                    <li class="header_gss">6. 공주, 논산, 금산</li>
+                </ul>
             </div>
 
-            <div>
-                <img class="header_threeline"
+            <div class="threeline">
+                <img
                     src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/%EC%84%B8%EC%A4%84%EB%A1%9C%EA%B3%A0.png?raw=true">
+                <ul class="menu">
+                    <li class="menu_login"><a href="./log.html">로그인</a></li>
+                    <li class="menu_join"><a href="./log.html">회원가입</a></li>
+                    <li class="menu_my"><a href="./log.html">내정보</a></li>
+                    <li class="menu_reser"><a href="">예약내역</a></li>
+                </ul>
             </div>
-        </header>
+        </div>
         <hr class="header_line">
 
         <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -272,14 +213,14 @@
                         <span>개인정보처리방침&nbsp;</span>|
                         <span>고객센터</span>
                     </div>
-                    <div class="footer_div icondiv">
+                    <!-- <div class="footer_div icondiv">
                         <span><img
                                 src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Facebook.png?raw=true">&nbsp;&nbsp;</span>
                         <span><img
                                 src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/YouTube.png?raw=true">&nbsp;&nbsp;</span>
                         <span><img
                                 src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Instagram.png?raw=true"></span>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="footer_div line2"></div>
 
@@ -301,6 +242,9 @@
         </footer>
 
     </div>
+    <script src="header.js"></script>
+    <script src="main.js"></script>
+    <script src="footer.js"></script>
 </body>
 
 
