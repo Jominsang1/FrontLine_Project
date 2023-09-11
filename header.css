@@ -68,6 +68,8 @@ header .header_input {
     /* border: 1px solid red; */
     
     width: 50%;
+
+    margin-right: 15%;
 }
 
 header .input_wrap {
@@ -134,4 +136,8 @@ header .input_list {
 
 header .input_list li:hover {
     color: blue;
+}
+
+body {
+    margin: 0;
 }
