@@ -32,21 +32,23 @@
             }
 
             let xhr2 = new XMLHttpRequest();
-            let url2 = "./Asan_trip.html"
+            let url2 = "./아산_천안_페이지/Asan_data.html"
             xhr2.open("GET", url2);
             xhr2.send();
             xhr2.onload = function () {
                 let str = xhr2.responseText
+                console.log(str)
                 let parser = new DOMParser()
                 let data = parser.parseFromString(str, "text/html")
 
-                let as = data.querySelectorAll(".asan_trip_info img")[5]
+                let as = data.querySelectorAll(".asan_travel img")[5]
 
                 document.querySelector(".header_as").prepend(as)
             }
 
+            //태서당 부터 파일 없어져서 그냥 떼움
             let xhr3 = new XMLHttpRequest();
-            let url3 = "./tsd.html"
+            let url3 = "./아산_천안_페이지/Asan_data.html"
             xhr3.open("GET", url3);
             xhr3.send();
             xhr3.onload = function () {
@@ -56,13 +58,13 @@
 
                 console.log(data)
 
-                let tsd = data.querySelectorAll(".taean_travel img")[0]
+                let tsd = data.querySelectorAll(".asan_travel img")[0]
 
                 document.querySelector(".header_tsd").prepend(tsd)
             }
 
             let xhr4 = new XMLHttpRequest();
-            let url4 = "./yhc.html"
+            let url4 = "./아산_천안_페이지/Asan_data.html"
             xhr4.open("GET", url4);
             xhr4.send();
             xhr4.onload = function () {
@@ -72,13 +74,13 @@
 
                 console.log(data)
 
-                let yhc = data.querySelectorAll(".yesan_travel img")[0]
+                let yhc = data.querySelectorAll(".asan_travel img")[3]
 
                 document.querySelector(".header_yhc").prepend(yhc)
             }
 
             let xhr5 = new XMLHttpRequest();
-            let url5 = "./BoBuSeo_trip.html"
+            let url5 = "./아산_천안_페이지/Asan_data.html"
             xhr5.open("GET", url5);
             xhr5.send();
             xhr5.onload = function () {
@@ -88,7 +90,7 @@
 
                 console.log(data)
 
-                let bbs = data.querySelectorAll("img")[4]
+                let bbs = data.querySelectorAll(".asan_travel img")[4]
 
                 document.querySelector(".header_bbs").prepend(bbs)
             }
@@ -219,7 +221,7 @@
             })
         }
     </script>
-     <style>
+    <style>
         /* 헤더 */
         div {
             /* border: 1px solid red; */
