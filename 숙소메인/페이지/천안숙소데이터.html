@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .title,
+        .address,
+        .info,
+        .desc {
+            display: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .desc {
+            height: 100px;
+        }
+
+        .address,
+        .info {
+            height: 50px;
+        }
+
+        .ch_food,
+        .ch_travel,
+        .ch_play,
+        .ch_sleep {
+            width: 575px;
+            /* height: 200px; */
+            margin: 5px;
+            display: none;
+        }
+
+
+
+
+        .image {
+            display: flex;
+            align-items: center;
+            width: 575px;
+            height: 250px;
+            overflow: hidden;
+            display: none;
+        }
+
+        img {
+
+            display: inline-block;
+            width: 200px;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .wrap_1 {
+            border: 1px solid black;
+            width: 50%;
+            text-align: center;
+            padding: 1%;
+            margin: auto;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        .category,
+        .title_submit,
+        .address_submit,
+        .info_submit,
+        .tell_submit,
+        .desc_submit,
+        .image_submit {
+            text-align: left;
+            margin-right: 2%;
+            margin-bottom: 2%;
+        }
+
+        .submit {
+            /* margin-left: 46%; */
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="wrap_1">
+
+        <div class="category">
+            카테고리 : <select id="select_val" name="ctg">
+                <option class="op" value="ch_travel">여행지</option>
+                <option class="op" value="ch_food">음식점</option>
+                <option class="op" value="ch_play">놀거리</option>
+                <option class="op" value="ch_sleep">숙소</option>
+            </select>
+        </div>
+        <div class="title_submit">
+            <상호명><input type="text" class="title_s" value="" placeholder="상호명을 입력하세요">
+        </div>
+        <div class="address_submit">
+            <주소><input type="text" class="address_s" placeholder="주소를 입력하세요">
+        </div>
+        <div class="info_submit">
+            <정보><input type="text" class="info_s" placeholder="정보를 입력하세요">
+        </div>
+        <div class="tell_submit">
+            <전화번호><input type="text" class="tell_s" placeholder="전화번호를 입력하세요">
+        </div>
+        <div class="desc_submit">
+            <상세정보><input type="text" class="desc_s" placeholder="상세정보를 입력하세요">
+        </div>
+        <div class="image_submit">
+            <이미지><input type="text" class="image_s" placeholder="이미지주소를 첨부하세요">
+        </div>
+        <div class="submit"><button class="confirm">등록</button></div>
+
+    </div>
+
+
+
+
+    <!-- 123 -->
+
+
+    <div class="ch_travel">
+        <div class="title">천호지</div>
+        <div class="address">충청남도 천안시 동남구 단대로 119</div>
+
+        <div class="image">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=c03679a0-0867-410c-8e47-d457ce8d508b">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=091cd367-93e5-4a32-8033-be1c811ab881">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=0a3c3f36-b3e9-494b-8a02-c14907b457a2">
+        </div>
+    </div>
+
+    <div class="ch_travel">
+        <div class="title">광덕사</div>
+        <div class="address">충청남도 천안시 동남구 광덕면 광덕사길 30</div>
+
+        <div class="image">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f6adcc73-95bc-45fb-88fa-c03b1b9db2a1">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=e26aa1f1-420d-40e2-8a57-5b167717f5ae">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=5a6b9a15-9d28-4fce-bf8d-ecbbed115b05">
+        </div>
+    </div>
+
+    <div class="ch_travel">
+        <div class="title">에코힐링 황톳길</div>
+        <div class="address">충청남도 천안시 서북구 공원로 159</div>
+
+        <div class="image">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=e16d4c86-fb6c-4ed7-a679-d4b518f6e033">
+        </div>
+    </div>
+
+    <div class="ch_travel">
+        <div class="title">광덕산 관광농원</div>
+        <div class="address">충청남도 천안시 동남구 광덕면 해사동길 15</div>
+
+        <div class="image">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=1fab54d8-64c7-4e61-930a-04ffb0291295">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=f0826121-50bd-444f-9c51-37914630afc0">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=e18ff916-6073-4c78-bd48-2b44ae0fc454">
+        </div>
+    </div>
+
+    <div class="ch_travel">
+        <div class="title">흑성산</div>
+        <div class="address">충청남도 천안시 동남구 목천읍 교촌7길 46-12</div>
+
+        <div class="image">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=8dde8b6b-bee1-4a55-9ca9-0e3079029c48">
+        </div>
+    </div>
+
+    <div class="ch_travel">
+        <div class="title">독립기념관</div>
+        <div class="address"> 충청남도 천안시 동남구 목천읍 독립기념관로 1</div>
+
+        <div class="image">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=13e2040e-3344-44b3-a9b8-65b68772bf9b">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=92642064-66f2-4eec-8b59-78f150ef489e">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=c2b797ba-384d-4754-a2c6-a5eea257f90c">
+        </div>
+    </div>
+
+
+    <!-------------------------------------------------------------------------------------------------------------->
+
+
+    <div class="ch_food">
+        <div class="title">달식당</div>
+        <div class="address">충남 천안시 동남구 대흥로 215 백자빌딩 1층 102호 달식당</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">어머니가 30년. 아들과 며느리가 이어받아 30년.
+            천안 자유시장에서 시작해
+            가장 작은 곳에서 가장 큰 곳까지 경험한 저희.
+            다시 손님과 도란도란 얘기나누며 김밥 만들고 싶습니다.
+
+            김밥과 돈까스는 참 많이 닮아있는것 같아요. 재료가 참 중요하죠.
+            좋은 재료로 정성들여 만들어 고소하고 맛있는 한끼를 선물해 드릴게요.</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20180411_155%2F1523372533207IOyBG_JPEG%2FYH8WEwkyx0baflb0p91snBwz.jpg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20180411_41%2F1523372533076fd68I_JPEG%2Ffbh023zUou5J4VcCBF_S-_b1.jpg">
+        </div>
+    </div>
+
+    <div class="ch_food">
+        <div class="title">뚜쥬르 빵돌가마점</div>
+        <div class="address">충남 천안시 동남구 풍세로 706</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">어머니가 30년. 아들과 며느리가 이어받아 30년.
+            천안 자유시장에서 시작해
+            가장 작은 곳에서 가장 큰 곳까지 경험한 저희.
+            다시 손님과 도란도란 얘기나누며 김밥 만들고 싶습니다.
+
+            김밥과 돈까스는 참 많이 닮아있는것 같아요. 재료가 참 중요하죠.
+            좋은 재료로 정성들여 만들어 고소하고 맛있는 한끼를 선물해 드릴게요.</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20151104_285%2F1446623917652EPcMc_JPEG%2F167054568853849_0.jpg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210625_283%2F1624584385251btufL_JPEG%2Fx0uh8503bYDUBiZYl2rd6wcj.jpg">
+        </div>
+    </div>
+
+  
+    <div class="ch_food">
+        <div class="title">맛찬들왕소금구이</div>
+        <div class="address">충남 천안시 서북구 원두정6길 6</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">어머니가 30년. 아들과 며느리가 이어받아 30년.
+            천안 자유시장에서 시작해
+            가장 작은 곳에서 가장 큰 곳까지 경험한 저희.
+            다시 손님과 도란도란 얘기나누며 김밥 만들고 싶습니다.
+
+            김밥과 돈까스는 참 많이 닮아있는것 같아요. 재료가 참 중요하죠.
+            좋은 재료로 정성들여 만들어 고소하고 맛있는 한끼를 선물해 드릴게요.</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20191128_159%2F1574928679978JVEVe_JPEG%2FAT6TOGlGbjErnWgo7lqTqqth.jpg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20191128_31%2F15749286797792EHRA_JPEG%2FlVERoRXw4R2fl8VVh-aZPoJj.jpg">
+        </div>
+    </div>
+
+    <div class="ch_food">
+        <div class="title">호수 매운탕</div>
+        <div class="address">충청남도 천안시 서북구 성성2길 61</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">어머니가 30년. 아들과 며느리가 이어받아 30년.
+            천안 자유시장에서 시작해
+            가장 작은 곳에서 가장 큰 곳까지 경험한 저희.
+            다시 손님과 도란도란 얘기나누며 김밥 만들고 싶습니다.
+
+            김밥과 돈까스는 참 많이 닮아있는것 같아요. 재료가 참 중요하죠.
+            좋은 재료로 정성들여 만들어 고소하고 맛있는 한끼를 선물해 드릴게요.</div>
+        <div class="image">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=22c8f0c6-0b60-4737-8dc3-fcc542965e10">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=ba9a4bda-660d-4b3a-b179-e84d50010183">
+        </div>
+    </div>
+
+    <div class="ch_food">
+        <div class="title">충남 집순대</div>
+        <div class="address">충청남도 천안시 동남구 병천면 충절로 1748</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">어머니가 30년. 아들과 며느리가 이어받아 30년.
+            천안 자유시장에서 시작해
+            가장 작은 곳에서 가장 큰 곳까지 경험한 저희.
+            다시 손님과 도란도란 얘기나누며 김밥 만들고 싶습니다.
+
+            김밥과 돈까스는 참 많이 닮아있는것 같아요. 재료가 참 중요하죠.
+            좋은 재료로 정성들여 만들어 고소하고 맛있는 한끼를 선물해 드릴게요.</div>
+        <div class="image">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=0bfe1b4d-cc48-4286-8934-5105d8a3863f">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=964044d3-535a-468b-8306-8071013db1ab">
+        </div>
+    </div>
+    
+
+   
+
+    <!-------------------------------------------------------------------------->
+
+    <div class="ch_play">
+        <div class="title">히흣 도예공방</div>
+        <div class="address">충청남도 천안시 동남구 대흥로 323</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">천안에서 즐기는 데이트 추천장소!!</div>
+
+        <div class="image">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=e6dc1e1f-224f-4a00-8d72-0d90ebf827b2">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=48b0b8b3-153a-42a9-8092-a2d9a4673193">
+        </div>
+    </div>
+
+    <div class="ch_play">
+        <div class="title">천안흥타령춤축제</div>
+        <div class="address">충청남도 천안시 서북구 번영로 208 종합운동장 천안시종합운동장일원</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">천안에서 즐기는 데이트 추천장소!!</div>
+
+        <div class="image">
+            <img
+                src="https://korean.visitkorea.or.kr/kfes/upload/contents/db/1fc75427-81f0-42bf-946b-d81e9a32aca5_5.jpg">
+        </div>
+
+    </div>
+
+    <div class="ch_play">
+        <div class="title">빵빵데이 천안</div>
+        <div class="address">충청남도 천안시 서북구 번영로 156 천안시청</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">천안에서 즐기는 데이트 추천장소!!</div>
+
+        <div class="image">
+            <img src="https://image.여기유.com/content_festival/2023082109372416925782441458.jpg">
+        </div>
+    </div>
+
+    <div class="ch_play">
+        <div class="title">천안 중앙시장</div>
+        <div class="address">충청남도 천안시 동남구 사직로 7</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">천안에서 즐기는 데이트 추천장소!!</div>
+
+        <div class="image">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=fd6bb0db-8c97-45d6-9cfc-b1b2ca15b0f7">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=c0e1a8be-38dd-46ef-8c49-7ec2b96bf601">
+        </div>
+    </div>
+
+    <div class="ch_play">
+        <div class="title">천안타운홀</div>
+        <div class="address">충청남도 천안시 동남구 옛시청길 29 힐스테이트 천안</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">천안에서 즐기는 데이트 추천장소!!</div>
+
+        <div class="image">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=c4971109-8615-45e5-89fc-5a76fe39d1e5">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=c281c506-ea89-4f67-a9be-d302cb072e07">
+            <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=fe855eab-fe16-4cfd-a438-9fd53ee1ddc8">
+        </div>
+    </div>
+
+    <div class="ch_play">
+        <div class="title">아라리오 갤러리</div>
+        <div class="address">충청남도 천안시 동남구 만남로 43</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">천안에서 즐기는 데이트 추천장소!!</div>
+
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221219_231%2F1671437219477p05ry_JPEG%2F%25C3%25B5%25BE%25C8%25B0%25B6%25B7%25AF%25B8%25AE_%25BF%25DC%25B0%25FC%25281%2529.jpg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221219_120%2F1671437189377K4Nhx_JPEG%2F%25C3%25B5%25BE%25C8%25B0%25B6%25B7%25AF%25B8%25AE_%25BF%25DC%25B0%25FC%25284%2529.jpg">
+        </div>
+    </div>
+
+    <div class="ch_play">
+        <div class="title">루베아</div>
+        <div class="address">충남 천안시 동남구 목천읍 교촌7길 46-11</div>
+        <div class="info">주차, 포장, 예약, 남/녀 화장실 구분</div>
+        <div class="tell">041-123-4567</div>
+        <div class="desc">천안에서 즐기는 데이트 추천장소!!</div>
+
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220917_191%2F1663373165990Jz1PH_JPEG%2FE0CC3407-8A4A-44FF-BC00-06B18A08E4AC.jpeg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220917_247%2F16633731632995HgzS_JPEG%2F899E1E11-DDBA-4CDC-A3EA-2F5FC95251CD.jpeg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220917_118%2F1663373163449xCP9T_JPEG%2F0AEAFB14-DC54-4D06-A6BF-D6792AA3E80E.jpeg">
+        </div>
+    </div>
+
+
+    <!-- ------------------------------------------------------------------------------------------------------- -->
+
+    <div class="ch_sleep">
+        <div class="title">신라스테이 천안</div>
+        <div class="address">충남 천안시 서북구 동서대로 177</div>
+        <div class="tell">041-415-9000</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221213_296%2F1670919178589Lqv1U_JPEG%2F%25C5%25A9%25B1%25E2%25BA%25AF%25C8%25AF%25BD%25C5%25B6%25F3%25BD%25BA%25C5%25D7%25C0%25CC%25C3%25B5%25BE%25C8_%25BF%25DC%25B0%25E6%2528%25BE%25DF%25B0%25E6%2529.jpg">
+        </div>
+        <div class=desc>한국관광협회중앙회 호텔업등급관리국에서 3성으로 인증받은 호텔입니다.</div>
+    </div>
+    <div class="ch_sleep">
+        <div class="title">라마다앙코르바이윈덤 천안</div>
+        <div class="address">충남 천안시 서북구 차돌들길 12 라마다앙코르바이윈덤 천안</div>
+        <div class="tell">041-570-3000</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220816_109%2F1660632384077u8wlL_JPEG%2FDSC04538_full_size.jpg">
+        </div>
+        <div class=desc>글로벌 호텔그룹 윈덤그룹 브랜드인 라마다 앙코르 천안은 합리적이고 심플한 라이프스타일을 추구하여 여유로운 업무공간과 업무효율을 높이는 공간의 안락함을 객실에 그대로
+            반영하였습니다.</div>
+    </div>
+
+    <div class="ch_sleep">
+        <div class="title">다인펜션</div>
+        <div class="address">충남 천안시 동남구 광덕면 해사동길 82-1</div>
+        <div class="tell">0507-1342-7297</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210920_190%2F1632124736409dmLk8_JPEG%2FNr59iLWWNbzra7elaRZ5LJPa.jpeg.jpg">
+        </div>
+        <div class=desc>핑크마티니, 레몬그라스, 그린파파야 3동의 감성적인 펜션
+            음악이 흐르는 아름다운 창가와 아침 새소리.
+            별들이 가득한 밤하늘과 행복한 불멍타임을 다인펜션에서 즐겨보세요.</div>
+    </div>
+
+    <div class="ch_sleep">
+        <div class="title">프렌즈애견빌리지</div>
+        <div class="address">충청남도 천안시 동남구 목천읍 삼방로 911-20</div>
+        <div class="tell">041-904-0330</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220118_249%2F1642483433276XM1ic_JPEG%2Fimage.jpg">
+        </div>
+    </div>
+    <div class="ch_sleep">
+        <div class="title">다인펜션</div>
+        <div class="address">충남 천안시 동남구 광덕면 해사동길 82-1</div>
+        <div class="tell">0507-1342-7297</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210920_190%2F1632124736409dmLk8_JPEG%2FNr59iLWWNbzra7elaRZ5LJPa.jpeg.jpg">
+        </div>
+        <div class=desc>핑크마티니, 레몬그라스, 그린파파야 3동의 감성적인 펜션
+            음악이 흐르는 아름다운 창가와 아침 새소리.
+            별들이 가득한 밤하늘과 행복한 불멍타임을 다인펜션에서 즐겨보세요.</div>
+    </div>
+    <div class="ch_sleep">
+        <div class="title">금당채</div>
+        <div class="address">충남 천안시 서북구 성거읍 천흥4길 181-36</div>
+        <div class="tell">0507-1341-6000</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230427_160%2F1682570744201NpXVU_JPEG%2FDSC_6210.jpg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230506_138%2F1683358617407etfw5_JPEG%2FDSC_1421.jpg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230506_150%2F1683358570117xAnWS_JPEG%2FDSC_1136_%25281%2529.jpg">
+        </div>
+        <div class=desc>
+            계절마다 새로운 옷을 바꿔 입는 주변 환경과 한옥의 전통스러운 멋스러움과 현대의 모던함이 잘 어우러지게 지어진 한옥에서 고즈넉한 한옥의 정취를 통해서 그동안 잊고 지낸 삶의 여유와 건강한 휴식을
+            선물합니다.</div>
+    </div>
+
+    <div class="ch_sleep">
+        <div class="title">다인펜션</div>
+        <div class="address">충남 천안시 동남구 광덕면 해사동길 82-1</div>
+        <div class="tell">0507-1342-7297</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210920_190%2F1632124736409dmLk8_JPEG%2FNr59iLWWNbzra7elaRZ5LJPa.jpeg.jpg">
+        </div>
+        <div class=desc>핑크마티니, 레몬그라스, 그린파파야 3동의 감성적인 펜션
+            음악이 흐르는 아름다운 창가와 아침 새소리.
+            별들이 가득한 밤하늘과 행복한 불멍타임을 다인펜션에서 즐겨보세요.</div>
+    </div>
+    
+    <div class="ch_sleep">
+        <div class="title">반딧불이키즈풀빌라</div>
+        <div class="address">충남 천안시 동남구 만남의길 20-1 반딧불이키즈풀빌라</div>
+        <div class="tell">010-3168-2100</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230826_78%2F1693039220412H2AQd_JPEG%2F2.jpg">
+        </div>
+        <div class=desc>도심속 아이들이 맘껏 뛰놀수 있는 공간, 그리고 부모님들이 편안하게 쉴수 있는 반딧불이키즈풀빌라</div>
+    </div>
+
+    <div class="ch_sleep">
+        <div class="title">신라스테이 천안</div>
+        <div class="address">충남 천안시 서북구 동서대로 177</div>
+        <div class="tell">041-415-9000</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221213_296%2F1670919178589Lqv1U_JPEG%2F%25C5%25A9%25B1%25E2%25BA%25AF%25C8%25AF%25BD%25C5%25B6%25F3%25BD%25BA%25C5%25D7%25C0%25CC%25C3%25B5%25BE%25C8_%25BF%25DC%25B0%25E6%2528%25BE%25DF%25B0%25E6%2529.jpg">
+        </div>
+        <div class=desc>한국관광협회중앙회 호텔업등급관리국에서 3성으로 인증받은 호텔입니다.</div>
+    </div>
+    <div class="ch_sleep">
+        <div class="title">라마다앙코르바이윈덤 천안</div>
+        <div class="address">충남 천안시 서북구 차돌들길 12 라마다앙코르바이윈덤 천안</div>
+        <div class="tell">041-570-3000</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220816_109%2F1660632384077u8wlL_JPEG%2FDSC04538_full_size.jpg">
+        </div>
+        <div class=desc>글로벌 호텔그룹 윈덤그룹 브랜드인 라마다 앙코르 천안은 합리적이고 심플한 라이프스타일을 추구하여 여유로운 업무공간과 업무효율을 높이는 공간의 안락함을 객실에 그대로
+            반영하였습니다.</div>
+    </div>
+
+    <div class="ch_sleep">
+        <div class="title">다인펜션</div>
+        <div class="address">충남 천안시 동남구 광덕면 해사동길 82-1</div>
+        <div class="tell">0507-1342-7297</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210920_190%2F1632124736409dmLk8_JPEG%2FNr59iLWWNbzra7elaRZ5LJPa.jpeg.jpg">
+        </div>
+        <div class=desc>핑크마티니, 레몬그라스, 그린파파야 3동의 감성적인 펜션
+            음악이 흐르는 아름다운 창가와 아침 새소리.
+            별들이 가득한 밤하늘과 행복한 불멍타임을 다인펜션에서 즐겨보세요.</div>
+    </div>
+
+    <div class="ch_sleep">
+        <div class="title">프렌즈애견빌리지</div>
+        <div class="address">충청남도 천안시 동남구 목천읍 삼방로 911-20</div>
+        <div class="tell">041-904-0330</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220118_249%2F1642483433276XM1ic_JPEG%2Fimage.jpg">
+        </div>
+    </div>
+
+    <div class="ch_sleep">
+        <div class="title">금당채</div>
+        <div class="address">충남 천안시 서북구 성거읍 천흥4길 181-36</div>
+        <div class="tell">0507-1341-6000</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230427_160%2F1682570744201NpXVU_JPEG%2FDSC_6210.jpg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230506_138%2F1683358617407etfw5_JPEG%2FDSC_1421.jpg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230506_150%2F1683358570117xAnWS_JPEG%2FDSC_1136_%25281%2529.jpg">
+        </div>
+        <div class=desc>
+            계절마다 새로운 옷을 바꿔 입는 주변 환경과 한옥의 전통스러운 멋스러움과 현대의 모던함이 잘 어우러지게 지어진 한옥에서 고즈넉한 한옥의 정취를 통해서 그동안 잊고 지낸 삶의 여유와 건강한 휴식을
+            선물합니다.</div>
+    </div>
+
+
+    <div class="ch_sleep">
+        <div class="title">반딧불이키즈풀빌라</div>
+        <div class="address">충남 천안시 동남구 만남의길 20-1 반딧불이키즈풀빌라</div>
+        <div class="tell">010-3168-2100</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230826_78%2F1693039220412H2AQd_JPEG%2F2.jpg">
+        </div>
+        <div class=desc>도심속 아이들이 맘껏 뛰놀수 있는 공간, 그리고 부모님들이 편안하게 쉴수 있는 반딧불이키즈풀빌라</div>
+    </div>
+    <div class="ch_sleep">
+        <div class="title">신라스테이 천안</div>
+        <div class="address">충남 천안시 서북구 동서대로 177</div>
+        <div class="tell">041-415-9000</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221213_296%2F1670919178589Lqv1U_JPEG%2F%25C5%25A9%25B1%25E2%25BA%25AF%25C8%25AF%25BD%25C5%25B6%25F3%25BD%25BA%25C5%25D7%25C0%25CC%25C3%25B5%25BE%25C8_%25BF%25DC%25B0%25E6%2528%25BE%25DF%25B0%25E6%2529.jpg">
+        </div>
+        <div class=desc>한국관광협회중앙회 호텔업등급관리국에서 3성으로 인증받은 호텔입니다.</div>
+    </div>
+    <div class="ch_sleep">
+        <div class="title">라마다앙코르바이윈덤 천안</div>
+        <div class="address">충남 천안시 서북구 차돌들길 12 라마다앙코르바이윈덤 천안</div>
+        <div class="tell">041-570-3000</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220816_109%2F1660632384077u8wlL_JPEG%2FDSC04538_full_size.jpg">
+        </div>
+        <div class=desc>글로벌 호텔그룹 윈덤그룹 브랜드인 라마다 앙코르 천안은 합리적이고 심플한 라이프스타일을 추구하여 여유로운 업무공간과 업무효율을 높이는 공간의 안락함을 객실에 그대로
+            반영하였습니다.</div>
+    </div>
+
+    <div class="ch_sleep">
+        <div class="title">다인펜션</div>
+        <div class="address">충남 천안시 동남구 광덕면 해사동길 82-1</div>
+        <div class="tell">0507-1342-7297</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210920_190%2F1632124736409dmLk8_JPEG%2FNr59iLWWNbzra7elaRZ5LJPa.jpeg.jpg">
+        </div>
+        <div class=desc>핑크마티니, 레몬그라스, 그린파파야 3동의 감성적인 펜션
+            음악이 흐르는 아름다운 창가와 아침 새소리.
+            별들이 가득한 밤하늘과 행복한 불멍타임을 다인펜션에서 즐겨보세요.</div>
+    </div>
+
+    <div class="ch_sleep">
+        <div class="title">프렌즈애견빌리지</div>
+        <div class="address">충청남도 천안시 동남구 목천읍 삼방로 911-20</div>
+        <div class="tell">041-904-0330</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220118_249%2F1642483433276XM1ic_JPEG%2Fimage.jpg">
+        </div>
+    </div>
+
+    <div class="ch_sleep">
+        <div class="title">금당채</div>
+        <div class="address">충남 천안시 서북구 성거읍 천흥4길 181-36</div>
+        <div class="tell">0507-1341-6000</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230427_160%2F1682570744201NpXVU_JPEG%2FDSC_6210.jpg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230506_138%2F1683358617407etfw5_JPEG%2FDSC_1421.jpg">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230506_150%2F1683358570117xAnWS_JPEG%2FDSC_1136_%25281%2529.jpg">
+        </div>
+        <div class=desc>
+            계절마다 새로운 옷을 바꿔 입는 주변 환경과 한옥의 전통스러운 멋스러움과 현대의 모던함이 잘 어우러지게 지어진 한옥에서 고즈넉한 한옥의 정취를 통해서 그동안 잊고 지낸 삶의 여유와 건강한 휴식을
+            선물합니다.</div>
+    </div>
+
+
+    <div class="ch_sleep">
+        <div class="title">반딧불이키즈풀빌라</div>
+        <div class="address">충남 천안시 동남구 만남의길 20-1 반딧불이키즈풀빌라</div>
+        <div class="tell">010-3168-2100</div>
+        <div class="price">￦ 200,874 / 1박</div>
+        <div class="image">
+            <img
+                src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230826_78%2F1693039220412H2AQd_JPEG%2F2.jpg">
+        </div>
+        <div class=desc>도심속 아이들이 맘껏 뛰놀수 있는 공간, 그리고 부모님들이 편안하게 쉴수 있는 반딧불이키즈풀빌라</div>
+    </div>
+
+
+
+
+    <div class="locations">
+        <div class="title">천안</div>
+
+        <div class="image">
+            <img src="https://www.cheonan.go.kr/images/kor/sub/sub04/img_01_07_001.gif">
+        </div>
+    </div>
+    <div class="locations">
+        <div class="title">아산</div>
+
+        <div class="image">
+            <img
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIPEBAQEBAWEA8PEhAQFRYVDxAXEhEWFhUWGhUZFxcYHiggGBoxGxUTIzIjJSkrLi8uGB8zODMvNygvLisBCgoKDg0OGxAQGy0lICYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALUBFwMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcBBAIFCAP/xABCEAACAQICBwUDCQYFBQAAAAAAAQIDBBEhBQYSMUFRYQcTInGBMmKRFCNCUnKhscHRFSQzQ8LwgpKisuE0Y3N0k//EABsBAQACAwEBAAAAAAAAAAAAAAAEBQIDBgEH/8QAMREAAgIBAgQCCAYDAAAAAAAAAAECAwQRMQUSIVFBYRMiMnGBkbHRFKHB4fDxBiNS/9oADAMBAAIRAxEAPwC8QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACMa860R0db7SwlcVcY0YPc3xlL3VisfNLiZQhKclGO7MZSUVzM3tYNZLawjtXFVRb9mCzqT+zFZ+u4gGkO1544W9p4edWpn/lin/uK0v72pcVJVq03UqzeLlJ5vouS6LI1i7p4bXFf7Or/IqrM2bfq9EWXR7X66fjtKclyjUnF/Fp/gSzV7tHs7uSpzbtqsskqmGxJ8ozWXxwZRAZss4fTJdFoYxzLY7vU9VoyVB2Ya6yhOFjdTcqc8I0ZyecJcKbfGL3Lk8tzWFvlJfTKmfLL+y0qtVkdUAAaTaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYxPP3aVpV3Wka+eNO3fyeC5bHt+u3tfBHoE8waZb+U3OO/v6+Pn3ksSy4ZFOxy7IgZ8nypGmAC8KsAAA5JtPFPBp4preuqPSGqGlflljbV37c6aU/tx8M/8AUmebS9eyBv8AZkMdyq1sPLa/XErOKRXo1LsydgyfO15E3ABSFqAAAAAAAAAAfOdRRWMmkurSONK4hL2Zxl5ST/AHmp9gYRkHoAAAAAAAAAAAAAAAAAAAAAAABhnnntD0Y7XSVzHDCNWTuIdVUbcv9e2vQ9DkQ7QtVP2lQTp4K6oYypt5KaftQb4J4LB8Gl1JeFeqbdZbPoyNlVOyHTdFBA+txQlTlKFSLhODcZRksJRa4NHyOjXUpQAD0GT0bqTot2lhbUZLCahtTXKc25SXxk16FZdmOp0rmrC8rxwtqTUqaa/jzW5/YTzx4tLqXUik4lkKTVcfDcs8Glx1m/HYyACrLAAAAAAAwyudee0L5PKVtZ4SrRynUecab4xit0pfcuvCS696YdlY1asHhVlhSp9JTyx9FtS9Dz9jjvzbz6s0XWuPRFfm5MoepE2b++q3EtqvVnVlvxnJv4LcvQ1oNxacXstbmsmvVAEPzKfXXcmmq3aFc2sowuJSuLfc9p41YLnGT9ryfxRcuj7yncU4VqUlOnUSlGS4o8zFk9jumZKpVs5PwTTrU8/ZksFNLzTT9HzJNNr15WWOFky5lCT6eBbQAJRbgAAAAAAAAAAAAAAAAAAAAAAAEc1m1OtdIrGrDYqpYKrDBVFyTywkujxK70h2SXUW+4r0qseG3t05Yeikn9xc4JFWVbUtIvp2NFmPXN6tFHUeym/k8JSoQXFurN/BKOZLtXuyy3oNTup/KprPZ2dmin1jm5erw6FhgzszrprRvT3dDGGJVF66fM4U4KKSSSSWCSWSXQ5gEQkgAAAAAAAAFddtLfyW2X0flGfn3c8PzKhL77Q9Du8sKsYLaq0mq0Fxbhjil1cXJepQhDyF62pSZ8Wrde6AANBBBJuzVv8AatphxdVPy7qf54EZLD7HtEOdxUu5L5ujF0ovg5ywxw8o/wC4zqWs0b8eLlbFLuXADCMlgdEAAAAAAAAAAAAAAADDYK37R9fXbOVpaS+f3VKiz7nH6Mff68PPdsqqlbLliYWWRrjzSJJrJrpaWGMatRzrYY91TSlU6Y8I+rRBL3terNvubWEI8HUnKbfmo4YfErWUm25Ntyk22222297be9nEu6uHUxXrdX/OxVWZlktuhYtDtcu0/HQozXKKqwfxcpEo0F2o2lw1C4TtJvjJqVLH7a3eckkUkDOfD6JLRLT3GMcu2L31PVFOopJNNNNYpp4proz6FB6i671NHTVKq3Us5POO+VHH6VPpzjx4Z770tLqFaEalOSnTqRUoyTxUk9zRS5GNKiWktvBlnRfG1arc2AARzeAAAAAAAAAAAAYZVmvXZ7Nync2UdrbblUorBPF75U+f2fhyLUBjKKktGarqY2x5ZHl6rCUJOE4uE45OMotST6p5o4M9MXujKFfKtQp1l79OEvxRrW2r1nSltU7ShCS4xoU0164Ef8N5lc+Gy16SRS2qupdzfyjLZdG3eDdWSaTX/bT9t9d3XgXfofRtO0owoUY7NOmsFzb4tvi28Wbxk3QrUNibRjRp26vuAAbCSAAAAAAAAAAAAACG6/65R0dT7um1O7qrwR3qmvrz6clxfqZwhKclGK6mM5qEeZmn2j66qyi7a3knd1Fm8mqEXxfvvgvV8E6TlJttttttttvFtve2+LOdxXlUnKpUk5zm3KUm8XJve2fI6PGxo0x0W/iykvudktWAASTSD7W1CVWShTi5TluS/F8kYoUZVJRhBbU5PBL++BP9CaJjaww9qpLDblzfJcolJxrjNfDq+837Mf1fkvz+lpwvhk8yfaK3f6Lw1+h0dvqfJrGpWSfJQxw9W1j8CX6lXdbRs+5nPvrKbx3YToSf0ks8Y80vNLfjgHAy/wAkz5v/AGSTXbRafDxXzOvXA8SK0gmn31ev59H8i04STSaeKeaa3M5kN1Z05sNUKr8DyhJ/R6PoTFHQYmVDJr54/Fdn/PmU2RjyonyS+HmZABKNAAMAAjmntdLOybjUq7dVfy6a2prz4R9WiF6/6/Scp2tlPZjHGNStF5t8Y03wXOXw5lav8czRZcl0RW5Gfyvlh8y0Lntcz+bs21znWSfwUX+JytO1xY/O2bS5wqpv4SS/EqwGj08yF+Nu115j0HoHW60vvDRq4VN/dzTjU9E/a9MTv0eXoyaaabTTxTTaaa3NNbmWpqBr66ko2l7PGbwjTqvLbfCM/e5Pj5799dyl0e5Ox85SfLPp5lnAwjJvLEAAAAAAAAAAAAAAAAHQ62ayUtHUHVqeKcsY04J+KpL8lzfD4HsYuT0W55KSitWa2u2tdPRlHHKdxUTVKnzf1pcor/goK+valxVnWrTc6tR7UpPi/wAlwS4H10vpOrd1p168tqpUf+GK4RiuEVyNI6LExVTHze7/AERS5F7tfkAASyOD629CdWcadOLnUm1GMUsXJvckcYQcmoxTlKTSSSbbb3JJb2Xf2c6lKxgrivFO8qR3ZNUIv6K97m/RZb42Vkxohr4vZG6il2y0RFrDVeWjsqyTr1IpuSzil9WL6Pf16YG6WRpOwhcU3Ca6p8Yvmiv7+ynQqOnNZrc+ElwaPl3G6LvTu+b5lJ79vL3dvud9wm6v0SpitGvDv5/c1wAUhbGCV6s6cxwoVXnuhJ8fdfXkRUEnEyp41nPD4ruu382I+Tjxvhyy+D7FrAjWrWnO8SpVX84vZk/prk/e/EkmJ2+PkQyK1ZDb6eRyt1M6puEtwyse0vXXZ27K1n4841qifs86cX9bm+G7fu3u0fXT5MpWltL95mvHJfyIvl77W7lv5FPM8ut09WJT5mVp6kPj9jiZAIhUgyYNiytJVpqnBYt5t8EuLfQxk1FNvZGdcJTkoRWreyONrazqy2KcXOW/Lclzb4I7mGqlVrOpBPl4n9+BJNHWELeGxDzlLjJ82bRRX8Uscv8AX0R22F/jVChrk6uT8E9EvLpvod/qRp6s1G0vP4sVhTqp4xrJcG+E0sN+/wCJNkVXGTTTWTTTXRrcTjV7TSuI7E3hWis/eXNfoW/DeKenfo7ekvB9/wB/qe5XDfw8eaDbj57r7o70GEZLsrgAAAAAAAAAAdfpfSlK0ozr1p7FOmsXzb4JLi28kglq9EeN6LVnw1i03SsKEq9Z5LKMV7VSXCMVz/DNnn7WLTla/ryr1nm8oxT8NOPCMf14s2NbNZKukq7q1PDTjjGlTxypx/OTyxf6HRnQYWIqo80va+nkU+TkOx6LYAAnEUHIwWv2Y6jbOxfXcPFlKjTkvZ5VJLnyXDfvww05GRGmHM/h5myqp2S0Ru9m2o/yZRu7mP7zJY04NfwE1vfvtfDdzLHMYGTm7bZWS5pbl5XWq48qB12mNGRuYbLyks4y4xf6HYg0WVxsi4yWqZtjJxalF6NFX3dtKjNwmsJR/vFdD4lgac0TG5hyqR9mX5PoQKvRlTk4TWy4vBo4viGBLGn3i9n+nv8AqdRhZkciPX2luv1OAAK8mhPB4p4NbnyfA3dO9oLoW3dxWN7JbKeHhhH6769Oee46DTelVbwwWdWXsrl7z6EHqzcpOUntSk8W3xZecJhbBuxPSL6e/wDrucp/kXEK4r0EOs/F/wDK7e9/uKlRyk5SblKTcm28W297b5nAAuDigAfW0tp1qkKVKLnUqNRjFb2wen20Zo6rdVYUKMdupUeCXBc23wS5k3sNEKzTpNfOp+NtZt/pyJzqRqrDR1HPCdxUS7yf9MfdX37zd1g0MriO1HBVorJ/WXJmniGDZbT6j6rrp38vsdRwSFeLZz2rq/H/AJ/niQQGZwcW4yWEk8GnvTMHItaHbp6g5UqrhJSi9mUXimt6OIPU9Op41qT7QWmFcwz8NWPtR59V0O4KttriVKcZwey4vFP++BP9DaUjcwxWU45SjyfPyOu4ZxL069HZ7S/P9+/zObz8F0vnh7L/ACOzBhGS4K0AAAAAA1b+9p0Kc61WahTppylJ7kl+PkUFrvrXU0nWxzhb02+6p/1y99/csubfc9q+nLircu1nCVG3otShF/zuVRtZNclwzxz3QEu8DEUUrZbvbyKrLyHJ8i2AALMggAnnZxqQ7ycbq5h+6QeMYtf9RJf0Ljz3czXbbGqPNL+zOut2S5Ub3ZnqP3zhe3cPmVhKjTkv4j4Tkvqclx37sMbhSOMIpJJLBLLyOZzd98rp80v6LumpVx0QABpNoAAAOh1l0Q68HOml38Fkm8O8X1W+D5M74xgarqYXQcJrVMzhZKEuaD0ZTUdM0cZRnLupwbjKE1KMotb08csTU0hrJSgmqXzs+GCaivNvf6Ey7RdS/lad1bx/eoLxRX8+K/rS3Pju5YU3KLTaawabTTTTTW9NcGUUuD1Vz1bbRhlcezYLk0in/wBJfprpr8z6XFeVSTnN7Upb3+S5I+YBOSSWiOXlJyer3AAisWkli20klvbe5Jcz08OdKnKcowhFynNqMYpYuTe5JcWXbqDqdGwp97VSld1F4nvVJP6EfzfH0NLs41L+SRV1cR/eZrwxf8iL/rfHlu54z9Eyqrl6vcuMPF5fXnv4fcIyAbyxI/rHoRV13lNYVor/ADrk+vIhLWGKeTWTXFMtYjWsuhO8xrUl84l4or6a5rqUPFeG8+t1S6+K7+fv+vv3t+H53I/RWPp4Pt+30IcAYOWOgMn3srudCaqQeEl8GuKfQ+APYycXzLc8lFSWj2LH0VpKNxTU45PdKPGLN8rTRV3OjVjKni22ls/X6Fj0pNpNrZbSeHFdDtOG534mD5l6y37e/t8Dls3E/Dz6bPY+gALIhAAAHT6w6v2+kKXdXENrDOMllOm+cZcPwZU2ney+8oNyt8LqlwwajVS6xbwfo/QvEEijKsp9l9O3gaLceFnV7nmatq/eQeErOun/AOvVf3pGzYao39dpU7OrnxnDu4rzc8D0eMCW+KWaeyvz+5H/AAEdfaZV+q/ZXGDjVv5Ko1g1Rhj3f+OW+XksF5lmUqailGKUYxSSSSSSW5JcD6gg23Ttes2S66o1rSKAANRsAAAAAAAAAMYEP1t1DoX7dWD7i5f00sY1OW3Hj57yYg8aTWjMJ1xmtJLUoDSmol/bt427qxX0qXjT9PaXwOo/ZNzjh8lrY/8Agq/oeljBoePHwIMuHR8Gzz/orUi/uWsLeVKL+lVwgl6PxP0RZ2qOoVGxaq1H39yt0msIU/sR59Xn5EzBnCqMepuqw663ruzGBkA2ksAAAGMDIAOi0vq9Cu3OD7uo97w8MvNfmRm60DcU3nTclzj4l+pYZjArMnhOPe+b2X3X22J1HELqVy7rzKyVjV3d1P8A+cv0N6z1euKjzh3cec8vu3k/GBFr4DSnrKTfyRInxe1r1YpfM6nROg6dv4vbqfWfD7K4HbgFzVTCqPJBaIrLLJWS5pPVgAGwwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/9k=">
+        </div>
+    </div>
+    <div class="locations">
+        <div class="title">태안/서산/당진</div>
+
+        <div class="image">
+            <img src="https://cdn.discordapp.com/attachments/1141330543749910602/1147529859376099359/tsd.png">
+        </div>
+    </div>
+    <div class="locations">
+        <div class="title">보령/부여/서천</div>
+
+        <div class="image">
+            <img src="https://cdn.discordapp.com/attachments/1141330543749910602/1147529859900391434/bbs.png">
+        </div>
+    </div>
+    <div class="locations">
+        <div class="title">예산/홍성/청양</div>
+
+        <div class="image">
+            <img src="https://cdn.discordapp.com/attachments/1141330543749910602/1147529867655659581/yhc.png">
+        </div>
+    </div>
+    <div class="locations">
+        <div class="title">공주/논산/금산</div>
+
+        <div class="image">
+            <img src="https://cdn.discordapp.com/attachments/1141330543749910602/1147529866820997190/gng.png">
+        </div>
+    </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+
+        html = "";
+
+
+        let main_food = document.querySelector('.foods');
+        console.log(main_food)
+
+        let select_val = document.getElementById('select_val');
+        let title_sub = document.querySelector('.title_s')
+        let address_sub = document.querySelector('.address_s')
+        let info_sub = document.querySelector('.info_s')
+        let tell_sub = document.querySelector('.tell_s')
+        let desc_sub = document.querySelector('.desc_s')
+        let image_sub = document.querySelector('.image_s')
+
+        // let op = document.querySelectorAll('op')
+        // let op_2 = document.getElementById(op_2)
+        // let op_3 = document.getElementById(op_3)
+        // let op_4 = document.getElementById(op_4)
+
+        let submit = document.querySelector('.confirm').addEventListener('click', function () {
+            let ctg = select_val.options[select_val.selectedIndex].value
+            // console.log(ctg)
+            // console.log(title_sub.value)
+            html += `<div class="${ctg}">`
+            html += `<div class="title">${title_sub.value}</div>`
+            html += `<div class="address">${address_sub.value}</div>`
+            html += `<div class="info">${info_sub.value}</div>`
+            html += `<div class="tell">${tell_sub.value}</div>`
+            html += `<div class="desc">${desc_sub.value}</div>`
+            html += `<div class="image">`
+            html += `<img src="${info_sub.value}">`
+            html += `</div>`
+            html += `</div>`
+
+
+            // console.log(html)
+
+            main_food.innerHTML = html;
+        })
+
+    </script> -->
+
+
+
+
+
+
+
+</body>
+
+</html>
