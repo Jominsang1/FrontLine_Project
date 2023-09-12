@@ -214,7 +214,7 @@
         .div6 {
             font-family: 'Nanum Gothic', sans-serif;
             font-size: 17px;
-            margin: 20px;
+            /* margin: 20px; */
 
         }
 
@@ -222,18 +222,83 @@
             margin-right: 30px;
         }
 
-        .ul {
-            list-style: none;
-            /* display: flex;
-            justify-content: space-between; */
-        }
-
         li {
-            float: left;
-            margin-left: 8%;
+            margin-bottom: 20px;
         }
 
+        .comments {
+            color: #999999;
+            margin-bottom: 13px;
+        }
 
+        /*추가*/
+        .bundle {
+            display: flex;
+            justify-content: space-between
+        }
+
+        #x1 {
+            border: none;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .reply {
+            background-color: #F0F0F0;
+        }
+
+        .fold_bt {
+            padding: 5px;
+            margin-top: 20px;
+            border-top: 1px solid #999999;
+            border-bottom: 1px solid #999999;
+            text-align: center;
+            font-size: 15px;
+            color: #999999;
+            font-family: 'Nanum Gothic', sans-serif;
+            cursor: pointer;
+        }
+
+        .reply {
+            display: flex;
+            flex-direction: column
+        }
+
+        .replytext {
+            justify-content: center;
+        }
+
+        .replysbs {
+            display: flex;
+            flex-direction: row
+        }
+
+        /*추가*/
+
+        /*여기서 답글 더 추가*/
+
+        .plusbundle {
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .plus_comments {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 20px;
+            color: #999999;
+            margin-bottom: 13px;
+        }
+
+        .plus_comments {
+            margin-left: 40px;
+        }
+
+        #x2 {
+            border: none;
+            cursor: pointer;
+            background-color: #F0F0F0;
+        }
 
 
         /* /////////////민상 css///////////// */
@@ -446,6 +511,7 @@
                     //     // }
                     // }
 
+                    comment();
 
 
                     console.log(title)
@@ -575,6 +641,316 @@
         }
 
 
+
+
+        function comment() {
+            // 텍스트에 입력한 글자가 밑에 뜨도록
+
+            document.querySelector(".bt").addEventListener("click", function () {
+
+
+                let text = document.querySelector("#textbox1").value
+
+                let text_info = document.querySelector("#textbox1")
+
+                let result = document.querySelector(".comments")
+
+                let input = document.createElement("div")
+
+
+
+
+
+                /*여기부터*/
+
+
+
+                let html = '';
+
+
+                html += '<div class="div6">'
+                html += '<div class="div62">'
+                html += '<span class="duv6 bundle">'
+                html += '<span class="div6 left">'
+                html += '<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true">'
+                html += '<span class="div6 user_number">익명1234</span>'
+                html += '</span>'
+                html += '<span class="div6 right">'
+                html += '<input id="x1" type="button" value="삭제">'
+                html += '</span>'
+                html += '</span>'
+                html += '<span class="coment_list">'
+                html += '<div class="comments">' + text + '</div>'
+                html += '<input class="ct_1" type="button" value="답글">'
+                html += '</div>'
+                html += '<hr>'
+                html += '<div class="reply">'
+                <!--여기서부터 답글-->
+
+
+
+
+                html += '<div class="plus_list">'
+                html += '<div class="plus">'
+                html += '<span class="plusbundle">'
+                html += '<span class="plusleft">'
+                html += '<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/reply_img.png?raw=true"style="margin-right: 10px;">'
+                html += '<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true">'
+                html += '<span class="plus_user_number">익명1234</span>'
+                html += '</span>'
+                html += '<span class="plusright">'
+                html += '<input id="x2" type="button" value="삭제">'
+                html += ' </span>'
+                html += ' </span>'
+                html += '<span class="plus_coment_list">'
+                html += '<div class="plus_comments">안뇽하세요</div>'
+                html += ' </div>'
+                html += '</div>'
+
+
+
+
+
+                html += '<span class="replysbs">'
+                html += '<span class="replyimg"><img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/reply_img.png?raw=true"style="margin-right: 10px;"></span>'
+                html += '<span class="replytext"><input type="text"id="textbox2" style="width:1500px; height:70px;" placeholder="소중한 댓글을 남겨주세요"><br>'
+                html += '<input class="upload_bt" type="submit" value="등록" style="margin-top: 13px;"></span>'
+                html += ' </span>'
+                html += '<div class="fold_bt">답글 접기</div>'
+                html += ' </div>'
+                html += '</div>'
+
+
+
+
+
+
+                /*여기까지*/
+
+                input.innerHTML = html
+
+                document.querySelector(".review_list").prepend(input)
+
+                text_info.value = "";
+
+                //엑스버튼
+                if (document.querySelector("#x1") !== null) {
+
+                    let x = document.querySelectorAll("#x1")
+
+                    for (let i = 0; i < x.length; i++) {
+
+                        x[i].addEventListener("click", function () {
+
+                            console.log(" x button click")
+                            this.parentNode.parentNode.parentNode.remove();
+                        })
+                    }
+                }
+
+
+
+
+
+
+
+                //답글 버튼 누르면 접엇다폈다
+                // if (document.querySelector(".ct_1") !== null) {
+
+                let fold = document.querySelectorAll(".ct_1")
+
+                for (let i = 0; i < fold.length; i++) {
+
+                    fold[i].addEventListener("click", function () {
+
+                        console.log("하이")
+                            if (this.reply.style.display == 'block') {
+                                this.reply.style.display = 'none';
+                            } else {
+                                this.reply.style.display = 'block';
+                            }
+                        })
+                        
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                // }
+
+
+
+
+
+
+
+
+
+                //     document.querySelector(".ct_1").addEventListener("click", function () {
+                //     console.log("하이")
+                //     let reply = document.querySelector(".reply");
+                //     if (reply.style.display == 'block') {
+                //         reply.style.display = 'none';
+                //     } else {
+                //         reply.style.display = 'block';
+                //     }
+
+                //     // if (getID.style.display == "block") {
+                //     //     getID.style.display = "none"
+                //     // } else {
+                //     //     getID.style.display = "block"
+                //     // }
+                // })
+                /*답글 여기서부터*/
+
+                //대댓글 작성
+                document.querySelector(".upload_bt").addEventListener("click", function () {
+
+
+                let text = document.querySelector("#textbox2").value
+
+                let text_info = document.querySelector("#textbox2")
+
+                let result = document.querySelector(".comments")
+
+                let input = document.createElement("div")
+
+                input.innerHTML = "<span class='plusbundle'><span class='plusleft'><img src='https://github.com/Jominsang1/FrontLine_Project/blob/main/images/reply_img.png?raw=true'style='margin-right: 10px;''><imgsrc='https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true'><span class='plus_user_number'>익명1234</span></span><span class='plusright'><input id='x2' type='button' value='삭제'></span></span><span class='plus_coment_list'><div class='plus_comments'> " + text + " </div>"
+
+
+                document.querySelector(".plus_list").append(input)
+
+                text_info.value = "";
+
+                //대댓글 삭제 버튼
+                if (document.querySelector("#x2") !== null) {
+
+                    let x = document.querySelectorAll("#x2")
+
+                    for (let i = 0; i < x.length; i++) {
+
+                        x[i].addEventListener("click", function () {
+
+                            console.log(" x button click")
+                            this.parentNode.parentNode.parentNode.remove();
+                        })
+                    }
+                }
+
+
+
+            })
+
+            //추가
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            })
+        
+
+        //여기까지 큰괄호
+
+
+
+
+
+        document.querySelector(".ct_1").addEventListener("click", function () {
+            console.log("하이")
+            let reply = document.querySelector(".reply");
+            if (reply.style.display == 'block') {
+                reply.style.display = 'none';
+            } else {
+                reply.style.display = 'block';
+            }
+
+            // if (getID.style.display == "block") {
+            //     getID.style.display = "none"
+            // } else {
+            //     getID.style.display = "block"
+            // }
+        })
+
+
+        //답글 접었다 폈다 버튼
+        if (document.querySelector(".fold_bt") !== null) {
+
+            let fold = document.querySelectorAll(".fold_bt")
+
+            for (let i = 0; i < fold.length; i++) {
+
+                fold[i].addEventListener("click", function () {
+
+                    console.log("하이")
+                    let reply = document.querySelector(".reply");
+                    if (reply.style.display == 'block') {
+                        reply.style.display = 'none';
+                    } else {
+                        reply.style.display = 'block';
+                    }
+                })
+
+            }
+        }
+
+        //답글 버튼 누르면 댓글창 열리게 
+
+        document.querySelector(".fold_bt").addEventListener("click", function () {
+            console.log("하이")
+            let reply = document.querySelector(".reply");
+            if (reply.style.display == 'block') {
+                reply.style.display = 'none';
+            } else {
+                reply.style.display = 'block';
+            }
+
+
+        })
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    }
+
     </script>
 
 
@@ -588,7 +964,88 @@
     <div id="cs">
     </div>
 
+    <div class="div5">
+        <div class="div5 review" style="margin-left: 20px;">
+            리뷰<img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/pencil-light.png?raw=true">
+        </div>
+        <div class="div5 bt">
+            <input type="button" value="등록">
+        </div>
     </div>
+
+    <div>
+        <hr style="margin:30px;">
+    </div>
+
+    <div class="comments_section">
+        <input type="text" id="textbox1" placeholder="소중한 댓글을 남겨주세요"
+            style="width:1820px; height:142px; border-color: #474747; margin:20px;">
+    </div>
+
+    <div class="review_list">
+        <div class="div6">
+            <div class="div62">
+                <span class="duv6 bundle">
+                    <span class="div6 left">
+                        <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true">
+                        <span class="div6 user_number">익명1234</span>
+                    </span>
+                    <span class="div6 right">
+                        <input id="x1" type="button" value="삭제">
+                    </span>
+                </span>
+                <span class="coment_list">
+                    <div class="comments">안뇽하세요</div>
+                    <input class="ct_1" type="button" value="답글">
+            </div>
+            <hr>
+            <div class="reply">
+                <!--여기서부터 답글-->
+
+
+
+
+                <div class="plus_list">
+                    <div class="plus">
+                        <span class="plusbundle">
+                            <span class="plusleft">
+                                <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/reply_img.png?raw=true"
+                                    style="margin-right: 10px;">
+                                <img
+                                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Circle.png?raw=true">
+                                <span class="plus_user_number">익명1234</span>
+                            </span>
+                            <span class="plusright">
+                                <input id="x2" type="button" value="삭제">
+                            </span>
+                        </span>
+                        <span class="plus_coment_list">
+                            <div class="plus_comments">안뇽하세요</div>
+                    </div>
+                </div>
+
+
+
+
+                <!--여기까지 답글-->
+                <span class="replysbs">
+                    <span class="replyimg"><img
+                            src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/reply_img.png?raw=true"
+                            style="margin-right: 10px;"></span><span class="replytext"><input type="text" id="textbox2"
+                            style="width:1500px; height:70px;" placeholder="소중한 댓글을 남겨주세요"><br>
+                        <input class="upload_bt" type="submit" value="등록" style="margin-top: 13px;"></span>
+                </span>
+                <div class="fold_bt">답글 접기</div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <span class="div7">
+        <input type="button" value="더보기">
 </body>
 
 </html>

@@ -2,9 +2,11 @@ window.addEventListener("load", function(){
 
     header_menu();
     header_search();
+    header_pop();
 
 })
 
+// 헤더 검색창 및 메뉴 기능구현
 
 function header_menu() {
 
@@ -60,7 +62,7 @@ function header_search() {
     let target = document.querySelector(".search")
     // console.log(target)
     let display = document.querySelector("body")
-    let input = document.querySelector(".input_list")
+    // let input = document.querySelector(".input_list")
     // console.log(input)
 
     // 마우스가 올라가 있는 상태에서
@@ -92,7 +94,6 @@ function header_search() {
     })
 }
 
-
 function header_pop() {
     let input = document.querySelector(".search")
     // console.log(input)
@@ -101,11 +102,11 @@ function header_pop() {
         // console.log(input.value)
         let count = 0;
         let list = document.querySelectorAll(".input_list li")
-        console.log(list);
-
+        console.log(list)
+        
         // console.log("result", String(list[0].textContent).search(input.value))
         // 일치 != -1 / 불일치 = -1
-
+        
         for (let i = 0; i < list.length; i++) {
             if (String(list[i].textContent).search(input.value) == -1) {
                 count += 1;
