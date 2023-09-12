@@ -7,8 +7,6 @@
     <title>Document</title>
 
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Roboto:700);
-
         .findWay {
             background: #3D4C53;
             margin: 20px auto;
@@ -68,15 +66,6 @@
             font-family: 'Nanum Gothic', sans-serif;
             font-size: 16px;
         }
-
-
-
-
-
-
-
-
-
 
 
         /* /////////////남주님 css///////////// */
@@ -402,6 +391,7 @@
                     html += `</div>`
 
 
+
                     html += ` <div class="findWay">`
                     html += `<p class="btnText">READY?</p>`
                     html += `<div class="btnTwo">`
@@ -482,7 +472,7 @@
 
                         // 만약 title 값이 ch_play_title[배열] 값과 같다면 사진을 출력해라 if 문
                         if (title == ch_play_title) {
-                            titleSub += '천안 맛집으로 소문난<br>'
+                            titleSub += '천안의 특별한 이색데이트<br>'
                             html_play += `<div class="play">${ch_play_img.innerHTML}</div>`
 
                         }
@@ -556,7 +546,6 @@
                             location.href = "https://map.kakao.com/?sName=" + address1 + "&eName=" + address
                         })
                     });
-
                 }
 
             });
