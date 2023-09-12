@@ -125,7 +125,9 @@
             let pop_count = 0;
             let count = 0;
             let menu_img = document.querySelector("header .header_img")
+            // console.log(menu_img)
             let menu_list = document.querySelector("header .menu")
+            // console.log(menu_list)
             let display = document.querySelector("body")
 
             menu_img.addEventListener("click", function(){
@@ -166,6 +168,7 @@
 
         function header_search(){
             let input = document.querySelector("header .input")
+            console.log(input);
 
             input.addEventListener("keyup", function(){
                 // console.log(document.querySelector(".ch").textContent)
@@ -208,13 +211,17 @@
             let display = document.querySelector("body")
             let input = document.querySelector("header .input")
 
+            // 마우스가 올라가 있는 상태에서
             target.addEventListener("mouseover", function(){
                 pop_count = 1;
             })
+
+            // 마우스가 벗어나 있는 상태에서
             target.addEventListener("mouseout", function(){
                 pop_count = 0;
             })
 
+            // 클릭을 했을때 작동한다
             display.addEventListener("click", function(){
                 if(pop_count == 0){
                     let input = document.querySelector("header .input")
@@ -224,6 +231,7 @@
                 }
             })
 
+            // 클릭을 했을때 작동한다
             input.addEventListener("click", function(){
                 if(pop_count == 1){
                     input.style.borderBottomRightRadius = "0"
