@@ -39,8 +39,8 @@
     font-size: inherit;
     outline: none;
     box-shadow:
-    1px 1px 5px rgba(64,60,67,.24)
-    /* z-index: 2; */
+        1px 1px 5px rgba(64, 60, 67, .24)
+        /* z-index: 2; */
 }
 
 .header_search img {
@@ -59,26 +59,52 @@
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     box-shadow:
-    0 9px 8px -5px rgba(64,60,67,.24), 8px 0 8px -8px rgba(64,60,67,.24), -8px 0 8px -8px rgba(64,60,67,.24);
+        0 9px 8px -5px rgba(64, 60, 67, .24), 8px 0 8px -8px rgba(64, 60, 67, .24), -8px 0 8px -8px rgba(64, 60, 67, .24);
     z-index: 1;
-    height: 320px;
+    height: 400px;
     margin-top: -35px;
+}
+
+.input_list .goto_room {
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+}
+
+.goto_room input {
+    cursor: pointer;
+    margin: 0 auto;
+    background-color: white;
+    box-sizing: border-box;
+    width: 450px;
+    padding: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #999999;
+    box-shadow:
+        1px 1px 5px rgba(64, 60, 67, .24);
+}
+
+.goto_room input:hover {
+    font-weight: bold;
+    color: #5498FF;
 }
 
 .input_list li {
     height: 50px;
     line-height: 50px;
+    /* margin-top: 2px; */
     margin-left: 30px;
     font-size: 18px;
 }
 
-.input_list hr {
+/* .input_list hr {
     background-color: rgba(0, 0, 0, 0.1);
     border: none;
     height: 2px;
     margin: 0px auto;
     width: 490px;
-}
+} */
 
 .input_list li:hover {
     font-weight: bold;
