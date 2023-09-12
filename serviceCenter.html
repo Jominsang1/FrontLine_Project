@@ -113,9 +113,9 @@
                 margin-left: 40px;
                 margin-top: -15px;
             }
-    
-            body {
-                margin: 0;
+            
+            footer a {
+                color: #fff; text-decoration: none; outline: none
             }
         </style>
         <style>
@@ -139,7 +139,25 @@
                 margin: 5%;
                 width: 10%;
                 height: 50%;
+                background-color: white;
+                color: black;
+                font-size: 20px;
+                font-weight: bold;
+                
+                border: 3px solid black;
+                border-radius: 15px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            main .section:hover {
+                margin: 5%;
+                width: 10%;
+                height: 50%;
                 background-color: #5498FF;
+                border: 3px solid #5498FF;
                 color: white;
                 font-size: 20px;
                 font-weight: bold;
@@ -148,7 +166,7 @@
 
                 display: flex;
                 justify-content: center;
-                align-items: center;
+                align-items: center; 
             }
         </style>
 </head>
@@ -240,9 +258,9 @@
         <div class="footer_div footer_wrap">
             <div class="footer_div footer_top">
                 <div class="footer_div textdiv">
-                    <span>이용약관&nbsp;</span>|
-                    <span>개인정보처리방침&nbsp;</span>|
-                    <span>고객센터</span>
+                    <span><a href="./terms.html">이용약관</a>&nbsp;</span>|
+                    <span><a href="./terms.html">개인정보처리방침</a>&nbsp;</span>|
+                    <span><a href="./serviceCenter.html">고객센터</a></span>
                 </div>
                 <div class="footer_div icondiv">
                     <span><a href="https://www.facebook.com/?locale=ko_KR"><img
