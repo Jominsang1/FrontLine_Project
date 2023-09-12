@@ -97,7 +97,7 @@ window.addEventListener("load", function () {
 
             let header_logo = document.querySelector(".header_logo")
             header_logo.addEventListener('click', function () {
-                location.href = "./main.html"
+                location.href = "../main.html"
             })
 
 
