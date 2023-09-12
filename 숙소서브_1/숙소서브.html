@@ -8,31 +8,73 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="./sub.js"></script>
-    
+
 
     <script type="text/javascript"
-            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5a611be24364678ff335af8c83f5d896&libraries=services"></script>
-    <body>
-</head>
-    
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5a611be24364678ff335af8c83f5d896&libraries=services"></script>
+
+    <script>
+        window.addEventListener("load", function () {
+
+            document.querySelector('.header_logo').addEventListener('click', function () {
+                location.href = "../숙소메인/main.html"
+            })
+
+            document.querySelector('.goto_room input').addEventListener('click', function () {
+                location.href = "../숙소메인/숙소메인.html"
+            })
+        });
+    </script>
+
+
+
+
+<body>
+    </head>
+
     <div id="wrap">
-        <header class="header">
-            <div>
-                <img class="header_logo"
-                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_main.png?raw=true">
+
+        <div class="header">
+            <div class="header_logo">
+                <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_main.png?raw=true">
             </div>
 
-            <div class="search">
-                <input type="text" placeholder="travel" aria-expanded="false">
-                <img class="search_3"
-                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Magnifier_2.png?raw=true">
+            <div class="header_search">
+                <input class="search" type="text" placeholder="travel" aria-expanded="false">
+                <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Magnifier_2.png?raw=true">
+
+                <ol class="input_list">
+                    <div class="goto_room"><input type="button" value="충남 숙소 더보기"></div>
+
+                    <a href="./아산_천안_페이지/cheonAn_main.html">
+                        <li class="header_ch">천안</li>
+                    </a>
+
+                    <a href="./아산_천안_페이지/asan_main.html">
+                        <li class="header_as">아산</li>
+                    </a>
+
+                    <li class="header_tsd">태안, 서산, 당진</li>
+                    <li class="header_yhc">예산, 홍성, 청양</li>
+                    <li class="header_bbs">보령, 부여, 서천</li>
+                    <li class="header_gss">공주, 논산, 금산</li>
+                </ol>
             </div>
 
-            <div>
-                <img class="header_threeline"
+
+            <div class="threeline">
+                <img
                     src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/%EC%84%B8%EC%A4%84%EB%A1%9C%EA%B3%A0.png?raw=true">
+                <ul class="menu">
+                    <li class="menu_login"><a href="../페이지/login.html"">로그인</a></li>
+                    <li class=" menu_join"><a href="../페이지/">회원가입</a></li>
+                    <li class="menu_my"><a href="../페이지/my-내정보.html">내정보</a></li>
+                    <li class="menu_reser"><a href="../페이지/my-예약내역.html">예약내역</a></li>
+                </ul>
             </div>
-        </header>
+
+        </div>
+
         <hr class="header_line">
 
         <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -56,38 +98,44 @@
         </main>
 
         <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-        
+
         <contents>
             <div class="contents_text">
                 <!-- <span> -->
-                    반딧불이 키즈풀빌라는 아이들이 놀 수 있는 공간과 부모님들이 편안하게 쉴 수 있는 공간을
-                    완벽하게 구분하여 제공합니다 아이들의 안전과<br>부모님들의 휴식을 동시에 만족시킬 수 있습니다
-                    도심속에 있는 키즈풀빌라라 접근성이 높고 배달음식을 이용하실 수 있습니다.
+                반딧불이 키즈풀빌라는 아이들이 놀 수 있는 공간과 부모님들이 편안하게 쉴 수 있는 공간을
+                완벽하게 구분하여 제공합니다 아이들의 안전과<br>부모님들의 휴식을 동시에 만족시킬 수 있습니다
+                도심속에 있는 키즈풀빌라라 접근성이 높고 배달음식을 이용하실 수 있습니다.
                 <!-- </span> -->
             </div>
         </contents>
 
         <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-        
+
         <reservation>
             <div class="window">
                 <div class="s_box">
                     <div class="s_box1">￦ 136,740 /박</div>
+                    <hr class="box_line">
                     <div class="s_box2">￦ 136,740 X 3박</div>
                     <div class="s_box3">총 합계 ￦778,050</div>
                 </div>
 
                 <div class="m_box1">
-                    <div class="m_text1">체크인<div class="date">2023.09.10.</div>
-                    </div>
+                    <div class="m_text">체크인</div>
+                    <div class="date">2023.09.10.</div>
                 </div>
+
                 <div class="m_box2">
-                    <div class="m_text2">체크아웃<div class="date">2023.09.11.</div>
-                    </div>
+                    <div class="m_text">체크아웃</div>
+                    <div class="date">2023.09.11.</div>
                 </div>
 
                 <div class="l_box">
-                    <div class="l_box1">인원 / 방<div class="guest">1명</div>
+                    <div class="l_text">인원 / 방</div>
+                    <div class="guest">1명 A룸</div>
+                    <div class="guest_icon">
+                        <img
+                            src="https://raw.githubusercontent.com/Jominsang1/FrontLine_Project/687cf87ebb82be7afb0836daa58528313188cc15/images/guest_icon.png">
                     </div>
                 </div>
 
@@ -99,13 +147,13 @@
         </reservation>
 
         <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-        
+
         <map>
             <div id="map">asd</div>
         </map>
 
         <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-        
+
         <footer>
             <div class="footer_div footer_wrap">
                 <div class="footer_div footer_top">
@@ -142,6 +190,7 @@
 
         </footer>
     </div>
-</body>
+    <script src="header.js"></script>
+</body >
 
-</html>
+</html >

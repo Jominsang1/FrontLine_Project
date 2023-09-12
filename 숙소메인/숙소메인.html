@@ -12,6 +12,7 @@
     <script>
         window.addEventListener("load", function () {
 
+            // 반복문을 사용해 이미지를 넣어준 함수
             $.ajax({
                 url: "./아산_천안_페이지/ch_data.html",
                 dataType: 'html',
@@ -21,14 +22,16 @@
                     let tableDom = htmlDom.documentElement
 
                     let arr_ch_sleep_img = tableDom.querySelectorAll(".ch_sleep .image")
-                    let arr_ch_sleep_title
                     for (let i = 0; i < 5; i++) {
 
                         let ch_sleep_img = arr_ch_sleep_img[i].querySelector('img')
-                        document.querySelector('.slide_list').innerHTML += `<div class="sleep">${ch_sleep_img.outerHTML}</div>`
-
+                        document.querySelector('.slide_list').innerHTML += `<li class="sleep">${ch_sleep_img.outerHTML}</li>`
                     }
+                    // sleep안에 자식태그 만들어서 앱솔루트하고 위치에 좋아요 버튼
 
+                    bind();
+
+                    // hotroom부분 이미지 넣는 함수
                     for (let i = 0; i < 10; i++) {
 
                         let ch_sleep_img = arr_ch_sleep_img[i].querySelector('img')
@@ -39,9 +42,27 @@
                 }
             });
 
+
+            // 헤더로고 메인으로 이동
             document.querySelector('.header_logo').addEventListener('click', function () {
                 location.href = "./main.html"
             })
+
+            document.querySelector('.goto_room').addEventListener('click', function () {
+                location.href = "숙소메인.html"
+            })
+
+            // document.querySelector('.menu_join').addEventListener('click', function () {
+            //     location.href = "./main.html"
+            // })
+
+            // document.querySelector('.menu_my').addEventListener('click', function () {
+            //     location.href = "../페이지/my-내정보.html"
+            // })
+
+            // document.querySelector('.menu_reser').addEventListener('click', function () {
+            //     location.href = "../페이지/예약내역.html"
+            // })
 
         });
     </script>
@@ -56,41 +77,41 @@
         <div class="header">
             <div class="header_logo">
                 <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/logo_main.png?raw=true">
-            </div class="header_logo">
+            </div>
 
             <div class="header_search">
                 <input class="search" type="text" placeholder="travel" aria-expanded="false">
                 <img src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/Magnifier_2.png?raw=true">
+
                 <ul class="input_list">
+                    <div class="goto_room"><input type="button" value="충남 숙소 더보기"></div>
                     <a href="./아산_천안_페이지/cheonAn_main.html">
                         <li class="header_ch">1. 천안</li>
                     </a>
-                    <hr>
                     <a href="./아산_천안_페이지/asan_main.html">
                         <li class="header_as">2. 아산</li>
                     </a>
-                    <hr>
                     <li class="header_tsd">3. 태안, 서산, 당진</li>
-                    <hr>
                     <li class="header_yhc">4. 예산, 홍성, 청양</li>
-                    <hr>
                     <li class="header_bbs">5. 보령, 부여, 서천</li>
-                    <hr>
                     <li class="header_gss">6. 공주, 논산, 금산</li>
                 </ul>
             </div>
+
 
             <div class="threeline">
                 <img
                     src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/%EC%84%B8%EC%A4%84%EB%A1%9C%EA%B3%A0.png?raw=true">
                 <ul class="menu">
-                    <li class="menu_login"><a href="./log.html">로그인</a></li>
-                    <li class="menu_join"><a href="./log.html">회원가입</a></li>
-                    <li class="menu_my"><a href="./log.html">내정보</a></li>
-                    <li class="menu_reser"><a href="">예약내역</a></li>
+                    <li class="menu_login"><a href="../페이지/login.html"">로그인</a></li>
+                    <li class=" menu_join"><a href="../페이지/">회원가입</a></li>
+                    <li class="menu_my"><a href="../페이지/my-내정보.html">내정보</a></li>
+                    <li class="menu_reser"><a href="../페이지/my-예약내역.html">예약내역</a></li>
                 </ul>
             </div>
+
         </div>
+
         <hr class="header_line">
 
         <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -104,17 +125,10 @@
 
             <div class="header_text">최고의 숙소와 함께하세요!</div>
 
-            <div class="slide">
-                <div class="slide_list">
-                    <!-- <div class="slide_item"><img src="./예시이미지.jpg"></div>
-                    <div class="slide_item"><img src="./예시이미지.jpg"></div>
-                    <div class="slide_item"><img src="./예시이미지.jpg"></div>
-                    <div class="slide_item"><img src="./예시이미지.jpg"></div>
-                    <div class="slide_item"><img src="./예시이미지.jpg"></div> -->
-                </div>
+            <div class="slide_wrap">
+                <ul class="slide_list">
+                </ul>
             </div>
-
-            <div style="margin-top: 10px;"></div>
 
             <div class="btns">
                 <input type="button" id="btn1">
@@ -126,18 +140,27 @@
         <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
         <div class="room_logo">
-            <div class="room"><img
-                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/motel.png?raw=true">
-                <div class="room_text">모텔</div>
-            </div>
-            <div class="room"><img
-                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/hotel.png?raw=true">
-                <div class="room_text">호텔</div>
-            </div>
-            <div class="room"><img
-                    src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/camp.png?raw=true">
-                <div class="room_text">펜션 & 캠핑</div>
-            </div>
+            <a href="../페이지/천안모텔.html">
+                <div class="room"><img
+                        src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/motel.png?raw=true">
+                    <div class="room_text">모텔</div>
+                </div>
+            </a>
+
+            <a href="../페이지/천안호텔.html">
+                <div class="room"><img
+                        src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/hotel.png?raw=true">
+                    <div class="room_text">호텔</div>
+                </div>
+            </a>
+
+            <a href="../페이지/천안펜션.html">
+                <div class="room"><img
+                        src="https://github.com/Jominsang1/FrontLine_Project/blob/main/images/camp.png?raw=true">
+                    <div class="room_text">펜션 & 캠핑</div>
+                </div>
+            </a>
+
         </div>
 
         <!--숙소 메인이미지는 따로 만들어서 이벤트페이지 형식으로 제작 총 12개 제작예정 -->
@@ -148,21 +171,8 @@
         <div class="hot_text">지금 핫한 🔥<br>베스트 숙소</div>
 
         <div class="hot_room_list">
-            <!-- <div class="hot_room_img"><img src="./예시이미지.jpg"></div>
-            <div class="hot_room_img"><img src="./예시이미지.jpg"></div>
-            <div class="hot_room_img"><img src="./예시이미지.jpg"></div>
-            <div class="hot_room_img"><img src="./예시이미지.jpg"></div>
-            <div class="hot_room_img"><img src="./예시이미지.jpg"></div> -->
         </div>
-
-        <!-- <div class="hot_room_list2">
-            <div class="hot_room_img2"><img src="./예시이미지.jpg"></div>
-            <div class="hot_room_img2"><img src="./예시이미지.jpg"></div>
-            <div class="hot_room_img2"><img src="./예시이미지.jpg"></div>
-            <div class="hot_room_img2"><img src="./예시이미지.jpg"></div>
-            <div class="hot_room_img2"><img src="./예시이미지.jpg"></div>
-        </div> -->
-        <div class="hot_more">더보기</div>
+        <div class="hot_more"><a href="./아산_천안_페이지/cheonAn_sleepMore.html">더보기</a></div>
 
         <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -171,40 +181,42 @@
 
             <div class="select_place_list">
                 <div class="select_place_img">
-                    <img src="./이미지/지역선택_원본 (1).png" id="sp_1">
+                    <img src="./images/지역선택_원본 (1).png" id="sp_1">
                     <!-- <img src="./이미지/지역선택 (1).png" class="sl_1"> -->
                 </div>
 
                 <div class="select_place_img">
-                    <img src="./이미지/지역선택_원본 (2).png" id="sp_2">
+                    <img src="./images/지역선택_원본 (2).png" id="sp_2">
                     <!-- <img src="./이미지/지역선택 (2).png" class="sl_2"> -->
                 </div>
 
                 <div class="select_place_img">
-                    <img src="./이미지/지역선택_원본 (3).png" id="sp_3">
+                    <img src="./images/지역선택_원본 (3).png" id="sp_3">
                     <!-- <img src="./이미지/지역선택 (3).png" class="sl_3"> -->
                 </div>
 
                 <div class="select_place_img">
-                    <img src="./이미지/지역선택_원본 (4).png" id="sp_4">
+                    <img src="./images/지역선택_원본 (4).png" id="sp_4">
                     <!-- <img src="./이미지/지역선택 (4).png" class="sl_4"> -->
                 </div>
 
                 <div class="select_place_img">
-                    <img src="./이미지/지역선택_원본 (5).png" id="sp_5">
+                    <img src="./images/지역선택_원본 (5).png" id="sp_5">
                     <!-- <img src="./이미지/지역선택 (5).png" class="sl_5"> -->
                 </div>
 
                 <div class="select_place_img">
-                    <img src="./이미지/지역선택_원본 (6).png" id="sp_6">
+                    <img src="./images/지역선택_원본 (6).png" id="sp_6">
                     <!-- <img src="./이미지/지역선택 (6).png" class="sl_6"> -->
                 </div>
             </div>
         </div>
+
         <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
         <div class="footer">
 
         </div>
+
         <footer>
             <div class="footer_div footer_wrap">
                 <div class="footer_div footer_top">
@@ -238,10 +250,11 @@
 
                 </div>
             </div>
-
         </footer>
 
+
     </div>
+
     <script src="header.js"></script>
     <script src="main.js"></script>
     <script src="footer.js"></script>
