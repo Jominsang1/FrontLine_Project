@@ -54,7 +54,7 @@ header a {
 }
 
 header .menu li a:hover{
-    color: lightblue;
+    color: #5498FF;
 }
 
 header .header_logo img {
@@ -68,6 +68,8 @@ header .header_input {
     /* border: 1px solid red; */
     
     width: 50%;
+
+    margin-right: 15%;
 }
 
 header .input_wrap {
@@ -133,5 +135,9 @@ header .input_list {
 }    
 
 header .input_list li:hover {
-    color: blue;
+    color: #5498FF;
+}
+
+body {
+    margin: 0;
 }

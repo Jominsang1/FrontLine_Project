@@ -75,7 +75,7 @@
             display: flex;
             /* justify-content: space-evenly; */
             flex-direction: row;
-            justify-content: left;
+            justify-content: center;
             align-items: center;
             align-content: center;
             flex-wrap: wrap;
@@ -207,10 +207,10 @@
                     let arr_location_img = tableDom.querySelectorAll(".locations .image");
                     let arr_location_title = tableDom.querySelectorAll(".locations .title");
 
-                    let arr_ch_sleep_img = tableDom.querySelectorAll(".ch_sleep .image");
-                    let arr_ch_sleep_title = tableDom.querySelectorAll(".ch_sleep .title");
-                    let arr_ch_sleep_address = tableDom.querySelectorAll(".ch_sleep .address");
-                    let arr_ch_sleep_price = tableDom.querySelectorAll(".ch_sleep .price");
+                    let arr_ch_sleep_img = tableDom.querySelector(".ch_hotel .image");
+                    let arr_ch_sleep_title = tableDom.querySelector(".ch_hotel .title");
+                    let arr_ch_sleep_address = tableDom.querySelector(".ch_hotel .address");
+                    let arr_ch_sleep_price = tableDom.querySelector(".ch_hotel .price");
 
 
                     // for (let i = 0; i < arr_location_img.length; i++) {
@@ -243,11 +243,11 @@
                             }
                         })
                     }
-                    for (let i = 0; i < arr_ch_sleep_img.length; i++) {
-                        let ch_sleep_img = arr_ch_sleep_img[i].querySelector('img')
-                        let ch_sleep_title = arr_ch_sleep_title[i].innerHTML
-                        let ch_sleep_address = arr_ch_sleep_address[i].innerHTML
-                        let ch_sleep_price = arr_ch_sleep_price[i].innerHTML
+                    for (let i = 0; i < 20; i++) {
+                        let ch_sleep_img = arr_ch_sleep_img.querySelector('img')
+                        let ch_sleep_title = arr_ch_sleep_title.innerHTML
+                        let ch_sleep_address = arr_ch_sleep_address.innerHTML
+                        let ch_sleep_price = arr_ch_sleep_price.innerHTML
                         html_sleep += `<div class="sleep">${ch_sleep_img.outerHTML}<div class="sleepTitle"><p>${ch_sleep_title}</p></div><div class="address"><p1>${ch_sleep_address}</p1></div><div class="price"><p2>${ch_sleep_price}</p2></div></div>`
                     }
                     document.querySelector('#sleep_img').innerHTML = html_sleep 
@@ -284,6 +284,7 @@
                 // console.log("마우스 벗어남")
             })
 
+            
             let sel_3 = document.getElementById('sp_3');
 
             sel_3.addEventListener('mouseenter', function () {
