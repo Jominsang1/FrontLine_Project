@@ -315,7 +315,7 @@ function check(result) {
 function sleep_more_btn() {
     let sleep_more_btn = document.querySelector('.sleep_more_btn')
     sleep_more_btn.addEventListener('click', function () {
-        location.href = "./cheonAn_sleepMore.html"
+        location.href = "../숙소메인/숙소메인.html"
     })
 }
 

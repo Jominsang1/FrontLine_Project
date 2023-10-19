@@ -8,63 +8,32 @@
     <script src="./header.js"></script>
     <!-- 헤더 스타일 -->
     <link rel="stylesheet" href="./header.css">
-    
-    <script>
-        window.addEventListener("load", function(){
-            join()
-        })
-
-        function join(){
-            document.querySelector(".join_normal").addEventListener("click", function(){
-                // alert("일반 회원가입 페이지로 이동합니다.")
-                location.href="./join_normal.html"
-            })
-
-            document.querySelector(".join_google").addEventListener("click", function(){
-                // alert("구글 회원가입 페이지로 이동합니다.")
-                location.href="./join_google.html"
-            })
-
-            document.querySelector(".join_naver").addEventListener("click", function(){
-                // alert("네이버 회원가입 페이지로 이동합니다.")
-                location.href="./join_naver.html"
-            })
-        }
-    </script>
-    
     <style>
-        h1 {
-            border-bottom: 1px solid black;
-            padding-bottom: 20px;
-        }
-        .join_main {
+        main .wrap {
             display: flex;
-            flex-direction: column;
             align-items: center;
-
-            margin-top: 10%;
-            margin-bottom: 25%;
+            flex-direction: column;
+            
+            margin-top: 20%;
+            margin-bottom: 35%;
         }
-
-        .join_main div{
-            border: 3px solid black;
-            border-radius: 15px;
-            width: 300px;
-            height: 50px;
-            margin: 15px;
-            padding-left: 15px;
+        main .wrap div {
             cursor: pointer;
-            line-height: 50px;
+                height: 40px;
+                width: 300px;
+    
+                color: white;
+                font-weight: bolder;
+                border-radius: 7px;
+                background-color: #5498FF;
+                
+                text-align: center;
+                line-height: 40px;
         }
 
-        .join_main div:hover{
-            border: 3px solid #5498FF;
-            padding-left: 15px;
-            cursor: pointer;
-            border-radius: 15px;
+        main .wrap a {
+            color: #fff; text-decoration: none; outline: none
         }
-
-        
     </style>
 
 <style>
@@ -198,26 +167,20 @@
                 <ul class="menu">
                     <li class="menu_login"><a href="./login.html">로그인</a></li>
                     <li class="menu_join"><a href="./join.html">회원가입</a></li>
-                    <li class="menu_my"><a href="./my-내정보.html">내 정보</a></li>
-                    <li class="menu_reser"><a href="my-예약내역.html">예약내역</a></li>
+                    <li class="menu_my"><a href="./my_page.html">내 정보</a></li>
+                    <li class="menu_reser"><a>예약내역</a></li>
                 </ul>
             </ul>
         </div>
     </header>
-    <div class="join_main">
-        <h1>
-            회원가입 방법을 선택하세요
-        </h1>
-        <div class="join_normal">
-            일반 회원가입
+    
+    <main>
+        <div class= wrap>
+            <h1>환영합니다!</h1>
+            <a href="./main.html"><div>메인으로</div></a>
         </div>
-        <div class="join_google">
-            구글 아이디로 회원가입
-        </div>
-        <div class="join_naver">
-            네이버 아이디로 회원가입
-        </div>
-    </div>
+    </main>
+    
 
     <footer>
         <div class="footer_div footer_wrap">

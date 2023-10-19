@@ -24,25 +24,43 @@
     font-size: 25px;
     margin-top: 10px;
 }
-.slide{
+
+.slide_wrap{
     position: relative;
+    width: 1260px;
+    height: 250px;
     /* overflow: hidden; */
-    margin-top: 20px;
+    margin-top: 15px;
+    /* text-align: center; */
+    /* background-color: aquamarine; */
 }
 
 .slide_list{
-    display: flex;
-    justify-content: center;
-    transform: translate(0, 0);
-    transition: 1s;
+    position: absolute;
+    left: 0; top : 0;
+    margin-left: 12px;
+    /* display: flex;
+    justify-content: center; */
+    
 }
 
-.sleep{
-    flex-shrink: 0;
-    width: 550px;
+.slide_list.animated{
+    transition: 0.5s ease-out;
+}
+
+
+.slide_list li{
+    float: left;
+    /* flex-shrink: 0; */
+    width: 400px;
     height: 250px;
-    margin: 10px;
+    /* margin: 10px; */
     cursor: pointer;
+}
+
+.slide_list li:not(:last-child){
+    /* 막내를 제외한 */
+    margin-right: 20px;
 }
 
 .slide_list img {
@@ -56,6 +74,7 @@
 .btns {
     display: flex;
     justify-content: center;
+    margin-top: 15px;
 }
 
 .btns #btn1 {
